@@ -3,7 +3,7 @@ The previous year decided to create a new design of the Aerodynamics Test Platfo
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[height=6.5cm]{figures/Previous Year's ATP Design.jpg}
+  \includegraphics[height=6.5cm]{figures/Stan Melchers Figures/Previous Year's ATP Design.jpg}
   \caption{Previous Year's ATP Design.}
   \label{fig:Previous_ATP_Design}
 \end{figure}
@@ -14,69 +14,106 @@ The previous year's team completed this design and was able to assemble the oute
 
 In their handover letter, the previous year's team recommended the design of the inner frame be re-evaluated to better integrate with the flapper as well as the steel wire attachment mechanism between the inner frame and crossbars.
 
-\subsection{Taking Stock of the Previous ATP Design}
-
-The semester began by reviewing the previous year's progress on the ATP, and getting my hands on the ATP. Below is an image of the state of the ATP at the start of the year.
+The semester began by reviewing the previous year's progress on the ATP, and getting a look at the ATP in person. Below is an image of the state of the ATP at the start of the year.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[height=6.5cm]{figures/State of ATP Sep 2025.jpg}
+  \includegraphics[height=6.5cm]{figures/Stan Melchers Figures/State of ATP Sep 2025.jpg}
   \caption{State of the ATP at the beginning of the Fall Semester.}
   \label{fig:State_Of_ATP_Sep}
 \end{figure}
 
-Looking at Figure \ref{fig:State_Of_ATP_Sep}, we see the aluminum outer frame, 3D printed inner frame and crossbars, as well as the steel cables connecting some of the components together. During my inspections of the ATP I noticed many of the 3D printed components were prototype components and were printed in multiple pieces and glued together afterwards, creating large variations in accuracy and built quality. Additionally, I observed the barrel adjusters did not offer much adjustment for the tensioning of the steel cables, being able to tension these cables would be necessary once the time came to integrate the load cells into the ATP. Based off the recommendations of the previous year's team and my own observation I decided a re-design of the inner frame and attachment mechanism was in order.
+Looking at Figure \ref{fig:State_Of_ATP_Sep}, we see the aluminum outer frame, 3D printed inner frame and crossbars, as well as the steel cables connecting some of the components together. During inspections of the ATP it was observed that many of the 3D printed components were prototype components and were printed in multiple pieces and glued together afterwards, creating large variations in accuracy and build quality. Additionally, it was observed that the barrel adjusters did not offer much adjustment for the tensioning of the steel cables, being able to tension these cables would be necessary once the time came to integrate the load cells into the ATP. Based off the recommendations of the previous year's team and personal observations it was decided a re-design of the inner frame and attachment mechanism was necessary to increase the stiffness, resolution, and ease of assembly of the ATP.
 
-I began by creating a CAD model of the outer frame based off the dimensions of the assembled ATP. With the outer frame accurately modelled, I could turn my attention to taking stock of the components we had on hand. I partially disassembled the ATP by removing all 3D printed components, steel cables, and couplings from the ATP. I recorded the part numbers of the couplings and measured the distances of the steel cables for later reference during the design process. Once this was complete, I was left with a bare outer frame.
-
-\subsection{Re-Designing the Inner Frame and Couplings}
-
-My next step was to re-design the inner frame as well as the coupling mechanism. Over the course of several weeks of iteration and design reviews with professor Garcias, I came up with a redesign of both the inner frame and coupling mechanism. 
+\subsection{Creating a Functional ATP}
+The goal for the fall semester was to create a functional ATP design that could be used with either the mechanical flapping mechanism or the electrodynamic flapping mechanism. To achieve this goal, we started with a redesign of the ATP's inner frame and coupling mechanism. After a couple weeks of design review and iteration, the inner frame design we settled on was two concentric 3D printed rings with an additional 3D printed adapter plate to which a flapper could be connected. The coupling mechanism was chosen to remain as the eighth inch steel cables with stud couplings due to time constraints as we wanted to get the ATP to a functional point as soon as possible. To connect to the load cells, stud anchors were used, the steel cables looped around the anchors and the anchors we're threaded into the load cells with the appropriate washers and nuts. Figures \ref{fig: ATP Design Fall 2025} and \ref{fig: Assembled ATP Fall 2025} are images of the designed and assembled ATP respectively.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[height=6.5cm]{figures/Completed ATP Design.jpg}
-  \caption{CAD Model of the current ATP Design.}
-  \label{fig:Current_ATP_Design}
+  \includegraphics[height = 6.5cm]{figures/Stan Melchers Figures/ATP Design - December 2025.jpg}
+  \caption{ATP Design at the end of the Fall Semester.}
+  \label{fig: ATP Design Fall 2025}
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[height = 6.5cm]{figures/Stan Melchers Figures/Assembled ATP - December 2025.jpg}
+  \caption{Assembled ATP at the end of the Fall Semester.}
+  \label{fig: Assembled ATP Fall 2025}
 \end{figure}
 
-The inner frame consists of two concentric 3D printed rings in addition to a 3D printed adapter plate to which the flapper can be mounted, the updated inner frame design can be seen in Figure \ref{fig:Current_ATP_Design}. As for the coupling mechanism, one side utilizes the existing stud couplers from the previous design to bolt through the inner frame. To attach the other end to the load cells, M6 stud anchors were used in conjunction with an M6 washer and nut, the steel cable could then be thread through the eyelet of the stud anchor and crimped back on itself. See Figures \ref{fig:Coupling_Mechanism} and \ref{fig:Coupling_Mechanism_Cross_Section} for a close-up view of the attachment mechanism. This attachment mechanism allowed for a large range of adjustment during the assembly process to control the tensions within the steel cables with a high degree of accuracy.
+With assembly complete, testing could begin. Testing was a joint effort with Kevin Fair as he is responsible for the Sensor Integration and Data Acquisition for the ATP. By this point in the semester, Kevin had gotten a single load cell functional with a laptop and LabVIEW to read the output voltage. We tested the load cell in both the horizontal and vertical orientations as well as various tensions for the steel cables. Our testing consisted of placing a series of decreasing masses onto the adapter plate and checking the output voltage of the load cell to determine the smallest detectable mass. During out initial tests, the smallest mass we detected was 200 grams. At a target flapper weight of 40 grams, this result was displeasing. Since this design utilizes steel cables, which work under tension, to achieve the desired rigidity these steel cables must be pre-tensioned. Our testing found that as this pre-tension force (And therefore the rigidity of the steel cables.) is increased, the resolution of our load cell decreased and vice-versa. Kevin talks in depth about this within section \ref{chap:Kevin_Fair} of this report. With the completion of this testing, that concluded our work on the ATP for the fall semester.
 
-\begin{figure}
+\subsection{Redesigning the Coupling Mechanism}
+Starting the winter semester, the next step was to reduce the static mass of the inner frame and coupler design. With a lower static mass, the tensile forces required to support the design would be lower and therefore the resolution of the load cells would be increased. Since the inner frame was already 3D printed and therefore quite light, concentration was put on the steel cable coupling mechanism as this accounted for the major of the mass.
+
+I began by creating a coupler design that utilized 3D printed threaded couplers and the eighth inch carbon graphite rod on hand from the wings team to connect the load cells to the inner frame. Figure \ref{fig:Rod Coupling Mechanism} shows a cross section of this design.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width = 10cm]{figures/Stan Melchers Figures/Rod Coupling Mechanism.png}
+  \caption{Rod Coupling Mechanism.}
+  \label{fig:Rod Coupling Mechanism}
+\end{figure}
+
+This design was sent for manufacturing, assembled, and tested once all components had been received. The testing revealed that the 3D printed couplers were too brittle and cracked at the base while being tightened to clamp onto the carbon graphite rod. With iteration it is possible that this design could have become a functional coupling mechanism design. However, at the same time as this testing, a second coupling mechanism was being designed and the potential for this second design seemed much higher. So, the decision was made to focus on the second design instead of revising the first design.
+
+This second coupling mechanism design was a rigid design that utilized 3D printed square beams that would have heat set inserts pressed into them. One end of the beam would connect to the load cell using an threaded stud while the other end would connect to the inner frame using a Socket Head Cap Screw (SHCS) and washer. Figure \ref{fig:Rigid Coupling Mechanism} shows a cross section of this design.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width = 10cm]{figures/Stan Melchers Figures/Rigid Coupling Mechanism.png}
+  \caption{Rigid Coupling Mechanism.}
+  \label{fig:Rigid Coupling Mechanism}
+\end{figure}
+
+This design proved to be quite an improvement on the previous steel coupler design, the total mass of all the steel couplers was approximately 370 grams, while the total mass of the rigid coupling mechanism is approximately 120 grams. This greatly decreased the static mass on the load cells which meant we could increase the resolution of the load cells. This improvement was confirmed when we tested our design with the electrodynamic flapping mechanism. At both 8Hz and 10Hz the ATP was able to pickup 8 and 10 peaks respectively on the load cells. Additionally, the smallest static mass we could now detect was 10 grams, a great improvement from the 200 grams detectable with the steel couplers. Kevin was further able to improve this, but the mechanical design of the couplers remained the same for the remainder of the year. Figure \ref{fig:Assembled ATP Feb 2026} shows the ATP with the rigid couplings and the electrodynamic flapping mechanism during a testing session.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[height = 6.5cm]{figures/Stan Melchers Figures/Assembled ATP - February 2026.jpg}
+  \caption{Assembled ATP as of February 2026.}
+  \label{fig:Assembled ATP Feb 2026}
+\end{figure}
+
+\subsection{Flapper Attachment Mechanisms}
+With the design of the coupling mechanism complete, attention was then put towards testing the ATP. We had three methods of dynamically testing the platform:
+
+\begin{enumerate}
+  \item The electrodynamic flapping mechanism
+  \item A purchased flapper
+  \item The mechanical flapping mechanism
+\end{enumerate}
+The electrodynamic flapping mechanism was first integrated to the platform because that was the mechanism that was progress most rapidly. The electrodynamic team had created their own 3D printed free standing design to hold their mechanism, integrating this to the platform was quite simple and just required adaptation to meet the adapter plate dimensions. Both the single and dual wing designs were created as see in figure \ref{fig:Electrodynamic Attachment Mechanism}. The flapping mechanism is held in place by a friction fit and the base is connected to the inner frame adapter plate using two SHCS and washers. These designs allowed us to test and compare the performance of both single and dual wing electrodynamic flapping at various frequencies.
+
+\begin{figure}[htb]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[height=4.5cm]{figures/Coupling Close Up.png}
-  \caption{Close-Up of the Coupling Mechanism.}
-  \label{fig:Coupling_Mechanism}
+  \includegraphics[width=.5\linewidth]{figures/Stan Melchers Figures/Single Wing Electrodynamic.png}
+  \caption{Single Wing Holder.}
+  \label{fig:Single Wing Holder}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[height=4.5cm]{figures/Coupling Close Up Cross Section.png}
-  \caption{\label{fig:right_robot} Cross Section of the Coupling Mechanism.}
-  \label{fig:Coupling_Mechanism_Cross_Section}
+  \includegraphics[width=.5\linewidth]{figures/Stan Melchers Figures/Dual Wing Electrodynamic.png}
+  \caption{Dual Wing Holder.}
+  \label{fig:Dual Wing Holder}
 \end{subfigure}
-\caption{Detailed Views of the Coupling Mechanism.}
-\label{fig:test}
+\caption{Both Electrodynamic Flapper Attachment Mechanisms}
+\label{fig:Electrodynamic Attachment Mechanism}
 \end{figure}
 
-\subsection{Assembly and Testing}
-With the design complete, it was now time to manufacture, assemble, and begin testing. The manufacturing was minimal and fast by design, only three components required manufacturing; the two 3D printed inner rings and the 3D printed adapter plate. In the meantime, the required components could be ordered from McMaster Carr. The required components consisted of mainly fasteners with the exception of the M6 stud anchors, M6 standoffs (To be used in place of the load cells during storage and assembly.), and steel cable crimp connectors.
-
-With all components on hand the ATP could then be assembled. Assembly consisted of installing the M6 standoffs in place of the load cells, followed by measuring, cutting, and crimping the steel cables to length with the stud anchors in place. Lastly, the stud couplers could be bolted through the 3D printed inner frame rings. See Figure \ref{fig:Assembled_ATP} for an image of the assembled ATP.
+The purchased flapper was of specific interest because it was known to produce enough force to be able to sustain flight. So, an attachment mechanism was designed to connect the flapper to the inner frame. Figure \ref{fig:Purchased Flapper Attachment Mechanism} shows the design. It clamps to the underside of the flapper using a SHCS and heat set insert. The stand is connected to the base using a second SHCS and insert. Lastly, the base connects to the adapter plate of the inner frame using two SHCS and washers. This designed proved vital in terms of testing since we we're able to compare the output of a known working flapper versus our various flapping mechanisms.
 
 \begin{figure}[htb]
   \centering
-  \includegraphics[height=6.5cm]{figures/Assembled ATP.jpg}
-  \caption{Assembled ATP.}
-  \label{fig:Assembled_ATP}
+  \includegraphics[height = 6.5cm]{figures/Stan Melchers Figures/Purchased Flapper Attachment Mechanism.png}
+\caption{Purchased Flapper Attachment Mechanism.}
+\label{fig:Purchased Flapper Attachment Mechanism}
 \end{figure}
 
-With assembly complete, testing could begin. Testing is a joint effort with Kevin Fair as his role is Sensor Integration and Data Acquisition for the ATP. By this point in the semester, Kevin had gotten a single load cell functional with a laptop and LabVIEW to read the output voltage. We tested the load cell in both the horizontal and vertical orientations as well as various tensions for the steel cables. Our testing consisted of placing a series of decreasing masses onto the adapter plate and checking the output voltage of the load cell to determine the smallest detectable mass. During out initial tests, the smallest mass we detected was 200 grams. At a target flapper weight of 40 grams, this result was displeasing. Since this design utilizes steel cables, which work under tension, to achieve the desired rigidity these steel cables must be pre-tensioned. Our testing found that as this pre-tension force (And therefore the rigidity of the steel cables.) is increased, the resolution of our load cell decreased and vice-versa. Kevin talks in depth about this within section \ref{chap:Kevin_Fair} of this report. Kevin has since been able to mitigate this issue via voltage subtraction and other means discussed within his section.
+As for the mechanical flapping mechanism, involvement with the integration was very limited. The mechanical team simply designed their flapper such that the base aligns directly with the adapter plate on the inner frame, making the integration very simple.
 
-With the results from our testing, my next step was to attempt to reduce the static mass of the design. With a lower static mass, the tensile forces required to support the design would be lower and therefore the resolution of the load cells could be increased.  I focused my efforts on the steel cables and couplings as these components were the heaviest. I sketched a 3D printed coupler which utilizes a bore and a tapered thread to clamp existing carbon fiber cable (Leftover from the previous year.) this coupler then connects to the thread of the load cell. This concluded my work for the fall semester.
-
-\subsection{Plan for Winter Semester}
-Moving into the winter semester, my overall goal is to get the ATP functional and able to collect data. This will primarily consist of testing and prototyping with Kevin throughout the semester.
-
-As for the short term, I will turn my updated coupler concept into a function CAD design. I would like to design a method of adjusting the tension within the cables to help with assembly and prototyping. Once designed, manufacturing (3D printing) will occur, followed by assembly and testing. Testing will be similar to the testing process preformed previously, the load cell will be tested in a variety of orientations and analyzed using a variety of masses. Once we are satisfied with the testing results for a single load, the integration of the remaining five load cells will follow. Once all load cells our preforming as expected, data logging can begin.
+\subsection{Supporting Team Members}
+\subsection{Redesigning the Outer Frame}
+\subsection{Recommendations for the Following Year}
