@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  31 MAR 2026 11:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  1 APR 2026 12:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -960,7 +960,7 @@ Chapter 2.
 ]
 
 [7] (./Stan Melchers.tex
-<figures/Stan Melchers Figures/Previous Year's ATP Design.jpg, id=139, 835.12pt x 704.6325pt>
+<figures/Stan Melchers Figures/Previous Year's ATP Design.jpg, id=143, 835.12pt x 704.6325pt>
 File: figures/Stan Melchers Figures/Previous Year's ATP Design.jpg Graphic file (type jpg)
 <use figures/Stan Melchers Figures/Previous Year's ATP Design.jpg>
 Package pdftex.def Info: figures/Stan Melchers Figures/Previous Year's ATP Design.jpg  used on input line 6.
@@ -968,7 +968,7 @@ Package pdftex.def Info: figures/Stan Melchers Figures/Previous Year's ATP Desig
 
 
 [8 <./figures/Stan Melchers Figures/Previous Year's ATP Design.jpg>]
-<figures/Stan Melchers Figures/State of ATP Sep 2025.jpg, id=145, 1554.80875pt x 1384.17125pt>
+<figures/Stan Melchers Figures/State of ATP Sep 2025.jpg, id=149, 1554.80875pt x 1384.17125pt>
 File: figures/Stan Melchers Figures/State of ATP Sep 2025.jpg Graphic file (type jpg)
 <use figures/Stan Melchers Figures/State of ATP Sep 2025.jpg>
 Package pdftex.def Info: figures/Stan Melchers Figures/State of ATP Sep 2025.jpg  used on input line 21.
@@ -976,12 +976,12 @@ Package pdftex.def Info: figures/Stan Melchers Figures/State of ATP Sep 2025.jpg
 
 
 [9 <./figures/Stan Melchers Figures/State of ATP Sep 2025.jpg>]
-<figures/Stan Melchers Figures/ATP Design - December 2025.jpg, id=155, 730.73pt x 582.175pt>
+<figures/Stan Melchers Figures/ATP Design - December 2025.jpg, id=159, 730.73pt x 582.175pt>
 File: figures/Stan Melchers Figures/ATP Design - December 2025.jpg Graphic file (type jpg)
 <use figures/Stan Melchers Figures/ATP Design - December 2025.jpg>
 Package pdftex.def Info: figures/Stan Melchers Figures/ATP Design - December 2025.jpg  used on input line 33.
 (pdftex.def)             Requested size: 232.13242pt x 184.9429pt.
-<figures/Stan Melchers Figures/Assembled ATP - December 2025.jpg, id=156, 1347.0325pt x 1347.0325pt>
+<figures/Stan Melchers Figures/Assembled ATP - December 2025.jpg, id=160, 1347.0325pt x 1347.0325pt>
 File: figures/Stan Melchers Figures/Assembled ATP - December 2025.jpg Graphic file (type jpg)
 <use figures/Stan Melchers Figures/Assembled ATP - December 2025.jpg>
 Package pdftex.def Info: figures/Stan Melchers Figures/Assembled ATP - December 2025.jpg  used on input line 39.
@@ -989,7 +989,7 @@ Package pdftex.def Info: figures/Stan Melchers Figures/Assembled ATP - December 
 
 
 [10 <./figures/Stan Melchers Figures/ATP Design - December 2025.jpg> <./figures/Stan Melchers Figures/Assembled ATP - December 2025.jpg>]
-<figures/Stan Melchers Figures/Rod Coupling Mechanism.png, id=163, 359.3425pt x 130.4875pt>
+<figures/Stan Melchers Figures/Rod Coupling Mechanism.png, id=167, 359.3425pt x 130.4875pt>
 File: figures/Stan Melchers Figures/Rod Coupling Mechanism.png Graphic file (type png)
 <use figures/Stan Melchers Figures/Rod Coupling Mechanism.png>
 Package pdftex.def Info: figures/Stan Melchers Figures/Rod Coupling Mechanism.png  used on input line 53.
@@ -997,12 +997,12 @@ Package pdftex.def Info: figures/Stan Melchers Figures/Rod Coupling Mechanism.pn
 
 
 [11 <./figures/Stan Melchers Figures/Rod Coupling Mechanism.png>]
-<figures/Stan Melchers Figures/Rigid Coupling Mechanism.png, id=171, 335.2525pt x 135.50626pt>
+<figures/Stan Melchers Figures/Rigid Coupling Mechanism.png, id=175, 335.2525pt x 135.50626pt>
 File: figures/Stan Melchers Figures/Rigid Coupling Mechanism.png Graphic file (type png)
 <use figures/Stan Melchers Figures/Rigid Coupling Mechanism.png>
 Package pdftex.def Info: figures/Stan Melchers Figures/Rigid Coupling Mechanism.png  used on input line 64.
 (pdftex.def)             Requested size: 284.52756pt x 115.00302pt.
-<figures/Stan Melchers Figures/Assembled ATP - February 2026.jpg, id=173, 1389.19pt x 1232.605pt>
+<figures/Stan Melchers Figures/Assembled ATP - February 2026.jpg, id=177, 1389.19pt x 1232.605pt>
 File: figures/Stan Melchers Figures/Assembled ATP - February 2026.jpg Graphic file (type jpg)
 <use figures/Stan Melchers Figures/Assembled ATP - February 2026.jpg>
 Package pdftex.def Info: figures/Stan Melchers Figures/Assembled ATP - February 2026.jpg  used on input line 73.
@@ -1010,12 +1010,12 @@ Package pdftex.def Info: figures/Stan Melchers Figures/Assembled ATP - February 
 
 
 [12 <./figures/Stan Melchers Figures/Rigid Coupling Mechanism.png>]
-<figures/Stan Melchers Figures/Single Wing Electrodynamic.png, id=182, 736.7525pt x 695.59875pt>
+<figures/Stan Melchers Figures/Single Wing Electrodynamic.png, id=186, 736.7525pt x 695.59875pt>
 File: figures/Stan Melchers Figures/Single Wing Electrodynamic.png Graphic file (type png)
 <use figures/Stan Melchers Figures/Single Wing Electrodynamic.png>
 Package pdftex.def Info: figures/Stan Melchers Figures/Single Wing Electrodynamic.png  used on input line 92.
 (pdftex.def)             Requested size: 118.0078pt x 111.41483pt.
-<figures/Stan Melchers Figures/Dual Wing Electrodynamic.png, id=183, 809.0225pt x 698.61pt>
+<figures/Stan Melchers Figures/Dual Wing Electrodynamic.png, id=187, 809.0225pt x 698.61pt>
 File: figures/Stan Melchers Figures/Dual Wing Electrodynamic.png Graphic file (type png)
 <use figures/Stan Melchers Figures/Dual Wing Electrodynamic.png>
 Package pdftex.def Info: figures/Stan Melchers Figures/Dual Wing Electrodynamic.png  used on input line 98.
@@ -1023,28 +1023,48 @@ Package pdftex.def Info: figures/Stan Melchers Figures/Dual Wing Electrodynamic.
 
 
 [13 <./figures/Stan Melchers Figures/Assembled ATP - February 2026.jpg>]
-<figures/Stan Melchers Figures/Purchased Flapper Attachment Mechanism.png, id=192, 333.245pt x 282.05376pt>
+<figures/Stan Melchers Figures/Purchased Flapper Attachment Mechanism.png, id=196, 333.245pt x 282.05376pt>
 File: figures/Stan Melchers Figures/Purchased Flapper Attachment Mechanism.png Graphic file (type png)
 <use figures/Stan Melchers Figures/Purchased Flapper Attachment Mechanism.png>
 Package pdftex.def Info: figures/Stan Melchers Figures/Purchased Flapper Attachment Mechanism.png  used on input line 110.
 (pdftex.def)             Requested size: 218.5135pt x 184.9429pt.
-)
+
 
 [14 <./figures/Stan Melchers Figures/Single Wing Electrodynamic.png> <./figures/Stan Melchers Figures/Dual Wing Electrodynamic.png> <./figures/Stan Melchers Figures/Purchased Flapper Attachment Mechanism.png>]
+<figures/Stan Melchers Figures/Phone Holder.png, id=206, 315.141pt x 279.006pt>
+File: figures/Stan Melchers Figures/Phone Holder.png Graphic file (type png)
+<use figures/Stan Melchers Figures/Phone Holder.png>
+Package pdftex.def Info: figures/Stan Melchers Figures/Phone Holder.png  used on input line 126.
+(pdftex.def)             Requested size: 118.0078pt x 104.47798pt.
+<figures/Stan Melchers Figures/Phone Holder Cross Section.png, id=207, 251.94125pt x 280.04625pt>
+File: figures/Stan Melchers Figures/Phone Holder Cross Section.png Graphic file (type png)
+<use figures/Stan Melchers Figures/Phone Holder Cross Section.png>
+Package pdftex.def Info: figures/Stan Melchers Figures/Phone Holder Cross Section.png  used on input line 132.
+(pdftex.def)             Requested size: 118.0078pt x 131.17307pt.
+<figures/Stan Melchers Figures/Calibration Weights.jpg, id=209, 1259.70625pt x 1259.70625pt>
+File: figures/Stan Melchers Figures/Calibration Weights.jpg Graphic file (type jpg)
+<use figures/Stan Melchers Figures/Calibration Weights.jpg>
+Package pdftex.def Info: figures/Stan Melchers Figures/Calibration Weights.jpg  used on input line 144.
+(pdftex.def)             Requested size: 184.93048pt x 184.9429pt.
 
-[15] (./Kevin Fair.tex)
 
-[16
+[15 <./figures/Stan Melchers Figures/Phone Holder.png> <./figures/Stan Melchers Figures/Phone Holder Cross Section.png>])
+
+[16 <./figures/Stan Melchers Figures/Calibration Weights.jpg>]
+
+[17] (./Kevin Fair.tex)
+
+[18
 
 ] (./Wade Schnurr.tex)
 
-[17] (./Aidan Sheridan.tex)
+[19] (./Aidan Sheridan.tex)
 
-[18] (./Abdulrahman Sirajudeen-Sanni.tex)
+[20] (./Abdulrahman Sirajudeen-Sanni.tex)
 
-[19] (./Justin Denneny.tex)) (./Conclusion.tex
+[21] (./Justin Denneny.tex)) (./Conclusion.tex
 
-[20]
+[22]
 Chapter 3.
 )
 
@@ -1052,7 +1072,7 @@ LaTeX Warning: Empty bibliography on input line 101.
 
 
 
-[21
+[23
 
 ] (./Main.aux)
  ***********
@@ -1070,18 +1090,18 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23346 strings out of 473190
- 410384 string characters out of 5715801
- 1265087 words of memory out of 5000000
- 46187 multiletter control sequences out of 15000+600000
- 594160 words of font info for 83 fonts, out of 8000000 for 9000
+ 23381 strings out of 473190
+ 411871 string characters out of 5715801
+ 1265451 words of memory out of 5000000
+ 46214 multiletter control sequences out of 15000+600000
+ 595990 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,8n,81p,1375b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfso1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Main.pdf (22 pages, 3108562 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfso1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Main.pdf (24 pages, 6644824 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 227 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 315 PDF objects out of 1000 (max. 8388607)
+ 243 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
