@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  1 APR 2026 13:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  1 APR 2026 16:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1061,21 +1061,23 @@ Package pdftex.def Info: figures/Stan Melchers Figures/ATP Design Cross Section 
 (pdftex.def)             Requested size: 118.0078pt x 121.99446pt.
 
 
-[16 <./figures/Stan Melchers Figures/Calibration Weights.jpg>])
+[16 <./figures/Stan Melchers Figures/Calibration Weights.jpg>]
 
-[17 <./figures/Stan Melchers Figures/ATP Design - April 2026.png> <./figures/Stan Melchers Figures/ATP Design Cross Section - April 2026.png>] (./Kevin Fair.tex)
+[17 <./figures/Stan Melchers Figures/ATP Design - April 2026.png> <./figures/Stan Melchers Figures/ATP Design Cross Section - April 2026.png>])
 
-[18
+[18] (./Kevin Fair.tex)
+
+[19
 
 ] (./Wade Schnurr.tex)
 
-[19] (./Aidan Sheridan.tex)
+[20] (./Aidan Sheridan.tex)
 
-[20] (./Abdulrahman Sirajudeen-Sanni.tex)
+[21] (./Abdulrahman Sirajudeen-Sanni.tex)
 
-[21] (./Justin Denneny.tex)) (./Conclusion.tex
+[22] (./Justin Denneny.tex)) (./Conclusion.tex
 
-[22]
+[23]
 Chapter 3.
 )
 
@@ -1083,7 +1085,7 @@ LaTeX Warning: Empty bibliography on input line 101.
 
 
 
-[23
+[24
 
 ] (./Main.aux)
  ***********
@@ -1097,18 +1099,18 @@ Package logreq Info: Writing requests to 'Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23401 strings out of 473190
- 413032 string characters out of 5715801
- 1265744 words of memory out of 5000000
+ 23402 strings out of 473190
+ 413039 string characters out of 5715801
+ 1265749 words of memory out of 5000000
  46233 multiletter control sequences out of 15000+600000
  595990 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,8n,81p,1375b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,8n,81p,1510b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfso1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on Main.pdf (24 pages, 7257120 bytes).
+Output written on Main.pdf (25 pages, 7259212 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 246 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
+ 328 PDF objects out of 1000 (max. 8388607)
+ 251 compressed objects within 3 object streams
+ 72 named destinations out of 1000 (max. 500000)
  166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
