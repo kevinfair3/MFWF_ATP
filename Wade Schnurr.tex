@@ -1,55 +1,237 @@
-\subsection{Background}
-There is no previous progress to refer to, as the machine learning roles of the Aerodynamic Test Platform and Wings (ATPW) subgroup are newly defined responsibilities.
-
-\subsection{Introduction}
-The overall goal for the neural network is to develop a non-linear black-box aerodynamic model using a machine learning model to predict three-dimensional aerodynamic forces to validate and compare with the 
-experimental data obtained from the Aerodynamic Test Platform (ATP). Eventually, for comparison, two different machine learning approaches, such as neural networks, will be used to model the non-linear aerodynamics of flapping wings. The team has currently collected aerodynamic data on NACA airfoils to synthesize and validate aerodynamic models as a preliminary exercise.
-
-\subsection{Analysis of Problem}
-Before steps could be taken towards developing a model, an understanding of machine learning (ML) to a certain level had to be established. This was done through online resources, for example, online lectures presented by Andrew Ng at Stanford \cite{NgDeepLearningPlaylist2025}, YouTube video series such as Deep Learning With Tensorflow 2.0, Keras and Python by codebasics \cite{codebasicsDeepLearning2025}, podcasts such as the Machine Learning Guide by OCDevel \cite{OCDevelMLGSpotify2025}, discussions with the assigned Lead Engineer Professor Hashim A. Hashim Mohamed, and more. For future groups, Andrew Ng's Coursera course was also often recommended.
-
-\subsubsection{Dataset Preparation}
-Before a machine model could be selected and created, a dataset needed to be selected. NACA airfoil data were chosen for the preliminary exercise. The NACA airfoil data were selected because there appeared to be some rough correlation and potential overlap between the categories of data presented for the NACA airfoils and the potential data to be extracted from the Micro Flapping-Wing Flyer (MFWF) and ATP. Joukowsky and NACA 4, 5, 6, and 7 digit airfoil data were extracted from airfoiltools.com \cite{AirfoilToolsNACA4Digit2025}. Each airfoil on airfoiltools.com was divided into seven files, each containing data for one of the seven Reynolds-number intervals from 50,000 to 5,000,000. Initially, to develop the ML model, a small sample of airfoil data was downloaded as a Microsoft Excel file and combined to enable faster training and iteration. Over time, as the ML model was developed, Aidan Sheridan compiled a large Excel dataset containing all available airfoils and associated information, adding two new columns: one for the NACA Airfoil ID and another for the Reynolds Number. A few refinements were applied to the large dataset to make it easier for the ML model to read, and the model was then trained on it. There are six categories of information that were available with each NACA airfoil: angle of attack (\( \alpha \)), transition point on upper and lower surface (Top\_Xtr and Bot\_Xtr), Reynolds Number (Re), lift coefficient (Cl), drag coefficient (Cd), pitching moment (Cm), and profile drag coefficient (Cdp).
-
-\subsubsection{Machine Learning Model Development}
-The machine learning (ML) model for the preliminary exercise was to predict / output four values, the lift coefficient (Cl), drag coefficient (Cd), pitching moment (Cm), and profile drag coefficient (Cdp) based on five input parameters, NACA airfoil ID, angle of attack (\( \alpha \)), transition point on upper and lower surface (Top\_Xtr and Bot\_Xtr), and Reynolds Number (Re).
-
-The initial ML approach led to the development of a Long Short-Term Memory (LSTM), a type of Recurrent Neural Network (RNN), as recommended based on in-class feedback. An LSTM model is designed for time-series/sequential data, data that depends on previous data points, streams of data. For example, predicting the weather depends on current and previous conditions and how they have changed over time. However, the NACA airfoil data is not sequential; it does not depend on the data before or after it. Each row of data is independent and can be randomly ordered; this would not affect the prediction. The LSTM model added complexity without improving prediction accuracy. Early tests showed that the LSTM model underperformed, particularly when the NACA airfoil ID was not used as an input parameter (four inputs instead of five) compared to other models discussed later. LSTMs require 3-dimensional input (batch, time, and features). Since the NACA airfoil data was not sequenced, no time dimension, requiring the addition of a forced fake sequence that provided no meaningful context to the model, adding unnecessary complexity and slowing it down. Overall, the LSTM model had an increased training time, memory usage, and hyperparameter sensitivity.
-
-A Multi-Layer Perceptron (MLP) model was trained as it was better suited to the NACA airfoil dataset. An MLP was chosen because the NACA airfoil data is not sequential; it is static. MLP models can take an input of a simple list of numbers and learn relationships among them. The aerodynamic coefficients being predicted depend on complex interactions among variables, and MLP models can learn these nonlinear patterns to a relatively high degree of accuracy. MLP models contain fewer layers and complications, resulting in a simpler architecture compared to the previous LSTM model.
-
-\subsubsection{Model Evaluation and Validation}
-
-To assess the accuracy of the trained model, two main plots are utilized. Figures~\ref{fig: LSTM 2: Pred vs True Coefficients} and~\ref{fig: MLP: Pred vs True Coefficients} depict the true coefficient as the x-coordinate and the associated models prediction as the y-coordinate. The line y=x represents where the predictions perfectly represent the true coefficient, and the farther the distance from the line, the worse the prediction is. Figures~\ref{fig: LSTM 2: Training Accuracy} and~\ref{fig:MLP: Training Accuracy} show the system's accuracy using mean squared error (MSE) loss as a function of Epoch, the number of times the model has gone through the dataset.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width = 10 cm]{figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png}
-    \caption{LSTM model version 2, predicted coefficient results compared to the actual coefficient values.}
-    \label{fig: LSTM 2: Pred vs True Coefficients}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width = 10 cm]{figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png}
-    \caption{LSTM model version 2, training accuracy compared to the number of times the dataset has been run through.}
-    \label{fig: LSTM 2: Training Accuracy}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width = 10 cm]{figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png}
-    \caption{MLP model predicted coefficient results compared to the actual coefficient values.}
-    \label{fig: MLP: Pred vs True Coefficients}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width = 10 cm]{figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png}
-    \caption{MLP model training accuracy compared to the number of times the large dataset has been run through.}
-    \label{fig:MLP: Training Accuracy}
-\end{figure}
-
+% !TeX root = Wade-preview.tex
 \newpage
-\subsection{Plan for Winter Semester}
-At this time, there are two main goals for the ATPW machine learning group to continue progress into the winter semester. One: determine relevant ways to interpret and display the information generated by the current MLP model trained on NACA airfoil data. Two: consider the data that will be used as inputs and outputs from the ATP, how the X, Y, and Z forces are produced and their format. Analyze whether the current MLP model can be modified to accept the information from the ATP and produce high-accuracy results, or if it is necessary to develop a new model better suited for the type of data generated by the ATP.
+\begin{itemize}
+    \item \textcolor{purple}{Introduction}
+    \begin{itemize}
+        \item \textcolor{purple}{Recommended length: 2-3 paragraphs}
+        \item \textcolor{purple}{Paragraph 1 purpose: define the neural-network subgroup objective within the ATPW project.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{build a neural-network-based aerodynamic model}
+            \item \textcolor{purple}{support interpretation and future prediction of ATP measurements}
+            \item \textcolor{purple}{connect the work to the broader MFWF project}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 2 purpose: explain the project progression from Fall to Winter.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{NACA airfoil data were used as a preliminary structured dataset}
+            \item \textcolor{purple}{Fall focused on baseline model selection}
+            \item \textcolor{purple}{Winter moved toward PR-SSM and dynamic flapping-wing modeling}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 3 purpose if needed: give minimal neural-network background for readability.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{what a layer does}
+            \item \textcolor{purple}{what an activation function does}
+            \item \textcolor{purple}{what an epoch is}
+            \item \textcolor{purple}{why these ideas matter for nonlinear aerodynamic prediction}
+        \end{itemize}
+    \end{itemize}
+\subsection{Introduction}
+In the Fall 2025 semester, during the initial research the first attempts began to develop a proof-of concept machine learning model using NACA airfoil data to predict four aerodynamic properties associated with each airfoil (lift coefficient, drag coefficient, pitching moment, and profile drag coefficient). NACA was used because they have made significant contributions to the aerospace field and the NACA airfoil dataset were used because they provide a large, structured, and well documented aerodynamic database, ideal for early model development.The initial LSTM (Long Short-Term Memory) model underperformed compared to the current MLP (Multi-Layer Perceptron) model for reasons such as the non-sequential nature of the airfoil data. The LSTM model to function contained features to convert the non-sequential data into sequential data to interpret it as such, which added unnecessary complexity to the model.The LSTM model was initially chosen for the non-sequential data opposed to a physics based NN which can enforce aerodynamic laws as an early exploratory model because LSTMs are known for their ability to predict nonlinear relationships.The MLP neural network currently produces relatively high levels of accuracy when trained on the many datapoints contained in the NACA airfoil dataset. 
+
+In the Winter 2026 semester, the the first objective was to finalize the conceptual validation of the MLP (Multi Layer Perceptron) neural network using NACA airfoil data and to display the data in an intuitive way. The second objective was to make the transition to alter the current and/or develop a new non-linear black box aerodynamic model to use dimensions and measurements from the flyer (wings, actuation mechanism, …), ATP (Aerodynamic Test Platform), and RRTS (Rotational Rates Test Stand) to predict the non-linear three-dimensional aerodynamic forces (X, Y, and Z) and moments (Pitch, Roll, and Yaw) produced by the flyer flapper. The objective was to validate and compare the predicted forces and moments with the experimental data obtained from the ATP and RRTS. However, because the RRTS (Rotational Rates Test Stand) and ATP were still in development and not producing meaningful experimental results at the transition point between semesters, the focus shifted to replicate a paper that used machine learning  to predict dynamic aerodynamic forces and moments, as in first semester the MLP network used static NACA airfoil data to predict static forces, with the hope that they could be modified to accept future experimental data. The paper that was selected uses a PR-SSM to predict three dimensional non-linear wing forces and moments from and experimental dataset that also involves various wing trajectories.
+
+A brief overview of neural-network terminology is useful for understanding the work presented in the following sections. In a simple feed forward neural network with back propagation the input information flows through a series of layers and hidden layers. The input data is received by an input layer, which then passes through the hidden layers where the network learns patterns and non-linear relationships, which then pass the information to the output layer which produces the prediction. A layer is made up of multiple neurons that apply learned weights and biases to the input then passes the result through an activation function which is normally the same for all neurons in a given layer. Weights are a numerical value used to scale how strongly the input affects the output to the next layer. While biasses are a numerical value used to independently shift how strongly the input affects the output to the next layer. Activation functions are a mathematical function applied after the layers linear transformation allowing the network to model nonlinear relationships between inputs and output. During the training, the model is updated through a process called back propagation, a procedure use to update the network parameters based on the measured error after each prediction is made. An epoch is one complete pass of the training dataset thought network. These are just some of the relevant concepts of a neural network. The aerodynamic quantities being predicted depend on non-linear interactions between many variables such as geometry, operational setting, and fluid dynamic properties making neural networks an acceptable category of models for exploring aerodynamic predictions.
+
+ \subsection{MLP Neural Network - Methodology}
+     \item \textcolor{purple}{MLP Neural Network - Methodology}
+    \begin{itemize}
+        \item \textcolor{purple}{Recommended length: 4 paragraphs}
+        \item \textcolor{purple}{Paragraph 1 purpose: explain the role of the Fall MLP study.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{proof-of-concept study}
+            \item \textcolor{purple}{why NACA data were chosen}
+            \item \textcolor{purple}{why this was a useful intermediate step before ATP-ready dynamic data}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 2 purpose: define the Fall dataset, inputs, and outputs.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{data source}
+            \item \textcolor{purple}{Reynolds-number coverage}
+            \item \textcolor{purple}{selected inputs}
+            \item \textcolor{purple}{predicted coefficients}
+            \item \textcolor{purple}{any preprocessing or encoding}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 3 purpose: explain model selection.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{LSTM was explored}
+            \item \textcolor{purple}{dataset was non-sequential}
+            \item \textcolor{purple}{MLP was more appropriate for tabular independent samples}
+            \item \textcolor{purple}{MLP became the baseline model}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 4 purpose: summarize the final MLP setup.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{architecture}
+            \item \textcolor{purple}{activation functions}
+            \item \textcolor{purple}{scaling or normalization}
+            \item \textcolor{purple}{train/validation/test split}
+            \item \textcolor{purple}{stopping or regularization choices}
+        \end{itemize}
+    \end{itemize}
+
+ \subsection{MLP Neural Network - Results}
+    \item \textcolor{purple}{MLP Neural Network - Results}
+    \begin{itemize}
+        \item \textcolor{purple}{Recommended length: 4 paragraphs}
+        \item \textcolor{purple}{Paragraph 1 purpose: explain how the Fall MLP was evaluated.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{predicted-versus-true plots}
+            \item \textcolor{purple}{loss curves}
+            \item \textcolor{purple}{available metrics such as MSE or R\textsuperscript{2}}
+            \item \textcolor{purple}{comparison against the LSTM where useful}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 2 purpose: interpret predictive performance.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{closeness to the 1:1 line}
+            \item \textcolor{purple}{what the metrics suggest}
+            \item \textcolor{purple}{which outputs were predicted better or worse}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 3 purpose: interpret training behavior and failure patterns.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{loss-curve behavior}
+            \item \textcolor{purple}{overfitting or underfitting if visible}
+            \item \textcolor{purple}{any error concentration in certain regimes}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 4 purpose: explain why the Fall results mattered.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{Fall MLP established a useful baseline}
+            \item \textcolor{purple}{it showed limits of steady-airfoil learning}
+            \item \textcolor{purple}{it motivated the move toward Winter PR-SSM and more ATP-relevant data}
+        \end{itemize}
+    \end{itemize}
+
+ \subsection{PR-SSM Paper Replication - Methodology}
+     \item \textcolor{purple}{PR-SSM Paper Replication - Methodology}
+    \begin{itemize}
+        \item \textcolor{purple}{Recommended length: 4-5 paragraphs}
+        \item \textcolor{purple}{Paragraph 1 purpose: explain why the PR-SSM paper was chosen.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{more physically relevant than the Fall NACA study}
+            \item \textcolor{purple}{dynamic aerodynamic prediction}
+            \item \textcolor{purple}{stronger connection to flapping-wing behavior}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 2 purpose: define the Winter prediction problem and dataset.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{what is being predicted}
+            \item \textcolor{purple}{what the inputs are}
+            \item \textcolor{purple}{what local data were available}
+            \item \textcolor{purple}{how the dataset differs from the paper if relevant}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 3 purpose: summarize the model and training setup.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{architecture}
+            \item \textcolor{purple}{activation functions}
+            \item \textcolor{purple}{scaling}
+            \item \textcolor{purple}{losses}
+            \item \textcolor{purple}{stopping logic}
+            \item \textcolor{purple}{split strategy}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 4 purpose: explain deviations from the paper.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{what was replicated directly}
+            \item \textcolor{purple}{what had to be adapted}
+            \item \textcolor{purple}{why those changes were necessary}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 5 purpose if needed: connect the Winter methodology to ATP relevance.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{why this framework is closer to the final engineering problem than the Fall baseline}
+        \end{itemize}
+    \end{itemize}
+
+ \subsection{PR-SSM Paper Replication - Results}
+     \item \textcolor{purple}{PR-SSM Paper Replication - Results}
+    \begin{itemize}
+        \item \textcolor{purple}{Recommended length: 5 paragraphs}
+        \item \textcolor{purple}{Paragraph 1 purpose: define what counts as success in the Winter study.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{evaluation figures}
+            \item \textcolor{purple}{prediction-versus-true plots}
+            \item \textcolor{purple}{overlays}
+            \item \textcolor{purple}{metrics}
+            \item \textcolor{purple}{what a successful replication or adaptation would mean}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 2 purpose: interpret overall predictive quality.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{R\textsuperscript{2}}
+            \item \textcolor{purple}{MSE}
+            \item \textcolor{purple}{alignment with true data}
+            \item \textcolor{purple}{comparison to expected performance from the paper if possible}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 3 purpose: discuss dynamic tracking behavior.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{time-series overlays}
+            \item \textcolor{purple}{phase matching}
+            \item \textcolor{purple}{amplitude tracking}
+            \item \textcolor{purple}{cycle-level agreement if relevant}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 4 purpose: identify weak spots and limitations.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{patterns in poor predictions}
+            \item \textcolor{purple}{limited data}
+            \item \textcolor{purple}{split leakage risk}
+            \item \textcolor{purple}{effects of deviations from the paper}
+            \item \textcolor{purple}{uncertainty about generalization}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 5 purpose: assess ATP relevance.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{whether the approach appears viable for ATP data}
+            \item \textcolor{purple}{what information is still missing}
+            \item \textcolor{purple}{what remains to be validated}
+        \end{itemize}
+    \end{itemize}
+
+ \subsection{Conclusions and Recommendations}
+    \item \textcolor{purple}{Conclusions and Recommendations}
+    \begin{itemize}
+        \item \textcolor{purple}{Recommended length: 4 paragraphs}
+        \item \textcolor{purple}{Paragraph 1 purpose: synthesize the main lessons from both semesters.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{Fall established a baseline and model-selection logic}
+            \item \textcolor{purple}{Winter improved physical relevance through PR-SSM-style dynamic modeling}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 2 purpose: interpret final model usefulness.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{what the metrics imply}
+            \item \textcolor{purple}{what the current models can reasonably claim to do}
+            \item \textcolor{purple}{what they still cannot do confidently}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 3 purpose: recommend model improvements.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{hyperparameter tuning}
+            \item \textcolor{purple}{better validation}
+            \item \textcolor{purple}{more representative data}
+            \item \textcolor{purple}{stronger uncertainty treatment}
+            \item \textcolor{purple}{architecture refinement if justified}
+        \end{itemize}
+        \item \textcolor{purple}{Paragraph 4 purpose: recommend ATP data and workflow improvements.}
+        \item \textcolor{purple}{Main ideas:}
+        \begin{itemize}
+            \item \textcolor{purple}{synchronized kinematics and force data}
+            \item \textcolor{purple}{trustworthy targets}
+            \item \textcolor{purple}{broad operating-condition coverage}
+            \item \textcolor{purple}{ML-ready formatting}
+            \item \textcolor{purple}{future path toward final aerodynamic-force prediction}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
