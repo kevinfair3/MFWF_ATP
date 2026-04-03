@@ -1,10 +1,42 @@
 \subsection{Background}
 
-The previous wing design team worked on developing a lightweight, manufacturable wings for the flyer and made several key contributions. In 2022, the team established an initial test framework by building a static deflection test stand capable of measuring deflection at 3 points (root, mid, and tip) along the span of the wing. This allowed for early comparison of different combinations of veins and membranes, and a database was created using the results obtained. In the static tests, the team explored a wide range of vein geometries and materials, including LW-PLA and PETG, with carbon fibre leading edge rods. The root control bar as designed by the flapping mechanism team in the same year was also incorporated in the wing.These efforts helped identify  structural issues such as excessive stiffness, excessive deformation at the trailing edge, and durability concerns. The final design was selected based on performance in the static tests and initial project requirements. 
+The Wing design teams over 2 years established structural, material, and testing knowledge that defined and set a baseline for the wing design efforts this year.  
+In this section, summaries of key design and manufacturing contributions of prior teams, the limitations of their work, and how these gaps shaped the objectives pursued this year are discussed.
 
-Some work was done to characterize membrane materials such as polypropylene tape, Kapton, and RC covering film. The team observed that the membrane stiffness and vein geometry strongly influenced camber formation and overall deformation quality. Additionally, the team Identified root vein weaknesses. This revealed the need for reinforcement at the wing root to survive inertial loading at 30 Hz during stroke reversal.
+\subsubsection{2021/22 Team}
 
-Overall, a database of 12 prototype wings, documenting each design’s weight, geometry, and deformation profile was produced. Although static tests do not fully predict dynamic performance, the results helped in the selection of a wing design to compare results obtained this year to. The previous work also provided a foundation of viable materials and manufacturing processes for MFWF wings. These were used in the new prototypes developed this year. As the wing requirements remain the same this year, the insights from their work shaped this year’s focus on achieving controlled camber, improved stiffness gradients in vein geometry, and dynamic testing of new wing designs. The following are the requirements and constraints for the MFWF wing.
+The 2021/22 team established a foundational wing architecture and manufacturing 
+methodology for the Twist Modulation controlled wing. Their primary contribution was a hybrid four-component structural scheme consisting of a 3D-printed vein structure, a carbon fibre leading edge rod, a flexible 
+membrane, and a root control bar, shown in Figure~\ref{fig:baselinewingmodified}. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=4.5cm]{figures/baselinewingmodified.png}
+    \caption{Baseline Wings: Final Wing Design from Previous Capstone Year \cite{MFWF_FinalReport2021}}
+    \label{fig:baselinewingmodified}
+\end{figure}
+
+This architecture aimed to balance stiffness during stroke reversal and compliance under root actuation, while remaining practical to manufacture iteratively. Manufacturing method and process for this architecture is detailed in \cite{MFWF_FinalReport2021}
+
+Material selection was conducted in parallel. For the vein structure, four filaments 
+were evaluated --- Standard PLA, PETG, ABS, and LW-PLA. ABS was eliminated due to 
+print difficulty and high density. No significant stiffness difference was found 
+between the remaining three, so LW-PLA was selected solely on a weight basis, 
+achieving densities as low as 0.6~g/cm\textsuperscript{3} at a nozzle temperature of 
+250\textdegree C. For the flexible membrane, RC covering film was eliminated early due to its heat-activated adhesive and inconsistent brand quality. Both polypropylene tape and Kapton tape were carried forward; polypropylene tape was 0.4~g lighter per wing but exhibited gradual plastic deformation during use, while Kapton offered higher tear resistance and dimensional stability at a weight penalty. Both were deemed viable pending dynamic testing. Five carbon fibre leading edge rod sizes were also analyzed Rods with an outer diameter of 1.5~mm and above produced acceptable tip deflections, while the 1.0~mm rod was found to be marginal at 8.64~mm.
+
+\subsubsection{2022/23 Team}
+
+The team's key finding in the 2022/23 year was that the thin vein regions near the wing root were found to be susceptible to cracking and fatigue under the inertial loading experienced at 30~Hz stroke 
+reversal, identifying a clear need for local geometric reinforcement in subsequent 
+designs. They addressed the root stiffness issue by increasing the diameter of the root control bar ~\cite{MFWF_FinalReport2023}.
+
+\subsubsection{Gaps Motivating This Year's Work}
+Despite the progress made by both prior teams, the body of work remained confined to wings designs specifically suited for twist modulation. This year, a foundamental change in the control approach and decision to work with and electromagnetic flapping mechanism  forced a total redesign of the wing. The new frequency based control approach eliminated the need for twist modulation, which required a seperated root control bar and leading edge rod. In addition, the body of work remained confined to static characterization. Static tests are effective for screening structural behaviour under a fixed load, but do not capture the time-varying aerodynamic and inertial forces experienced during flapping. Key quantities directly linked to lift generation --- chordwise camber ratio, passive twist, and spanwise bending amplitude --- cannot be reliably measured in a static setting. Furthermore, while viable materials and geometries had been identified, no systematic framework existed to relate specific design parameters to these aeroelastically relevant deformation modes. Wing selection 
+had therefore relied on static deflection comparisons and mass compliance alone.These gaps directly shaped this year's work.
+
+Wing design and manufacturing tasks this year were initially focused on refinig and reproducing the wing architecture proposed during the previous years. Durability improvements were introduced at the root to address the cracking observed, and new vein geometries were designed and manufactured.  We then moved on to define ideal wing charateristics through extensive literature review. The verification focus also shifted to designing dynamic experiments and manufacturing test wings. The deflection and bending measuremeents were to be compared against target ranges established through a literature review of insect-scale flapping wing research correlated to lift generation. The wing was then redesigned to meet the interface requirements of the updated electromagnetic flapping mechanism, which also required the development of a new manufacturing process. And lastly, a structured Design of Experiments was developed to evaluate a 3 straight veined carbon fibre reinforced polypropolene wing wing with a built-in camber angle of 15 degrees. The wing requirements and physical constraints 
+remain unchanged from prior years.
 
 \begin{enumerate}
     \item The wing must be able to provide sufficient lift to the flyer.
@@ -23,18 +55,15 @@ Overall, a database of 12 prototype wings, documenting each design’s weight, g
     \item The wings should be easy to manufacture and with consistent results.
 \end{enumerate}
 
-Figure \ref{fig:baselinewingmodified} shows the wing made of LW-PLA veins and Kapton tape designed by the previous teams. 
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[height=4.5cm]{figures/baselinewingmodified.png}
-    \caption{Baseline Wings: Final Wing Design from Previous Capstone Year \cite{MFWF_FinalReport2021}}
-    \label{fig:baselinewingmodified}
-\end{figure}
+ Overall, .....
 
 \subsection{Literature Review}
 
-Building on insights from the 2021/22 and 2022/23 MFWF final reports~\cite{MFWF_FinalReport2021, MFWF_FinalReport2023}, a focused review of flapping-wing research was conducted to determine the deformation characteristics linked to efficient lift generation. The aim was to define an ``ideal'' deformation profile—specifically the combination of chordwise camber, passive twist, and spanwise bending observed in nature and flexible-wing FWMAVs. These characteristics directly inform the prototype designs developed this year. Figure \ref{fig:wingliftcharacteristics} shows important characteristics that contribute to a wings ability to generate lift. 
+Building on prior MFWF work~\cite{MFWF_FinalReport2021, MFWF_FinalReport2023}, a focused review of flapping-wing micro air vehicle (FWMAV) literature was conducted to identify deformation characteristics, structural parameters, and mass distributions that directly govern lift generation in hovering flight. Unlike fixed-wing aerodynamics, lift in FWMAVs is dominated by unsteady mechanisms, particularly leading-edge vortex (LEV) formation, wake capture, and rotational circulation~\cite{ellington1999, dickinson1999wing}.
+
+To ensure quantitative relevance, this review incorporates experimentally validated data from both biological flyers (e.g., hawkmoths, fruit flies) and engineered platforms such as the Harvard RoboBee ~\cite{ma2013robobee}, DelFly Nimble ~\cite{de2018delfly}, and KUBeetle ~\cite{phan2020kubettle}. These systems provide well-documented benchmarks for structural stiffness, and aerodynamic performance as they have all flown successfully.
+
+Across insect-scale flyers and engineered FWMAVs, three coupled deformation modes consistently appear: chordwise camber, spanwise bending, and passive twist. Figure \ref{fig:wingliftcharacteristics} shows the formation characteristics contributing to a wings ability to generate lift.
 
 \begin{figure}[htb]
     \centering
@@ -43,34 +72,151 @@ Building on insights from the 2021/22 and 2022/23 MFWF final reports~\cite{MFWF_
     \label{fig:wingliftcharacteristics}
 \end{figure}
 
-Most insect-scale flyers rely on passive aeroelastic deformation rather than rigid-wing aerodynamics\cite{ishihara}. Across beetles, flies, and insect-inspired robotic wings, three deformation modes consistently appear: camber, twist, and spanwise bending\cite{tian}. Chordwise camber between $5$--$12\%$ of chord was found to enhance the leading-edge vortex and increased lift during the power stroke\cite{wu}. Camber is evaluated using:
+These deformation modes emerge from the interaction between aerodynamic loading, inertial forces, and structural compliance~\cite{shyy2010aerodynamics, ishihara2009fluid}. Importantly, these behaviors are strongly influenced by wing mass distribution and stiffness gradients, which define the dynamic response.
+
+
+\subsubsection{Mass Scaling and Representative Flyers}
+
+Wing and body mass directly constrain lift requirements and influence optimal deformation behavior. Reported values from literature include:
+
+\begin{itemize}
+    \item \textbf{Fruit fly (Drosophila melanogaster):} body mass $\sim$1 mg, wing mass $\sim$0.02 mg (2\% of body mass)
+    \item \textbf{Hawkmoth (Manduca sexta):} body mass $\sim$1.5--2.5 g, wing mass $\sim$50--100 mg
+    \item \textbf{Harvard RoboBee:} total mass $\sim$80 mg, wing mass $\sim$3 mg per wing, flapping at $\sim$120 Hz~\cite{ma2013robobee}
+    \item \textbf{DelFly Nimble:} total mass $\sim$29 g, wingspan 33 cm, wing mass $\sim$0.5--1 g~\cite{de2018delfly}
+    \item \textbf{KUBeetle-S:} total mass $\sim$15 g, wing mass $\sim$0.2--0.4 g, flapping frequency $\sim$20 Hz~\cite{phan2020kubettle}
+\end{itemize}
+
+Across these systems, wing mass is typically 1--5\% of total body mass, with lower fractions observed in highly optimized flyers. Reduced wing mass lowers inertial power requirements and enables higher flapping frequencies, but must be balanced against structural stiffness to maintain controlled deformation. The mass constraint of 1.5g for the MFWF falls around 3.75\% in line with the findings. 
+
+\subsubsection{Chordwise Camber}
+
+Chordwise camber enhances lift by stabilizing the LEV during the downstroke and delaying flow separation. Experimental and numerical studies report optimal camber ratios in the range of $f = h/c = 5\%$--$12\%$ for Reynolds numbers between $10^2$ and $10^4$~\cite{wu2011aerodynamic, du2010aerodynamics}. Lift coefficient increases of 20--40\% relative to flat plates have been reported under comparable kinematics~\cite{luo2013effect}.
+
+Camber is defined as:
 \begin{equation}
-    f = \frac{h}{c},
+    f = \frac{h}{c}
 \end{equation}
-where $h$ is the maximum camber height and $c$ is the chord length. Thin membranes such as Mylar or polyurethane reliably achieve this camber range under aerodynamic loading.
 
-Second, flexible wings typically exhibit $15^\circ$--$25^\circ$ of passive twist from root to tip~\cite{yoon,kraemer2012rapid}. The root follows the imposed motion while the tip lags due to lower torsional stiffness, shaping the leading edge vortex and improving downstroke lift. Third, insect wings bend downward by approximately $10$--$20\%$ of the semi-span under inertial loading~\cite{yoon}, aligning the wing with the local flow and reducing structural stress at flapping frequencies near 20--30 Hz.
+In RoboBee wings (membrane thickness $\sim$5 $\mu$m), passive camber emerges due to aerodynamic pressure and inertial effects. Larger platforms such as DelFly employ thicker membranes ($\sim$10--25 $\mu$m), resulting in reduced camber but improved structural robustness. Camber in Wing designs for the MFWF should should thefore be targeted within 5--12\%, with attention to membrane thickness and tension.  
 
-Deformation also depends strongly on the interaction between veins and membrane stiffness~\cite{ishihara,kraemer2012rapid}. Intermediate veins help shape camber, a stiff leading edge maintains pitch at stroke reversal, and a compliant trailing edge supports both camber and twist.
+\subsubsection{Passive Twist}
+
+Passive twist introduces spanwise variation in angle of attack, improving lift distribution and delaying tip stall. Reported twist angles range from $15^\circ$--$25^\circ$ in both biological flyers and engineered systems~\cite{yoon2014effect, kraemer2012rapid}.
+
+In KUBeetle and DelFly designs, twist is achieved through graded stiffness, with torsional rigidity decreasing toward the wing tip. This allows phase lag between root motion and aerodynamic loading, producing beneficial twist without active control.
+
+Lift improvements of 10--30\% compared to rigid wings have been measured~\cite{mountcastle2010aerodynamic}. However, excessive twist ($>30^\circ$) reduces effective angle of attack and lift generation.
+
+
+Using a dynamic dfelection test twist for each design should be measured across multiple spanwise points. Mass distribution plays a key role here, a heavier tip will increase lag and can amplify twist beyond optimal ranges leading to loss of lift.
+
+\subsubsection{Spanwise Bending}
+
+Spanwise bending is driven primarily by inertial forces and aerodynamic loading. Typical deflections range from 10--20\% of the semi-span~\cite{combes2003flexural}. In hawkmoths, peak bending occurs near mid-span, while engineered wings often concentrate flexibility closer to the root.
+
+Moderate flexibility improves aerodynamic efficiency by up to 15\% through load redistribution and reduced peak stresses~\cite{kang2011effects}.
+
+\subsubsection{Material Properties and Structural Design} 
+
+Wing deformation is strongly governed by the distribution of stiffness across the structure. A common design pattern observed in both biological and engineered wings includes: 
+\begin{itemize} 
+    \item Stiff leading edge (carbon fiber or reinforced vein) 
+    \item Flexible membrane (low Young’s modulus, $\sim$1--10 MPa) \item Compliant trailing edge 
+\end{itemize} 
+
+Increasing leading-edge stiffness has been shown to reduce excessive bending while preserving aerodynamic shape. For example, increasing a carbon fiber rod diameter from 1.5 mm to 2.0 mm reduced wing deflection by approximately 40\% with minimal mass penalty in prior MFWF work~\cite{MFWF_FinalReport2023}. 
+
+Material selection directly affects repeatability and manufacturing variability. Literature highlights that small inconsistencies in membrane tension or vein placement can significantly alter deformation behavior, introducing experimental uncertainty. 
+
+\subsubsection{Flapping Kinematics and Operating Conditions} 
+
+Typical hovering FWMAVs operate within: 
+\begin{itemize} 
+    \item Frequency: 10--30 Hz 
+    \item Reynolds number: $10^2$--$10^4$ 
+    \item Stroke amplitude: $90^\circ$--$140^\circ$ 
+\end{itemize} 
+The Strouhal number ($St = fA/U$) is often maintained between 0.2 and 0.4 for efficient lift generation~\cite{taylor2003flying}. These parameters define the aerodynamic regime in which deformation characteristics must be evaluated. 
+
+Dynamic testing on the ATP must replicate these operating conditions to ensure meaningful comparison with literature. Testing across multiple frequencies and amplitudes is also required to capture nonlinear behavior. 
+
+\subsubsection{Experimental Considerations and Risks} 
+
+Several practical limitations are consistently reported in literature: 
+\begin{itemize} 
+    \item \textbf{Measurement Noise:} Optical tracking systems introduce uncertainty of $\sim$1--3 pixels, requiring calibration and filtering~\cite{wang2005measurement} 
+    \item \textbf{Cycle Variability:} Significant variation between flapping cycles necessitates averaging over multiple cycles 
+    \item \textbf{Manufacturing Variability:} Small differences in membrane tension or bonding lead to inconsistent deformation \item \textbf{Structural Failure Modes:} Leading-edge buckling and membrane fatigue are common under high-frequency loading 
+\end{itemize} 
+
+These risks directly impact the reliability of ATP measurements and must be accounted for in experimental design, particularly in defining acceptable uncertainty and repeatability thresholds.
+
+\subsubsection{Summary of Design-Relevant Parameters}
 
 \begin{table}[h]
 \centering
-\caption{Deformation characteristics for insect-scale flapping wings.}
-\label{tab:ideal}
+\caption{Quantified deformation, mass, and operating parameters for FWMAV wings.}
+\label{tab:lit_summary}
 \begin{tabular}{l c l}
 \hline
-\textbf{Parameter} & \textbf{Target Range} & \textbf{Rationale} \\ \hline
-Camber ratio $f = h/c$ & $5$--$12\%$ & Strong LEV and lift formation~\cite{wu,ishihara} \\
-Passive twist & $15^\circ$--$25^\circ$ & Reduces tip stall; enhances downstroke lift~\cite{wu,kraemer2012rapid} \\
-Spanwise bending & $10$--$20\%$ of semi-span & Aligns wing to flow; lowers stress~\cite{wu} \\
-Membrane stiffness & Low--moderate & Allows smooth camber (Mylar, PP, PU) \\
-Stiffness pattern & Stiff LE, flexible TE & Produces camber, twist, asymmetry~\cite{ishihara} \\ \hline
+\textbf{Parameter} & \textbf{Range} & \textbf{Design Implication} \\ \hline
+Wing mass fraction & 1--5\% body mass & Controls inertial loading \\
+Camber ratio $h/c$ & 5--12\% & Enhances LEV and lift \\
+Passive twist & $15^\circ$--$25^\circ$ & Improves lift distribution \\
+Spanwise bending & 10--20\% span & Balances load and efficiency \\
+Frequency & 10--30 Hz & Limited by mass and actuation \\
+Reynolds number & $10^2$--$10^4$ & Defines flow regime \\ \hline
 \end{tabular}
 \end{table}
 
-These deformation ranges define the criteria guiding this year's prototype development.It is important to note that these ranges are not idealized accross all flapping wings but specific wing architecture and geometries studied. Further experimentation will help identify an optimal range for the MFWF specifically based on flapping frequency, amplitude and lift force requirements. Variations in flexible membranes, vein geometry, and built-in camber were intentionally selected to evaluate how different structures reproduce these behaviours during the dynamic deflection tracking test.
+These values define measurable and physically grounded targets for the MFWF wing experiments. By integrating motion tracking, force measurements, the relationship between mass distribution, deformation, and aerodynamic performance can be explicitly quantified.
+
+Rather than assuming universal optimal values, this work aims to guide identifying the optimal parameters specific to the MFWF system through experiments, accounting for its unique mass, geometry, materials, and actuation constraints.
+
+
+%------------------------------------------------------------------
+\subsubsection{Summary of Design Benchmarks}
+%------------------------------------------------------------------
+
+Table~\ref{tab:benchmarks} consolidates the quantitative deformation targets, 
+measurement thresholds, and structural design guidance derived from the literature 
+review. These values serve as the evaluation criteria for all prototypes tested in 
+the ATP this year.
+
+\begin{table}[htb]
+\centering
+\caption{Design and Testing Benchmarks from Literature}
+\label{tab:benchmarks}
+\begin{tabular}{p{4cm} p{3cm} p{3cm} p{3cm}}
+\hline
+\textbf{Parameter} & \textbf{Target Range} & \textbf{Flag Condition} & 
+\textbf{Source} \\ \hline
+Camber ratio $f$ & 5--12\% & $f < 5\%$: too stiff; $f > 20\%$: 
+over-rotation risk & E, C \\
+Passive twist & 15\textdegree--25\textdegree & $< 10$\textdegree: too stiff; 
+$> 30$\textdegree: root stall risk & E, C \\
+Spanwise bending & 10--20\% of $R$ & $< 10\%$: too stiff; $> 20\%$: 
+buckling risk & E, C \\
+Cycle-to-cycle variability & $< 15$\% of mean & $> 15\%$: mechanism or 
+wing instability & E \\
+Min.\ cycles for averaging & $\geq 10$ & $< 5$: insufficient for 
+statistical confidence & E \\
+Camera frame rate (30~Hz) & $\geq 600$~fps (camber); $\geq 4000$~fps 
+(reversal) & Below minimum: stroke reversal unresolved & E \\
+Leading edge rod OD & $\geq 1.5$~mm & $1.0$~mm: marginal at 30~Hz & E \\
+Membrane modulus & Low--moderate & Excessively soft: lift degradation 
+at low frequency & E \\ \hline
+\end{tabular}
+\end{table}
+
+
 
 \subsection{Design of Experiment}
+
+
+
+
 A structured Design of Experiments (DOE) Table was developed to identify which wing architectures reproduce the similar deformation ranges established in the literature review. The DOE is fully defined, the baseline wing was remanufactured, an initial prototype set has been fabricated, and dynamic testing will proceed once the dynamic testing  setup is ready in the winter term. The objective is to determine how variations in membrane material and vein geometry influence camber, twist, and spanwise bending during flapping, while all other parameters remain same as in the baseline wing.
 
 Following standard DOE principles, only a small set of variables are being varied, and all other conditions are held constant. The wings share a fixed span determined using the max span constraints mentioned earlier to ensure consistent inertial loading, while chord size, chord curvature, membrane choice, and vein geometry were selected as the experimental factors. This approach isolates the structural contributions of each design parameter, ensuring that observed differences in deformation can be attributed to controlled changes.
