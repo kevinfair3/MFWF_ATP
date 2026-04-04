@@ -1,135 +1,317 @@
 \subsection{Background}
-The previous capstone year left the data acquisition of the ATP as a proposed schematic. With hardware delivery delays, the testing performed in the previous year was limited to simulations of the system. Figure \ref{fig:LoadStringSchem} outlines this schematic as a block diagram and depicts how the suggested components are to be constructed. The three main components that the "load string" consists of are the SM S-type load cells, the AD8556 amplifiers, and the NI USB-6002 DAQ.
+The Aerodynamic Test Stand (ATP) is a platform used to measure the force of a centralized flapper in 6 separate directions. It achieves this by using SM S-type load cells to produce a millivolt (mV) differential signal proportional to the axial force seen by the load cells. This differential signal is amplified and converted to a voltage with reference to ground. The data acquisition unit (DAQ) is used to measure this voltage and LabView is used to display/record the values.
 
-Going into the start of the 2025 year, the suggestion from the previous year's ATP data acquisition member was to test the hardware on the test platform. As such, the goal I outlined for this first semester was to fully commission the ATP test stand using the hardware that was proposed. My plan was to first statically load the test platform with known weights and record the measured results, then use a dynamic mechanism to reconstruct the flapping of the flyer and measure the dynamic response of the ATP.
-
-\subsection{Method Of Analysis}
-The nature of this project requires a micro aerial vehicle to fly which means the forces that it will be generating will also be micro. As such, the finest resolution that the load cells could report needed to be determined. To do this, I used a unit weight of 50 grams, as it should be close to the lift force the MFWF will generate during flight, to load and unload the load cell. This gives a method of analysis that is secluded from external factors and represents the theoretical finest resolution. In terms of quantifying the resolution, I decided to use the limit of detection (LOD) method to provide a constant way to prove the resolution for each test that was conducted.
-
-The LOD method, represented in equation \ref{LOD}, gives a gram force resolution based on the amount of noise that is present in the signal and the deviation caused by the applied load \cite{LimitOfDetection}. This method can be applied to the measured data that has been recorded during this semester and gives a concrete way to determine the resolution of a signal. The parameter is expressed as:
-
-\begin{equation}
-\label{LOD}
-    LOD = \frac{3\cdot V_{rms}}{S}
-\end{equation}
-
-where $V_{rms}$ is the root-mean-squared voltage of the noise and $S$ is the sensitivity of the the applied load in V/gram. Table \ref{tab:ATPTestResultsSummary} outlines the results of all testing carried out this semester and LOD is probably the most representative parameter that we care about.
-
-\subsection{Preliminary System}
-When the amplifiers arrived this semester, I was able to construct the load string as depicted by the schematic in Figure \ref{fig:LoadStringSchem}. 
+The 2022/2023 capstone year left the ATP electronics in pieces with a general construction schematic. The parts included five 50N SM S-type load cells, AD8556 amplifiers, the NI USB-6008 DAQ (borrowed), and two 7.4V batteries. Figure \ref{fig:PrelimSchematic} outlines how these parts were indented to fit together as constructed by the previous capstone year. Their goal laid out for this year was to manufacture the outlined architecture and achieve decoupled force measurement with the load cells while secured to the ATP. It should be stated that the 6th load cell was never present for testing this capstone year due to order and shipping delays, however it is acquired and ready for testing in the next capstone year.
 \begin{figure}[htb]
     \centering
     \includegraphics[height=4.5cm]{figures/PrelimSchematic.png}
     \caption{2023 Load string schematic \cite{MFWF_FinalReport2023}}
-    \label{fig:LoadStringSchem}
+    \label{fig:PrelimSchematic}
 \end{figure}
-I constructed the system with one load cell that sends its signal to the input of the AD8556 amplifier, and connected the amplifier output to the borrowed NI USB-6008 DAQ as we did not have the ordered DAQ yet. My first challenge of the semester was just with this initial connection of components. The load cell is essentially just a resistor bridge; the output voltage is half the supply voltage. In this preliminary load string, the suggested voltage to power the load cell was 10 volts, but half of that (5 V) is too close to the amplifiers supply and resulted in no amplified signal. Because of this, I needed to use 5 V to the load cell, which has implications I will discuss in section 2.2.4.
-\subsubsection{Unit Test}
-\indent With this reduced voltage, I performed a unit test on this preliminary load string setup with gains of 70, 400, 800, and 1280 (maximum for the amplifier used), but only obtained measurable results for the 1280 gain, seen in Figure \ref{fig:Prelim1280}. The LOD (resolution) of this signal is about 30 grams. Assuming that while the lift forces of the flyer will be around the 40 gram mark, this resolution is fine enough to reliably resolve that.
+
+\subsubsection{2025-2026 ATP Goals}
+With knowledge of what the ATP electronics were meant to achieve and how the MFWF is going to flap, the overarching goal for this year was to manufacture an ATP that was able to accurately measure the orthogonal forces produced by a flapping wing. From a required weight of 40 grams \cite{MFWF_FinalReport2023}, the MFWF must produce at least the same amount of thrust to fly. This marked the general requirement of the resolution of the load cells. However, it was theorized that to accurately measure forces within the transverse directions (non-vertical), the ATP must measure forces much smaller, down to the 5-gram regime, to meet the requirement of accurately measuring all orthogonal forces.
+
+Throughout the year, this was revised due to the lift forces that were being generated from both the electro-magnetic (EM) and mechanical actuators. With a lower thrust output that originally anticipated, the requirement of the ATP to measure within a 5-gram regime was extended to the dynamic lift measurement capability such that it could serve as a qualitative analysis for both these sub-teams and for the wing designers.
+
+\subsubsection{Method Of Analysis}
+As will become apparent within this report, measured values of force are not perfectly static. The signal measured changes with time and contains noise which can interfere with results. In terms of representing the acquired signal, the signal-to-noise ratio (SNR) is a common metric used when determining the quality of an expected signal compared to the measured one. While useful, one of the main goals of analyzing signals throughout this year was to determine how small of an offset could be detected over the noise, rather than how well a noisy signal could follow an expected one. This type of analysis was required when determining the resolution of the load cells and in determining the lift force generated by the flapper. For this reason, and due to the lack of tabulated data in the initial stages of testing, the SNR metric was not used during this year.
+
+Instead, metrics for the offset identification type of analysis were used. Common methods are the limit of detection (LOD) and the limit of quantification (LOQ) where LOD represents the smallest offset that is ‘detectible’ and LOQ represents the smallest offset that is ‘accurately measurable’ \cite{LODLOQ}. Due to the nature of uncertainty, and the lack of trust in the early design stages of the ATP, the LOD method was used as proof that a signal could be seen above the noise and as a metric for expressing how small of an applied force the load cells could resolve statically. The expressions for both parameters are given as the following:
+\begin{equation}
+    \label{eq:LOD}
+    LOD = \frac{3\sigma}{S}
+\end{equation}
+\begin{equation} 
+    \label{eq:LOQ}
+    LOQ = \frac{10\sigma}{S}
+\end{equation}
+
+where $S$ is the sensitivity of the the applied load in V/gram and $\sigma$ is the standard deviation of the noise in volts. To estimate $\sigma$ from a visual dataset, the highest conceivable value and lowest conceivable value can be used in the following \cite{SigmaEstimation}:
+\begin{equation}
+    \sigma = \frac{HCV - LCV}{6}
+\end{equation}
+
+It should be stated that this method of analysis was used to estimate the load cell resolutions from experimental data. It is not to be mistaken for absolute resolutions of the manufactured products, nor does it claim to be.
+
+\subsection{Preliminary Testing}
+After constructing the load string from Figure \ref{fig:PrelimSchematic} with only one load cell and amplifier, the first test performed was a general initialization test. The purpose was to validate the architecture previously conceived, however results of supplying power to the amplifier yielded no measurable force output. The AD8556 IC requires an input voltage of 5V and cannot amplify differential input signals that are close to its supply voltage rails \cite{Analog_AD8556_Datasheet}. The voltage of these differential inputs determined by the supplied voltage to the load cells. At 10V, this resulted in a common-mode voltage of 5V, which was within the amplifier's cut-off region. The resolution to this issue was to lower the supplied voltage to the load cells to 5V such that the common-mode voltage was 2.5V. The impact of this was a smaller range of voltage that could represent the capacity (0-50N) of the load cell . This range is termed 'sensitivity' in mV/V and is a characteristic of the load cell \cite{Interface_SM_SType}. Ideally, the highest voltage possible is used when powering the load cell to achieve a large range size and thus a higher resolution of force per voltage within the 15V supply limit of the SM S-type load cells.
+
+Regardless of this deficiency, the 5V supply allowed the amplifier to output a measurable single-ended signal. To test the maximum resolution of the signal, a 50-gram weight was applied to the load cell, and the amplifier was set to its maximum gain of 1280 \cite{Analog_AD8556_Datasheet} in attempts to visually see a large voltage change as a result of the applied load. Figure \ref{fig:Prelim1280} shows the signal recorded of the unloading and reloading of this weight after a few attempts were made. From the graph, the measured signal is undoubtedly noisy, having an amplitude of about 0.09 V (shown in green) and the change in weight was measured as a 0.15 V offset (shown in red). 
 \begin{figure}[htb]
     \centering
     \includegraphics[height=4.5cm]{figures/Prelim1280.png}
     \caption{Preliminary load string unit test results with 1280 gain}
     \label{fig:Prelim1280}
 \end{figure}
-However, the purpose of the ATP is to also be able to measure any transverse loading produced by the flyer. These forces could be as low as 5 grams and with this setup, that small force would just be lost to noise. A new load string setup was required.
-\subsubsection{ATP Test}
-With Stan's redesign of the inner frame completed, we tested the load cells on the ATP with static loads in place for the MFWF. Unfortunately, with the tension required to fasten the load cells to the inner frame, the voltage to the DAQ exceeded its limit of +10 volts \cite{NI_USB6008_Specs}. Recall that the load cell and amplifier output a voltage proportional to the gain and applied load. To account for this, the gain was reduced in the amplifier and resulted in a minimum resolution of 200 grams. Unfortunately, this setup wouldn't be able to measure anything the flyer could produce. The load string design needed to be re-visited.
-\subsection{Improved Amplifier}
-One of the limitations in the preliminary load string was the amplifier. It only supported gains up to 1280 and was limited to an input of 5 volts. Amplifiers can only function if the input signal is less than its supply and recall the load cells output is half the input, meaning this amplifier restricts the load cell to 5 V. The scale of the voltage that is produced by the load cell is directly proportional to it's supply power. That is, at 5 volts, it can produce about 16 mV at its maximum load of 50 newtons (5000 grams). A 10 volt supply doubles this, such that 50 newtons is about 32 mV. What this means is that a higher supply voltage allows a larger range to represent the forces, essentially providing a higher resolution with the same gain.
-\subsubsection{Unit Test}
-I ordered the AD8421 which has a 32 V maximum supply (well above 5 V), and could apply gain up to 2000 \cite{Analog_AD8421_Datasheet}. Using this, I was able to push the load cell supply to 10 V and performed another unit test. Figure \ref{fig:NewAmpUnitTest} shows the results of the test as the unit load is unloaded. The figure is comparatively more discrete than Figure \ref{fig:Prelim1280}.
+Using the LOD metric described in the background section of this report, as seen in equation \ref{eq:LOD}, the lowest detectible force (weight) can be determined:
+\[LOD = \frac{3\sigma}{S} = \frac{3 \cdot 0.09V}{0.15V/50g} = 30g\]
+While this mertric passes the initial goal of measuring the MFWF’s lift force, it does not meet the requirement for measuring down to the 5-gram regime. Regardless, the same load string was tested while fastened to the ATP to validate its LOD of 30 grams while in-frame. The load cell was secured to the top part of outer frame and connected to the inner frame from its live end. This initial ATP design used steel cables as the connection method as seen in Figure \ref{fig:Assembled_ATP_E}. 
 \begin{figure}[htb]
-\centering
-\includegraphics[height=4.5cm]{figures/NewAmpUnitTest.png}
-\caption{New amplifier unit test with 2000 gain}
-\label{fig:NewAmpUnitTest}
+    \centering
+    \includegraphics[height=5.5cm]{figures/Assembled ATP.jpg}
+    \caption{Preliminary ATP design with steel cable connections}
+    \label{fig:Assembled_ATP_E}
 \end{figure}
-This was actually due to the limits of the USB-6008 DAQ that was borrowed. It has a 12-bit analog to digital converter (ADC) \cite{NI_USB6008_Specs} which means that the smallest discrete "steps" it can turn an analog signal into is 0.005 V. of 0.01 V. Regardless of this, the test resulted in an LOD of 19 grams; better than the previous setup by about 11 grams, but still not small enough for the ideal of 5 grams.
-\subsubsection{ATP Test}
-The issue of tension was still present when wanting to test this load string on the ATP. It reached a point where it was thought a new ATP design would be needed to remove the tension in the load cells for a proper reading to be achieved. 
-\subsection{Subtracting the Tension}
-After discussing the tension problem in one of the weekly presentations, Professor Hashim provided a very insightful suggestion of subtracting the voltage that the tension produces with another known (static) voltage. This allowed the small force produced by the MFWF to be isolated and gained independently of the tension force.
+The result of this type of connection is a large amount of tension to achieve any sort of rigidity within the frame. Rigidity is required to allow forces to pass through the cable without loss. With the small forces the ATP is required to measure, any sort of mechanical deflection would result in forces not being measured by the load cells.
 
-I achieved subtraction by utilizing another AD8421 amplifier. The amplifier is made from op-amp stages that amplify its inputs and subtracts the signals. The first amplifier would take the load cell output and multiply it by some gain such that the output was 10 V plus the small load of the MFWF. I would then use that as an input to the next amplifier and the other input was a clean 10 V, resulting in just the small loads of the flapper as a relatively large voltage. Figure \ref{fig:BBDifference} shows just how many extra components that went in to achieve this subtraction, although most are just for power distribution.
+One downside to this design was that the tension induced force on the load cells, which generated a large differential voltage signal going into the amplifiers. At a gain of 1280, the output was too high to be read by the DAQ due to its 10V limit. This required a reduction in the max gain applied to the amplifiers, from 1280 to 500. The second downside was the difficulty recreating the exact tension across tests. Each tension value required an alteration of the gain setting such that the amplifiers output did not exceed the 10V limit. The implication of operating at a lower gain was a smaller multiplication of the already small forces, ultimately lowering the resolution, or LOD, that could be achieved. To prove this, Figure \ref{fig:ATP_TensionTests} shows the ATP's response to a 50- and 200-gram weight applied. The purpose of these figures is to show the ATP's measurement with the same applied weight as in the preliminary unit test, and to show the smallest applied weight that could be visually detected with this ATP design. 
 \begin{figure}[htb]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[height=4.5cm]{figures/DAQ_BB_Init1.png}
-  \caption{Preliminary setup}
-  \label{fig:PrelimBB}
-\end{subfigure}
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[height=4.5cm]{figures/DAQ_BB_Final1.png}
-  \caption{Subtraction setup}
-  \label{fig:FinalBB}
-\end{subfigure}
-\caption{Breadboard setups for (a) preliminary and (b) subtraction load string designs}
-\label{fig:BBDifference}
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/50g_ATPTension.png}
+        \caption{50-gram ATP test load and unload}
+        \label{fig:50gATP}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/200g_ATPTension.png}
+        \caption{200-gram ATP test load and unload}
+        \label{fig:200gATP}
+    \end{subfigure}
+    \caption{ATP test results with tension load string design}
+    \label{fig:ATP_TensionTests}
 \end{figure}
 
-\subsubsection{Unit Test}
-While the new design was modified for testing on the ATP, the USB-6002 DAQ had arrived during the same time period. Instead of a 12-bit ADC, it used a 16-bit ADC \cite{NI_USB6002_Specs}, which allowed finer step sizes to be measured on a signal. To verify this, I performed another unit test with the same setup as in section 2.2.4, but with the new DAQ. Figure \ref{fig:NewDAQUnitTest} shows the measurement of this unit test and compared to Figure \ref{fig:NewAmpUnitTest}, 
+Notice how the response with a 50-gram applied weight shows no measurement. Therefore, using the 200-gram test, the LOD was calculated to be 181 grams. This metric did not meet any requirements of the ATP and was the motivation to change the electronics to achieve a higher force resolution.
+
+\subsection{Electrical Improvements}
+The main issue that was addressed from the preliminary testing was the amplifier limitations. The targeted features were a higher supply voltage to not limit the load cells excitation voltage, and a higher gain to achieve better resolution per load string. The amplifier chosen was the AD8421 due to its low noise, easily configurable gain, 32V input ceiling, and common use in load string applications \cite{Analog_AD8421_Datasheet}. Additionally, the NI-6008 DAQ was upgraded for the NI-6002 DAQ. This was a recommendation from the previous capstone year due to its ADC step size. The 6008 has a 12-bit range \cite{NI_USB6008_Specs} while the 6002 had a 16-bit range \cite{NI_USB6002_Specs}, essentially allowing a finer number of steps to be represented in the same measured range. With a $\pm$ 10V measured range, the smallest voltage each ADC could measure can be calculated as \cite{ADC_voltage}:
+\[\text{NI-}6008 = \frac{20V}{2^{12}} = 4.88 mV\]
+\[\text{NI-}6002 = \frac{20V}{2^{16}} = 0.305 mV\]
+With the NI-6002 DAQ, a small measurement signal is able to be quantified with a finer resolution that the NI-6008 DAQ. This is especially important when trying to measure small forces with a small voltage change. 
+
+A test was conducted to validate these improvements to the load string. One load cell was subjected to a 50-gram weight, similar to what was performed in the preliminary test for consistency. The variables changed were the supplied voltage to the load cell from 5 to 10 volts, and the applied gain from 1280 to 2000. The recorded unloading and reloading can be seen in Figure \ref{fig:NewELECUnitTest}. 
 \begin{figure}[htb]
     \centering
     \includegraphics[height=4.5cm]{figures/NewDAQUnitTest.png}
-    \caption{USB-6002 DAQ unit test load and unload}
-    \label{fig:NewDAQUnitTest}
+    \caption{50g unload and load using upgraded electronics}
+    \label{fig:NewELECUnitTest}  
 \end{figure}
-it is visually quite an improvement. In fact, the LOD of this test was calculated to be 6.6 grams. Although this resolution is very close to the goal of 5 grams, the load cells themselves have an inaccuracy of 2.5 grams (0.025 N) \cite{Interface_SM_SType}. This means that with the current load cells, we would never be able to measure any force at the scale of the MFWF with 100\% accuracy. Even the thrust could be reported as 50 grams when it is actually 47.5 grams.
-\subsubsection{ATP Test}
-The ultimate goal of this semester was to commission of the ATP using the hardware we had. Since section 2.2.3 proved that the hardware we had was not adequate, I used the subtraction load string to perform the basis of the commissioning. I fastened a load cell to the top of the ATP and placed different weights on the inner frame to achieve a range of results. The subtraction load string was able to remove the tension while recording the signal. The result was a significant improved measurement of the applied loads. Figures \ref{fig:100gATPLoad} to \ref{fig:10gATPLoad} show the loading or unloading of four different applied loads.
-\begin{figure}[htbp]
+The main result of this figure is the significant reduction in noise compared to the signal offset due to the applied force. Using the LOD to quantify this, a minimum force of roughly 6.6 grams can be detected using this design. Knowing this is still a relatively unprecise metric, the result is clearly an improvement over the preliminary testing results of 30 grams, and much closer to the requirement of the 5-gram regime.
+
+\subsection{Subtracting the Tension}
+Regardless of the off-frame improvements to the resolution, the ATP’s flaw of a required tension on the load cells still limited the gain that could be used during testing. This limited the smallest force that could be measured. The tension was a purely static offset within the measured signal, and static offsets can be removed by subtracting the same (or similar) signals. This idea was realized by using another amplifier to subtract a known voltage from the load cell's signal. Figure \ref{fig:SubStringSchem} shows the block diagram of how this system was implemented. A small gain was used for the first amplifier such that the signal was just over 5V. A known 5V source was then subtracted from that signal and the difference was multiplied by the second stage gain. 
+\begin{figure}[htb]
     \centering
-    \includegraphics[height=4.5cm]{figures/DoubleAmp_100.png}
-    \caption{100-gram ATP test load and unload}
-    \label{fig:100gATPLoad}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[height=4.5cm]{figures/50g_doubleAmp.png}
-    \caption{50-gram ATP test unload}
-    \label{fig:50gATPLoad}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[height=4.5cm]{figures/DoubleAmp_20.png}
-    \caption{20-gram ATP test load}
-    \label{fig:20gATPLoad}
-\end{figure}
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[height=4.5cm]{figures/DoubleAmp_10.png}
-    \caption{10-gram ATP test load}
-    \label{fig:10gATPLoad}
+    \includegraphics[height=6.5cm]{figures/SubStringSchem.png}
+    \caption{Subtraction load string architecture schematic}
+    \label{fig:SubStringSchem}  
 \end{figure}
 
-Table \ref{tab:ATPTestResultsSummary} shows that the best LOD of the ATP comissioning was 26.6 grams, which represents the 100-gram loading condition. This result is still not as ideal as I'd prefer, but compared to 200 grams, its a large improvement. I do believe that with some tweaking of the load string and some filtering of the signal, it can be viable. An important consideration, however, is the dynamic load of the flapper. With loading and unloading at about 40 Hz frequency, I'm not confident that same resolution can be achieved.
+The benefit of this architecture is the application of a second stage gain that doesn’t get limited by the amplifier output or DAQ input because it should just be the small force measurement that gets amplified. The low-noise requirement of measuring such fine forces was realized by using clean power sources. A battery was used to avoid noise related to AC conversion, and linear drop-out (LDO) regulators were used to avoid switch noise found in DC-DC converters. This architecture also utilized a 12V load cell supply voltage such that the mapped voltage range for the load cell's capacity was as high as possible. 
 
-\subsection{Testing Results Summary}
-Table \ref{tab:ATPTestResultsSummary} summarizes all the testing that was performed this semester with the different load string designs.
-\begin{table} [htbp]
+To validate this design, multiple tests were performed with the subtraction load string connected to only the top load cell. Four static loads were placed onto the ATP, and the resultant voltage was measured from the DAQ. The loads were decremented until 10 grams to determine the best LOD. Figures \ref{fig:ATP_10050gSub} and \ref{fig:ATP_2010gSub} show the 4 loading/unloading profiles of the different weights, and the main result visually is the 10-gram unloading being barely visible. 
+\begin{figure}[htb]
     \centering
-    \begin{tabular}{||c|c|c|c||}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/DoubleAmp_100.png}
+        \caption{100g ATP test with subtraction string}
+        \label{fig:100gSubATP}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/50g_doubleAmp.png}
+        \caption{50g ATP test with subtraction string}
+        \label{fig:50gSubATP}
+    \end{subfigure}
+    \caption{Load/unload tests with 100- and 50-gram weights using the subtraction load string.}
+    \label{fig:ATP_10050gSub}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/DoubleAmp_20.png}
+        \caption{20g ATP test with subtraction string}
+        \label{fig:20gSubATP}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/DoubleAmp_10.png}
+        \caption{10g ATP test with subtraction string}
+        \label{fig:10gSubATP}
+    \end{subfigure}
+    \caption{Load/unload tests with 20- and 10-gram weights using the subtraction load string.}
+    \label{fig:ATP_2010gSub}
+\end{figure}
+
+Compared to the visual change from Figure \ref{fig:200gATP}, the tension subtraction and improved electronics have made a difference in terms of the smallest force that can be measured with the ATP. The best calculated LOD from these four figures was 26.6 grams from the 100-gram test: within the original goal of 40 grams, but still not close to 5 grams. Unfortunately, any sort of averaging or low-pass filtering was not implemented yet, purely because of my lack of understanding with LabView as a software, and of RC type circuits. However, implementing something like this could have reduced the high frequency noise seen within the measured signal and the LOD could have been dropped to the within the 5-gram regime.
+
+\subsection{Dynamic Testing}
+Testing with static weights was not representative of the ATP’s intended use. While it did allow quantitative results in terms of force resolution, the more conclusive test was to measure force from an actuated wing motion. To first prove that the ATP could measure any force produced by an actuated wing, all five load cells were installed on the frame, and the EM actuator was placed in the center. The goal was to prove that the ATP could record forces at the frequency of the flapping mechanism, regardless of the precision in quantifying force. Figure \ref{fig:10HzFlapping} shows a frame of a recorded test where the EM actuator was operating at 10Hz. 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=6.5cm]{figures/10HzFlapping.png}
+    \caption{EM actuator at 10Hz signal response from ATP}
+    \label{fig:10HzFlapping}  
+\end{figure}
+This frame is 1 second wide, and visually there are 10 peaks within it that represent the force produced by the flapping wing as it completes its flapping path. While not an accurate representation of the force produced each flapping cycle, this test was a confirmation that forces from the EM actuator were being measured by the ATP. Similarly, Figure \ref{fig:8HzFlapping} shows a frame of an 8Hz test with the EM actuator, and the flapping motion is also clearly measured by the ATP, showing 8 major peaks within one frame. 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=6.5cm]{figures/8HzFlapping.png}
+    \caption{EM actuator at 8Hz signal response from ATP}
+    \label{fig:8HzFlapping}  
+\end{figure}
+However, larger force and resonant signals are also measured within this test, whereas these features aren’t present within the 10Hz test. The cause of this was thought to be from the ATP’s structure vibrating as a result of the actuation, resonating with the flapping frequency. There was no real implication of this to the rest of the testing performed, as the design of the ATP went through a design iteration after this.
+
+A large problem with the subtraction load string that became apparent as dynamic testing continued was the constant adjustment required. Potentiometers were used to control the gain set for each amplifier, and while useful, had inherent drift over time and resulted in a drifting signal from the first stage amplifier. The reason regular resistors were not used was due to constant change in tension experienced by the load cells and lack of methods to achieve perfect re-tension. Potentiometers allowed to account for this within the amplifiers but inherently had drift. Too large of a drift and the second stage amplifier was amplifying a large signal difference, and too small risked a “negative” subtraction output (where the load signal would be below the reference). 
+
+The implications of both these cases were reduced force resolutions due to saturation. Similar to the AD8556, the AD8421 had issues outputting voltage close to certain rails, however unlike the AD8556, this was an internal restriction and not due to the power supply. The AD8421 is a two stage op-amp IC that first applies the gain to the differential input, then subtracts the signals. This flaw means the first op-amp can saturate when the common-mode voltage and gain applied are too large, changing the output from a linear relationship to a non-linear one. For an applied force, the voltage representation within the non-linear region will change less with higher applied force, thus a smaller resolution. Additionally, the extra components used for each load string added noise to the measured signal and, still without averaging and low-pass filtering, any reduction in noise was preferred.
+
+To overcome these issues, a design change that was made that substituted the connector cables with rigid links, such that minimal tension was needed during operation. The electrical effect of this change can be seen in Figure \ref{fig:FinalStringSchem}, where the block diagram shows the updated architecture. 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=6.5cm]{figures/FinalStringSchem.png}
+    \caption{Rigid link load string architecture schematic}
+    \label{fig:FinalStringSchem}  
+\end{figure}
+The string is similar to the one from the start of the year, but with some additional voltage regulation. The goal of this design was to reduce the number of interactions with the load signal to minimize noise. The smaller operation tension also allowed for only one gain stage to be used for high resolution. To verify this, static ATP tests were conducted with the same procedure as previously carried out, however only the 20- and 10-gram tests are compared in Figures \ref{fig:ATP_20Compare} and \ref{fig:ATP_10Compare} to illustrate the significant improvement in static force resolution.
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/DoubleAmp_20.png}
+        \caption{20g ATP test with subtraction string}
+        \label{fig:20gCompATP}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/20g_linkedTest.png}
+        \caption{20g ATP test with rigid link string}
+        \label{fig:20gRigidATP}
+    \end{subfigure}
+    \caption{Comparison in ATP response with 20 grams applied with the subtraction and rigid link designs}
+    \label{fig:ATP_20Compare}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/DoubleAmp_10.png}
+        \caption{10g ATP test with subtraction string}
+        \label{fig:10gCompATP}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{figures/10g_linkedTest.png}
+        \caption{10g ATP test with rigid link string}
+        \label{fig:10gRigidATP}
+    \end{subfigure}
+    \caption{Comparison in ATP response with 10 grams applied with the subtraction and rigid link designs}
+    \label{fig:ATP_10Compare}
+\end{figure}
+
+The main result of these figures is once again the visual clarity of the measured signal in the loaded vs unloaded state. The calculated LOD on the 10-gram signal from the re-designed ATP was 2.24 grams. While this metric is still an estimate for the purposes of this project, it is a figure that categorizes the ATP as being able to measure forces within the 5-gram regime and achieve the static test goal for this year.
+
+\subsection{Calibration}
+As seen in every figure above, the measured forces have been represented in terms of voltage output by the amplifier. To further develop the ATP in becoming a user tool for other teams, a calibration was conducted on the load strings such that the voltage could be mapped to a force in newtons. The calibration involved subjecting each load cell to a known weight and measuring the voltage output of the entire string, repeating this process and determining the average for more accurate results. Figure \ref{fig:TopCalCurve} shows the calibration curve produced for the vertical load string as a result of this testing. 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=8.5cm]{figures/TOPCalCurve.png}
+    \caption{Calibration curve for TOP side load string}
+    \label{fig:TopCalCurve}  
+\end{figure}
+The figure shows a well-defined linear correlation, which the ATP operates in, but also maps out the saturation region of the signal when it is near the first stage op-amp limits of the AD8421 amplifier, as previously discussed. The linear region of the calibration curve, and the ones for the other 4 load strings, was applied in LabView software by sending the measured signal of the DAQ through a polynomial evaluator and enabled a more user-friendly ATP operation.
+
+\subsection{LabView Software}
+While not an integral part of the ATP's operation in terms of force measurement, it should be stated that the LabView program that was used during this year was not the one provided from the 2022-2023 capstone year. This was due to the lack of testing performed with the provided LabView software and the required change to it for this years testing requirements. Figure \ref{fig:LabView_UI} shows the user interface of the LabView program that was finalized for use during this year. 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=7.5cm]{figures/LabView_UI.png}
+    \caption{User interface of the LabView program for the ATP}
+    \label{fig:LabView_UI}  
+\end{figure}
+The main features include 5 real-time displays for each load cell's force, calibration curve implementation, tare functionality, averaged result displays, raw data visualization, and data recording. For in-depth details on the software, see the LabView section of the ATP handover package.
+
+\subsection{ATP Evaluation}
+Returning to dynamic testing of the ATP, the only significant result so far was the measurement of forces at the same frequency as the flapper. The recorded signal contained high frequency noise and ATP vibrations when flapping. It is difficult to rely on the measured signal to be an accurate representation of the precise forces being produced from the flapping mechanism. In an ideal scenario, the force produced by each flapping stroke could be measured by the ATP accurately and in all 6 directions. In reality, this is very difficult given the Capstone’s budget and resources. Knowing the current ATP’s limitations in terms of dynamic signal resolution, a decision was made to utilize the design as an averaged force measurement instrument rather than trying to achieve the ideal case. This would allow qualitative analysis of a tested mechanism such that decisions could be made based on differences in force output in 6 directions.
+
+To prove the ATP’s capability for this purpose, a series of tests were conducted to a) prove the accuracy of an averaged force measurement, b) prove the repeatability of an averaged force measurement, and c) prove the qualitative conclusions based on an averaged force measurement. This averaged force measurement was achieved by using a 4th order Butterworth filter and a rolling average filter, both within the LabView software. The implementation of this was a result of a few weeks of learning the LabView program and practicing with simulated signal manipulation when available.
+
+\subsubsection{Accuracy}
+To ideally prove the accuracy of averaged force measurement, a known dynamic force actuator was required. While concepts involving rotating eccentric masses and voice coil actuation were explored briefly, the simplest solution was to revisit the static loading. In determining lift force from an actuator, the most important loading was within the vertical axis. As a result, a static, 500-gram weight was applied where the flapper was attached within the frame and different supporting links were connected to the inner frame sequentially while the vertical force was being measured. The methodology behind this test was the result of validating the calibration done on the ATP. It was noticed that the vertical load cell placed at the top of the ATP frame measured a significantly lower force than if placed on the bottom of the frame. To quantify this inaccuracy, Figure \ref{fig:APT_NumbSchem} shows a schematic of the ATP with labelled links and Table \ref{tab:ATP_ForceTable} shows the force measurement from the load string based on the load cell position (top vs bottom) and the links connected to the inner frame (123456).
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=6.5cm]{figures/ATP_NumbSchem.jpg}
+    \caption{ATP schematic with numbered links}
+    \label{fig:APT_NumbSchem}  
+\end{figure}
+\begin{table} [htb]
+    \centering
+    \begin{tabular}{||c|c|c|c|c|c|c||}
         \hline
-        Test & $V_{rms}$ Noise $[mV]$ & $S$ [$\frac{mV}{g}$] & $LOD$ [g] \\
+        \textbf{Config} & \textbf{TOP-1} & \textbf{TOP-13456} & \textbf{TOP-ALL} & \textbf{BOTTOM-2} & \textbf{BOTTOM-12} & \textbf{BOTTOM-ALL}\\
         \hline\hline
-        Preliminary Unit & 28.3 & 2.8 & 30.3 \\
-        \hline
-        New Amp. Unit & 7.07 & 1.1 & 19.3 \\
-        \hline
-        New DAQ Unit & 0.354 & 0.16 & 6.64 \\
-        \hline
-        ATP Calibration (Best) & 35.4 & 4 & 26.6 \\
+        Force [N] & 4.9 & 0.15 & 0.85 & -0.18 & -4.36 & -3.41 \\
         \hline
     \end{tabular}
-    \caption{Fall semester ATP test results summary}
-    \label{tab:ATPTestResultsSummary}
+    \caption{Force measurements from different ATP configurations with a 500-gram applied weight}
+    \label{tab:ATP_ForceTable}
 \end{table}
 
-\subsection{Plan for Winter Semester}
-In terms of the signal resolution for a unit load, the load string is capable of determining a load close to the desired 5-gram resolution. However, the load cells inherent accuracy of 2.5 grams limits the fine readings that can be achieved. In terms of ATP comissioning, the subtraction load string is clearly beneficial to remove the tension effects of the current design, but the signals at smaller loads are still quite noisy. The winter semester should have me focusing on improving this signal quality by using some sort of filtering technique.
+The results of this test show that the most accurate configuration was with the load cell placed at the top and no additional links connected to the frame, measuring 4.9N which is exactly 500 grams. As the 4 lateral links are connected to the frame, however, the measured force decreases, indicating a level of load sharing between the other links. The introduction of link 2 allows for an additional vertical static point, transferring more of the force to the top load cell. When the load cell is placed at the bottom of the frame, it is under compression. With no other links connected, the output voltage gets pushed into the lower saturation region of the amplifier, resulting in a non-linear force representation, as seen by $Bottom-2$. When link 1 is attached, it introduces tension on the load cell and the baseline is within the linear region, allowing for an 'accurate' measurement of the applied compression, as represented by the -4.36N data point. However, the addition of the other links again reduces the measured force to -3.41N, further indicating load sharing between the links.
 
-However, the filtering will have an effect on the dynamic response of the system. While the fine measurements (sub 20 grams) are harder to measure on the ATP, I believe the dynamics of the flyer will have a large impact on the resolution of this signal, and a point should be made to verify a dynamic resolution of even 50 grams if the team is to use this ATP design. The first priority of the winter semester should be to test the ATP with a dynamic load that simulates the flapping of the MFWF. With the results of this test, and some tuning of the subtraction load string, I indent to have a reasonable understanding of how the ATP will perform with the MFWF mounted. Given that professor Hashim has been influential to this side of the ATP team, I will be using him as a resource to gain more knowledge of how the fine resolution of a dynamic flyer can be achieved. Ultimately, my goal before the winter semester ends is to have an exhausted testing report of this ATP design to prove its viability for the MFWF team to use during their flight tests. 
+To conclude this analysis, the static-linked ATP design is not accurate at measuring vertical averaged/static force applied within any of its fully connected configurations. This is due to the load sharing that is experienced as additional links connect to the inner frame. The most accurate measurement occurs when the vertical load cell is placed at the bottom of the frame, reading 3.41N when a 4.9N force is applied vertically. Given this 30\% error, the ATP can still be used for relative quantitative analysis for averaged force measurement, but any sort of accurate quantitative analysis would require a better design.
+
+\subsubsection{Repeatability}
+To prove the repeatability of the ATP in terms of the averaged measured force, the purchased flapping bird was used as the flapping mechanism. Given its production quality, it was conceptually the most stable flapping mechanism in terms of producing aerodynamic forces that was available. The test consisted of measuring the force produced within the axial direction of the ATP using the left and right load cells. This was repeated 6 times to produce an average force measurement and standard deviation for both load strings. Figure \ref{fig:FlappingBirdATP} indicates the graphed results of a singular run, outlining the average force produced of each load cell as a function of time. The reason the other three load cells were not used within this analysis was due to the lack of aerodynamic force production in their respective axes. Note that this is expected behaviour of the flapping bird and not a deficiency of the ATP’s capabilities. Table 2 compiles the average forces measured across all 6 runs for both load cells and identifies the respective standard deviation and coefficient of variation (CV) across the sample size.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=8.5cm]{figures/FlappingBirdATP.png}
+    \caption{Averaged force measured by the ATP over a flapping bird test run}
+    \label{fig:FlappingBirdATP}  
+\end{figure}
+\begin{table} [htb]
+    \centering
+    \begin{tabular}{||c|c|c||}
+        \hline
+        \textbf{Test No.} & \textbf{Force-Right [N]} & \textbf{Force-Left [N]} \\
+        \hline\hline
+        1 & 0.085 & 0.085 \\
+        2 & 0.09 & 0.095 \\
+        3 & 0.09 & 0.0925 \\
+        4 & 0.0775 & 0.088 \\
+        5 & 0.09 & 0.087 \\
+        6 & 0.085 & 0.083 \\
+        \hline
+        \textbf{Average} & 0.086 & 0.088 \\
+        \textbf{Standard Deviation} & 0.0049 & 0.0045 \\
+        \textbf{CV} & 5.72\% & 5.14\% \\
+        \hline
+    \end{tabular}
+    \caption{Lift force measurements of the right and left load cells during flapping bird test}
+    \label{tab:FlappingBirdTable}
+\end{table}
+
+The result of this test shows the maximum standard deviation to be from the right load cell, at 0.0049 N across the 6 repetitions. This corresponds to a coefficient of variation (CV) of 5.72\%, determined by using the following equation \cite{Elsevier_CV}:
+\[CV = \frac{\sigma}{\mu} \cdot 100\]
+where $\sigma$ is the standard deviation and $\mu$ is the average of the collected sample. While CV is not standardized in terms of its “acceptable ranges”, generally 5\% is considered acceptable depending on the application \cite{Elsevier_CV}. To conclude this analysis, the ATP measurement of averaged force in the left and right load cells is acceptably repeatable given the maximum CV determined from a 6-iteration test of the flapping bird was 5.72\%. This is acceptable given the qualitative nature of the ATP with it's current design.
+
+\subsubsection{Qualitative Analysis}
+To prove the ATP can qualitatively discern the force output from different tests, variables for each developmental actuator were adjusted such that the measured force shows a qualitative difference. The distinction in qualitative compared to quantitative is used here due to the prior proof of the ATP’s inaccuracy of measuring the correct generated force. In terms of the actual testing, the inaccurate quantitative force results were used to discern whether one test provided higher lift force than another, but the values represented do not claim to be the absolute force measurements of the tested specimens.
+
+To prove the lift force dependence of the flapping frequency, the mechanical flapper was secured to the ATP with one wing and the flapping frequency was increased from 15Hz to 25Hz. The expectation was that the lift force would increase with the flapping frequency, and thus the measured force from the ATP would also increase. The results of this test are shown in Figure \ref{fig:MechanicalFlapping}, where the force output of one wing is graphed as a function of time while the flapping frequency is increased. 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=8.5cm]{figures/MechanicalTest.png}
+    \caption{Mechanical flapping test with one wing and increasing frequency from 15Hz to 25Hz}
+    \label{fig:MechanicalFlapping}  
+\end{figure}
+The trend shown in the figure is a clear increase in the measured force as the flapping frequency increases, from about 0.03N at 15Hz start to about 0.05N at 25Hz. The "noise" seen in the figure is not a result of poor acquisition, but rather a flaw in the mechanical actuator design. The wing fastening mechanism was prone to slippage and thus the range of motion would change slightly with each flapping cycle, resulting in a different force output. While not an accurate enough measurement to quantify, it is a good example of how the ATP can be used to qualitatively analyze the performance of a tested mechanism and make design decisions based on that analysis.
+
+The EM actuator was also tested with the same methodology, however discrete changes in frequency were made to better identify a singular condition. The results of this test are shown in Figure \ref{fig:EM_FQ}, where the force output of one wing is graphed as a function of time while the flapping frequency is changed. 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[height=8.5cm]{figures/EM_4F_Drift.png}
+    \caption{EM actuator test with a single wing and different freuencies of 6, 8, 12, and 11 Hz}
+    \label{fig:EM_FQ}  
+\end{figure}
+Each spike represents the condition where the EM actuator is flapping at a different frequency; 6, 8, 12, and 11 Hz in this example. While the results follow a constant drift throughout the test, as seen by the orange trendline, the rise in force due to the actuation can still be used to compare across each frequency. Tests were conducted in attempts to understand the drift; however different tests resulted in different directions of drift from the captured baseline. More interestingly, the amount of drift seen in this figure was only experienced when testing with the EM actuator and the flapping bird and mechanical actuator both returned within 0.01N of the start baseline. Unfortunately, further investigation was not conducted to resolve the issue as regardless of the drift, the qualitative analysis could still be conducted. The figure identifies the largest force output at 11Hz (the last peak), where the lowest force output is from the 12Hz. This is consistent with the range limitation of the EM actuator previously indicated by the EM actuator team, where it significantly reduces as a function of increased frequency after 11Hz. The results of this test qualitatively prove this as a function of force output instead of a purely visual representation. 
+
+\subsection{Conclusion and Future Work}
+The ATP has been developed this year to a point where it can be used as a qualitative analysis tool for a MFWF actuator. The analysis of the test results acquired should validate its functionality for measuring force from a specific actuator or wing design. However, there are many improvements that can be made to make it a more accurate and precise tool for measuring averaged forces from an actuator. The first improvement should be to determine the cause of baseline drift found most prominently within the EM actuator test. With validation of why this occurs, prevention methods can be used to more accurately identify the measured force. Another important improvement should be the implementation of a noise filter within the hardware. A measured force signal without high frequency noise will allow better signal averaging within software and a better representation of force. The largest change that should be made requires collaboration with the physical design changes of the ATP. The current accuracy limitation of the load strings is a result of load sharing within the inner frame and can be eliminated with a proper redesign. It is highly recommended that a FBD is conducted before manufacturing to verify the expected load path. In terms of electronics, the tension experienced on the load cells when implementing a redesign should be monitored as it will affect the required gain to achieve high resolution.
+
+In terms of measuring the precise forces from the MFWF in a decoupled manner, the design of the ATP would have to be significantly changed. In terms of the electronics, SM S-type load cells are ideal for tension-compression measurements but limit the design to accommodate that. The AD8421 amplifiers are ideal for low noise applications but have internal limitations that require the design to be built around them. If a redesign were to happen with the goal of precise force measurement, it is recommended to spend the time to cherry pick the components required to achieve the best performance and critique their integration within the structural design.

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  24 FEB 2026 08:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  2 APR 2026 14:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"/Users/kevinfair/Desktop/C/4th Year/Capstone/Final Report/Midterm Report Latex/Main"
-(/Users/kevinfair/Desktop/C/4th Year/Capstone/Final Report/Midterm Report Latex/Main.tex
+**"/Users/kevinfair/Desktop/C/4th Year/Capstone/Final Report/MFWF_ATP/Main"
+(/Users/kevinfair/Desktop/C/4th Year/Capstone/Final Report/MFWF_ATP/Main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
@@ -53,11 +53,15 @@ Package: IEEEtrantools 2015/08/26 V1.5 by Michael Shell
 \@IEEEeqncolcnt=\count276
 \@IEEEsubeqnnumrollback=\count277
 \IEEEPARstartletwidth=\dimen157
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks18
+\inpenc@posthook=\toks19
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
+\KV@toks@=\toks20
 ) (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
@@ -74,7 +78,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutheight=\dimen163
 \Gm@layouthoffset=\dimen164
 \Gm@layoutvoffset=\dimen165
-\Gm@dimlist=\toks19
+\Gm@dimlist=\toks21
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
  (/usr/local/texlive/2025/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
@@ -500,15 +504,15 @@ Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count423
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks20
-\thm@bodyfont=\toks21
-\thm@headfont=\toks22
-\thm@notefont=\toks23
-\thm@headpunct=\toks24
+\thm@style=\toks22
+\thm@bodyfont=\toks23
+\thm@headfont=\toks24
+\thm@notefont=\toks25
+\thm@headpunct=\toks26
 \thm@preskip=\skip75
 \thm@postskip=\skip76
 \thm@headsep=\skip77
-\dth@everypar=\toks25
+\dth@everypar=\toks27
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2024/11/05 v2.17t AMS math features
 \@mathmargin=\skip78
@@ -518,7 +522,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2021/08/26 v2.01 AMS text
  (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks26
+\@emptytoks=\toks28
 \ex@=\dimen178
 )) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -556,21 +560,21 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \dotsspace@=\muskip22
 \c@parentequation=\count431
 \dspbrk@lvl=\count432
-\tag@help=\toks27
+\tag@help=\toks29
 \row@=\count433
 \column@=\count434
 \maxfields@=\count435
-\andhelp@=\toks28
+\andhelp@=\toks30
 \eqnshift@=\dimen181
 \alignsep@=\dimen182
 \tagshift@=\dimen183
 \tagwidth@=\dimen184
 \totwidth@=\dimen185
 \lineht@=\dimen186
-\@envbody=\toks29
+\@envbody=\toks31
 \multlinegap=\skip79
 \multlinetaggap=\skip80
-\mathdisplay@stack=\toks30
+\mathdisplay@stack=\toks32
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -651,7 +655,7 @@ Package graphics Info: Driver file: pdftex.def on input line 106.
 \WF@size=\dimen196
 \c@WF@wrappedlines=\count445
 \WF@box=\box63
-\WF@everypar=\toks31
+\WF@everypar=\toks33
 Package: wrapfig 2003/01/31  v 3.6
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/placeins/placeins.sty
 Package: placeins 2005/04/18  v 2.2
@@ -682,10 +686,10 @@ File: pppdftex.def 2025/01/30 v0.6e Pdfpages driver for pdfTeX (AM)
 )
 \pdfpages@includegraphics@status=\count449
 \AM@pagebox=\box64
-\AM@global@opts=\toks32
+\AM@global@opts=\toks34
 \AM@pagecnt=\count450
-\AM@toc@title=\toks33
-\AM@lof@heading=\toks34
+\AM@toc@title=\toks35
+\AM@lof@heading=\toks36
 \c@AM@survey=\count451
 \AM@templatesizebox=\box65
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/attachfile2/attachfile2.sty
@@ -701,10 +705,6 @@ File: atfi-pdftex.def 2024-01-18 v2.12 attachfile2 driver for pdfTeX (HO)
 \atfi@appearancedepth=\skip105
 \atfi@appearancebox=\box66
 \c@atfi@flags=\count452
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks35
-\inpenc@posthook=\toks36
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+ptm on input line 116.
@@ -755,32 +755,29 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidthlast=\dimen263
 \titlewidthfirst=\dimen264
 ) (./Formatting.tex)
-
-Package biblatex Warning: Load 'inputenc' before biblatex.
-
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
-(./Main.aux)
+ (./Main.aux)
 \openout1 = `Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
-LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -816,7 +813,7 @@ LaTeX Font Info:    ... okay on input line 85.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 85.
+Package hyperref Info: Link coloring OFF on input line 86.
 (./Main.out) (./Main.out)
 \@outlinefile=\write5
 \openout5 = `Main.out'.
@@ -853,8 +850,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Main.bbl' found.
  (./Main.bbl)
-Package biblatex Info: Reference section=0 on input line 85.
-Package biblatex Info: Reference segment=0 on input line 85.
+Package biblatex Info: Reference section=0 on input line 86.
+Package biblatex Info: Reference segment=0 on input line 86.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -867,12 +864,12 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )) (./Title_page.tex
-<logos/MFWF Logo.png, id=44, 963.6pt x 542.025pt>
+<logos/MFWF Logo.png, id=52, 963.6pt x 542.025pt>
 File: logos/MFWF Logo.png Graphic file (type png)
 <use logos/MFWF Logo.png>
 Package pdftex.def Info: logos/MFWF Logo.png  used on input line 15.
 (pdftex.def)             Requested size: 337.26506pt x 189.71158pt.
-<logos/Carleton Logo - NEW.png, id=45, 1473.5853pt x 1308.087pt>
+<logos/Carleton Logo - NEW.png, id=53, 1473.5853pt x 1308.087pt>
 File: logos/Carleton Logo - NEW.png Graphic file (type png)
 <use logos/Carleton Logo - NEW.png>
 Package pdftex.def Info: logos/Carleton Logo - NEW.png  used on input line 17.
@@ -923,7 +920,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.89 \listoftables
+l.90 \listoftables
                    [1
 
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./Main.lot)
@@ -961,7 +958,7 @@ Chapter 2.
 ]
 
 [8] (./Stan Melchers.tex
-<figures/Previous Year's ATP Design.jpg, id=216, 835.12pt x 704.6325pt>
+<figures/Previous Year's ATP Design.jpg, id=251, 835.12pt x 704.6325pt>
 File: figures/Previous Year's ATP Design.jpg Graphic file (type jpg)
 <use figures/Previous Year's ATP Design.jpg>
 Package pdftex.def Info: figures/Previous Year's ATP Design.jpg  used on input line 6.
@@ -969,7 +966,7 @@ Package pdftex.def Info: figures/Previous Year's ATP Design.jpg  used on input l
 
 
 [9 <./figures/Previous Year's ATP Design.jpg>]
-<figures/State of ATP Sep 2025.jpg, id=222, 1554.80875pt x 1384.17125pt>
+<figures/State of ATP Sep 2025.jpg, id=257, 1554.80875pt x 1384.17125pt>
 File: figures/State of ATP Sep 2025.jpg Graphic file (type jpg)
 <use figures/State of ATP Sep 2025.jpg>
 Package pdftex.def Info: figures/State of ATP Sep 2025.jpg  used on input line 23.
@@ -977,17 +974,17 @@ Package pdftex.def Info: figures/State of ATP Sep 2025.jpg  used on input line 2
 
 
 [10 <./figures/State of ATP Sep 2025.jpg>]
-<figures/Completed ATP Design.jpg, id=229, 730.73pt x 582.175pt>
+<figures/Completed ATP Design.jpg, id=264, 730.73pt x 582.175pt>
 File: figures/Completed ATP Design.jpg Graphic file (type jpg)
 <use figures/Completed ATP Design.jpg>
 Package pdftex.def Info: figures/Completed ATP Design.jpg  used on input line 38.
 (pdftex.def)             Requested size: 232.13242pt x 184.9429pt.
-<figures/Coupling Close Up.png, id=233, 1209.51875pt x 719.68875pt>
+<figures/Coupling Close Up.png, id=268, 1209.51875pt x 719.68875pt>
 File: figures/Coupling Close Up.png Graphic file (type png)
 <use figures/Coupling Close Up.png>
 Package pdftex.def Info: figures/Coupling Close Up.png  used on input line 49.
 (pdftex.def)             Requested size: 215.17554pt x 128.0374pt.
-<figures/Coupling Close Up Cross Section.png, id=234, 1166.3575pt x 727.71875pt>
+<figures/Coupling Close Up Cross Section.png, id=269, 1166.3575pt x 727.71875pt>
 File: figures/Coupling Close Up Cross Section.png Graphic file (type png)
 <use figures/Coupling Close Up Cross Section.png>
 Package pdftex.def Info: figures/Coupling Close Up Cross Section.png  used on input line 55.
@@ -995,7 +992,7 @@ Package pdftex.def Info: figures/Coupling Close Up Cross Section.png  used on in
 
 
 [11 <./figures/Completed ATP Design.jpg>]
-<figures/Assembled ATP.jpg, id=242, 1347.0325pt x 1347.0325pt>
+<figures/Assembled ATP.jpg, id=277, 1347.0325pt x 1347.0325pt>
 File: figures/Assembled ATP.jpg Graphic file (type jpg)
 <use figures/Assembled ATP.jpg>
 Package pdftex.def Info: figures/Assembled ATP.jpg  used on input line 70.
@@ -1007,183 +1004,287 @@ Package pdftex.def Info: figures/Assembled ATP.jpg  used on input line 70.
 [13 <./figures/Assembled ATP.jpg>]
 
 [14] (./Kevin Fair.tex
+<figures/PrelimSchematic.png, id=296, 657.95813pt x 378.66469pt>
+File: figures/PrelimSchematic.png Graphic file (type png)
+<use figures/PrelimSchematic.png>
+Package pdftex.def Info: figures/PrelimSchematic.png  used on input line 7.
+(pdftex.def)             Requested size: 222.47797pt x 128.0374pt.
+
 
 [15
 
-]
-<figures/PrelimSchematic.png, id=273, 657.95813pt x 378.66469pt>
-File: figures/PrelimSchematic.png Graphic file (type png)
-<use figures/PrelimSchematic.png>
-Package pdftex.def Info: figures/PrelimSchematic.png  used on input line 22.
-(pdftex.def)             Requested size: 222.47797pt x 128.0374pt.
-<figures/Prelim1280.png, id=277, 776.9025pt x 418.56375pt>
+ <./figures/PrelimSchematic.png>]
+
+[16]
+<figures/Prelim1280.png, id=318, 776.9025pt x 418.56375pt>
 File: figures/Prelim1280.png Graphic file (type png)
 <use figures/Prelim1280.png>
-Package pdftex.def Info: figures/Prelim1280.png  used on input line 31.
+Package pdftex.def Info: figures/Prelim1280.png  used on input line 43.
 (pdftex.def)             Requested size: 237.6484pt x 128.0374pt.
 
 
-[16 <./figures/PrelimSchematic.png>]
+[17]
+File: figures/Assembled ATP.jpg Graphic file (type jpg)
+<use figures/Assembled ATP.jpg>
+Package pdftex.def Info: figures/Assembled ATP.jpg  used on input line 52.
+(pdftex.def)             Requested size: 156.47786pt x 156.49014pt.
+<figures/50g_ATPTension.png, id=338, 601.4972pt x 389.95688pt>
+File: figures/50g_ATPTension.png Graphic file (type png)
+<use figures/50g_ATPTension.png>
+Package pdftex.def Info: figures/50g_ATPTension.png  used on input line 63.
+(pdftex.def)             Requested size: 212.41261pt x 137.70674pt.
+<figures/200g_ATPTension.png, id=339, 614.295pt x 400.49625pt>
+File: figures/200g_ATPTension.png Graphic file (type png)
+<use figures/200g_ATPTension.png>
+Package pdftex.def Info: figures/200g_ATPTension.png  used on input line 69.
+(pdftex.def)             Requested size: 212.41261pt x 138.48302pt.
 
-[17 <./figures/Prelim1280.png>]
-<figures/NewAmpUnitTest.png, id=298, 864.98157pt x 271.76532pt>
-File: figures/NewAmpUnitTest.png Graphic file (type png)
-<use figures/NewAmpUnitTest.png>
-Package pdftex.def Info: figures/NewAmpUnitTest.png  used on input line 44.
-(pdftex.def)             Requested size: 407.53128pt x 128.0374pt.
 
+[18 <./figures/Prelim1280.png>]
 
-[18 <./figures/NewAmpUnitTest.png>]
-<figures/DAQ_BB_Init1.png, id=309, 1346.02875pt x 856.19875pt>
-File: figures/DAQ_BB_Init1.png Graphic file (type png)
-<use figures/DAQ_BB_Init1.png>
-Package pdftex.def Info: figures/DAQ_BB_Init1.png  used on input line 59.
-(pdftex.def)             Requested size: 201.27943pt x 128.0374pt.
-<figures/DAQ_BB_Final1.png, id=310, 1149.29375pt x 863.225pt>
-File: figures/DAQ_BB_Final1.png Graphic file (type png)
-<use figures/DAQ_BB_Final1.png>
-Package pdftex.def Info: figures/DAQ_BB_Final1.png  used on input line 65.
-(pdftex.def)             Requested size: 170.45758pt x 128.0374pt.
-<figures/NewDAQUnitTest.png, id=314, 1003.49907pt x 462.97969pt>
+[19 <./figures/50g_ATPTension.png> <./figures/200g_ATPTension.png>]
+<figures/NewDAQUnitTest.png, id=358, 1003.49907pt x 462.97969pt>
 File: figures/NewDAQUnitTest.png Graphic file (type png)
 <use figures/NewDAQUnitTest.png>
-Package pdftex.def Info: figures/NewDAQUnitTest.png  used on input line 77.
+Package pdftex.def Info: figures/NewDAQUnitTest.png  used on input line 88.
 (pdftex.def)             Requested size: 277.51727pt x 128.0374pt.
+<figures/SubStringSchem.png, id=360, 469.755pt x 469.00218pt>
+File: figures/SubStringSchem.png Graphic file (type png)
+<use figures/SubStringSchem.png>
+Package pdftex.def Info: figures/SubStringSchem.png  used on input line 98.
+(pdftex.def)             Requested size: 185.2394pt x 184.9429pt.
 
 
-[19 <./figures/DAQ_BB_Init1.png> <./figures/DAQ_BB_Final1.png>]
-<figures/DoubleAmp_100.png, id=325, 657.657pt x 308.352pt>
+[20]
+
+[21 <./figures/NewDAQUnitTest.png> <./figures/SubStringSchem.png>]
+<figures/DoubleAmp_100.png, id=379, 657.657pt x 308.352pt>
 File: figures/DoubleAmp_100.png Graphic file (type png)
 <use figures/DoubleAmp_100.png>
-Package pdftex.def Info: figures/DoubleAmp_100.png  used on input line 86.
-(pdftex.def)             Requested size: 273.08313pt x 128.0374pt.
-<figures/50g_doubleAmp.png, id=326, 651.6345pt x 308.352pt>
+Package pdftex.def Info: figures/DoubleAmp_100.png  used on input line 110.
+(pdftex.def)             Requested size: 212.41261pt x 99.59213pt.
+<figures/50g_doubleAmp.png, id=380, 651.6345pt x 308.352pt>
 File: figures/50g_doubleAmp.png Graphic file (type png)
 <use figures/50g_doubleAmp.png>
-Package pdftex.def Info: figures/50g_doubleAmp.png  used on input line 92.
-(pdftex.def)             Requested size: 270.58237pt x 128.0374pt.
-<figures/DoubleAmp_20.png, id=327, 648.62325pt x 319.79475pt>
+Package pdftex.def Info: figures/50g_doubleAmp.png  used on input line 116.
+(pdftex.def)             Requested size: 212.41261pt x 100.51433pt.
+<figures/DoubleAmp_20.png, id=381, 648.62325pt x 319.79475pt>
 File: figures/DoubleAmp_20.png Graphic file (type png)
 <use figures/DoubleAmp_20.png>
-Package pdftex.def Info: figures/DoubleAmp_20.png  used on input line 98.
-(pdftex.def)             Requested size: 259.69212pt x 128.0374pt.
-<figures/DoubleAmp_10.png, id=328, 651.6345pt x 310.15875pt>
+Package pdftex.def Info: figures/DoubleAmp_20.png  used on input line 127.
+(pdftex.def)             Requested size: 212.41261pt x 104.72743pt.
+<figures/DoubleAmp_10.png, id=382, 651.6345pt x 310.15875pt>
 File: figures/DoubleAmp_10.png Graphic file (type png)
 <use figures/DoubleAmp_10.png>
-Package pdftex.def Info: figures/DoubleAmp_10.png  used on input line 104.
-(pdftex.def)             Requested size: 269.0014pt x 128.0374pt.
+Package pdftex.def Info: figures/DoubleAmp_10.png  used on input line 133.
+(pdftex.def)             Requested size: 212.41261pt x 101.10329pt.
 
 
-[20 <./figures/NewDAQUnitTest.png>]
+[22 <./figures/DoubleAmp_100.png> <./figures/50g_doubleAmp.png> <./figures/DoubleAmp_20.png> <./figures/DoubleAmp_10.png>]
+<figures/10HzFlapping.png, id=393, 366.61969pt x 238.64156pt>
+File: figures/10HzFlapping.png Graphic file (type png)
+<use figures/10HzFlapping.png>
+Package pdftex.def Info: figures/10HzFlapping.png  used on input line 147.
+(pdftex.def)             Requested size: 284.12172pt x 184.9429pt.
+<figures/8HzFlapping.png, id=395, 560.0925pt x 371.13657pt>
+File: figures/8HzFlapping.png Graphic file (type png)
+<use figures/8HzFlapping.png>
+Package pdftex.def Info: figures/8HzFlapping.png  used on input line 154.
+(pdftex.def)             Requested size: 279.10545pt x 184.9429pt.
 
-[21 <./figures/DoubleAmp_100.png> <./figures/50g_doubleAmp.png> <./figures/DoubleAmp_20.png>]
 
-[22 <./figures/DoubleAmp_10.png>])
+[23 <./figures/10HzFlapping.png>]
 
-[23] (./Wade Schnurr.tex
+[24 <./figures/8HzFlapping.png>]
+<figures/FinalStringSchem.png, id=409, 473.51906pt x 459.21562pt>
+File: figures/FinalStringSchem.png Graphic file (type png)
+<use figures/FinalStringSchem.png>
+Package pdftex.def Info: figures/FinalStringSchem.png  used on input line 167.
+(pdftex.def)             Requested size: 190.70482pt x 184.9429pt.
+File: figures/DoubleAmp_20.png Graphic file (type png)
+<use figures/DoubleAmp_20.png>
+Package pdftex.def Info: figures/DoubleAmp_20.png  used on input line 176.
+(pdftex.def)             Requested size: 212.41261pt x 104.72743pt.
+<figures/20g_linkedTest.png, id=412, 420.06938pt x 276.28218pt>
+File: figures/20g_linkedTest.png Graphic file (type png)
+<use figures/20g_linkedTest.png>
+Package pdftex.def Info: figures/20g_linkedTest.png  used on input line 182.
+(pdftex.def)             Requested size: 212.41261pt x 139.70477pt.
+File: figures/DoubleAmp_10.png Graphic file (type png)
+<use figures/DoubleAmp_10.png>
+Package pdftex.def Info: figures/DoubleAmp_10.png  used on input line 193.
+(pdftex.def)             Requested size: 212.41261pt x 101.10329pt.
+<figures/10g_linkedTest.png, id=413, 419.31656pt x 276.28218pt>
+File: figures/10g_linkedTest.png Graphic file (type png)
+<use figures/10g_linkedTest.png>
+Package pdftex.def Info: figures/10g_linkedTest.png  used on input line 199.
+(pdftex.def)             Requested size: 212.41261pt x 139.9535pt.
+<figures/TOPCalCurve.png, id=415, 683.55376pt x 493.0922pt>
+File: figures/TOPCalCurve.png Graphic file (type png)
+<use figures/TOPCalCurve.png>
+Package pdftex.def Info: figures/TOPCalCurve.png  used on input line 213.
+(pdftex.def)             Requested size: 335.26761pt x 241.84842pt.
 
-[24]
 
-[25]
-<figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png, id=381, 409.53pt x 409.53pt>
+[25 <./figures/FinalStringSchem.png>]
+
+[26 <./figures/20g_linkedTest.png> <./figures/10g_linkedTest.png>]
+<figures/LabView_UI.png, id=429, 1139.457pt x 548.64975pt>
+File: figures/LabView_UI.png Graphic file (type png)
+<use figures/LabView_UI.png>
+Package pdftex.def Info: figures/LabView_UI.png  used on input line 223.
+(pdftex.def)             Requested size: 443.18677pt x 213.39566pt.
+
+
+[27 <./figures/TOPCalCurve.png>]
+
+[28 <./figures/LabView_UI.png>]
+<figures/ATP_NumbSchem.jpg, id=444, 1107.13625pt x 958.58125pt>
+File: figures/ATP_NumbSchem.jpg Graphic file (type jpg)
+<use figures/ATP_NumbSchem.jpg>
+Package pdftex.def Info: figures/ATP_NumbSchem.jpg  used on input line 238.
+(pdftex.def)             Requested size: 213.60162pt x 184.9429pt.
+
+Overfull \hbox (23.40213pt too wide) in paragraph at lines 244--251
+ [][] 
+ []
+
+
+
+[29]
+<figures/FlappingBirdATP.png, id=450, 685.8122pt x 496.85625pt>
+File: figures/FlappingBirdATP.png Graphic file (type png)
+<use figures/FlappingBirdATP.png>
+Package pdftex.def Info: figures/FlappingBirdATP.png  used on input line 263.
+(pdftex.def)             Requested size: 333.82195pt x 241.84842pt.
+
+
+[30 <./figures/ATP_NumbSchem.jpg>]
+
+[31 <./figures/FlappingBirdATP.png>]
+<figures/MechanicalTest.png, id=464, 582.37575pt x 420.3705pt>
+File: figures/MechanicalTest.png Graphic file (type png)
+<use figures/MechanicalTest.png>
+Package pdftex.def Info: figures/MechanicalTest.png  used on input line 299.
+(pdftex.def)             Requested size: 335.05894pt x 241.84842pt.
+
+
+[32]
+<figures/EM_4F_Drift.png, id=472, 579.3645pt x 422.7795pt>
+File: figures/EM_4F_Drift.png Graphic file (type png)
+<use figures/EM_4F_Drift.png>
+Package pdftex.def Info: figures/EM_4F_Drift.png  used on input line 308.
+(pdftex.def)             Requested size: 331.4258pt x 241.84842pt.
+
+
+[33 <./figures/MechanicalTest.png>]
+
+[34 <./figures/EM_4F_Drift.png>])
+
+[35] (./Wade Schnurr.tex
+
+[36]
+
+[37]
+<figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png, id=512, 409.53pt x 409.53pt>
 File: figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png Graphic file (type png)
 <use figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png>
 Package pdftex.def Info: figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png  used on input line 27.
 (pdftex.def)             Requested size: 284.52756pt x 284.5444pt.
-<figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png, id=382, 460.6008pt x 344.9688pt>
+<figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png, id=513, 460.6008pt x 344.9688pt>
 File: figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png Graphic file (type png)
 <use figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png>
 Package pdftex.def Info: figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png  used on input line 34.
 (pdftex.def)             Requested size: 284.52756pt x 213.0994pt.
-<figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png, id=383, 367.3725pt x 367.3725pt>
+<figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png, id=514, 367.3725pt x 367.3725pt>
 File: figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png Graphic file (type png)
 <use figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png>
 Package pdftex.def Info: figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png  used on input line 41.
 (pdftex.def)             Requested size: 284.52756pt x 284.54816pt.
-<figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png, id=384, 465.23813pt x 349.305pt>
+<figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png, id=515, 465.23813pt x 349.305pt>
 File: figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png Graphic file (type png)
 <use figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png>
 Package pdftex.def Info: figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png  used on input line 48.
 (pdftex.def)             Requested size: 284.52756pt x 213.63005pt.
 
 
-[26]
+[38]
 
-[27 <./figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png> <./figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png>]
+[39 <./figures/Wade Schnurr Images/LSTM 2 Predicted vs True (Test Set).png> <./figures/Wade Schnurr Images/LSTM 2 with Arifoil Training History.png>]
 
-[28 <./figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png> <./figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png>])
+[40 <./figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png> <./figures/Wade Schnurr Images/MLP Training History (Large NACA Airfoil Dataset).png>])
 
-[29] (./Aidan Sheridan.tex
-<figures/MLP Network Diagram Aidan.png, id=406, 343.2825pt x 225.84375pt>
+[41] (./Aidan Sheridan.tex
+<figures/MLP Network Diagram Aidan.png, id=537, 343.2825pt x 225.84375pt>
 File: figures/MLP Network Diagram Aidan.png Graphic file (type png)
 <use figures/MLP Network Diagram Aidan.png>
 Package pdftex.def Info: figures/MLP Network Diagram Aidan.png  used on input line 7.
 (pdftex.def)             Requested size: 281.12679pt x 184.9429pt.
 
 
-[30 <./figures/MLP Network Diagram Aidan.png>]
-<figures/Training Data Aidan.png, id=415, 359.84438pt x 167.72662pt>
+[42 <./figures/MLP Network Diagram Aidan.png>]
+<figures/Training Data Aidan.png, id=546, 359.84438pt x 167.72662pt>
 File: figures/Training Data Aidan.png Graphic file (type png)
 <use figures/Training Data Aidan.png>
 Package pdftex.def Info: figures/Training Data Aidan.png  used on input line 19.
 (pdftex.def)             Requested size: 396.7964pt x 184.9429pt.
-<figures/Aidan Code Image 1.png, id=416, 447.17062pt x 463.7325pt>
+<figures/Aidan Code Image 1.png, id=547, 447.17062pt x 463.7325pt>
 File: figures/Aidan Code Image 1.png Graphic file (type png)
 <use figures/Aidan Code Image 1.png>
 Package pdftex.def Info: figures/Aidan Code Image 1.png  used on input line 28.
 (pdftex.def)             Requested size: 274.37032pt x 284.52756pt.
-<figures/Predicted vs True Aidan.png, id=417, 343.5234pt x 343.5234pt>
+<figures/Predicted vs True Aidan.png, id=548, 343.5234pt x 343.5234pt>
 File: figures/Predicted vs True Aidan.png Graphic file (type png)
 <use figures/Predicted vs True Aidan.png>
 Package pdftex.def Info: figures/Predicted vs True Aidan.png  used on input line 37.
 (pdftex.def)             Requested size: 184.94424pt x 184.9429pt.
 
 
-[31 <./figures/Training Data Aidan.png>]
-<figures/Training and Validation Loss Aidan.png, id=424, 361.8318pt x 271.2534pt>
+[43 <./figures/Training Data Aidan.png>]
+<figures/Training and Validation Loss Aidan.png, id=555, 361.8318pt x 271.2534pt>
 File: figures/Training and Validation Loss Aidan.png Graphic file (type png)
 <use figures/Training and Validation Loss Aidan.png>
 Package pdftex.def Info: figures/Training and Validation Loss Aidan.png  used on input line 44.
 (pdftex.def)             Requested size: 227.72336pt x 170.71652pt.
 
 
-[32 <./figures/Aidan Code Image 1.png>])
+[44 <./figures/Aidan Code Image 1.png>])
 
-[33 <./figures/Predicted vs True Aidan.png> <./figures/Training and Validation Loss Aidan.png>] (./Abdulrahman Sirajudeen-Sanni.tex
+[45 <./figures/Predicted vs True Aidan.png> <./figures/Training and Validation Loss Aidan.png>] (./Abdulrahman Sirajudeen-Sanni.tex
 
-[34]
-<figures/baselinewingmodified.png, id=444, 963.6pt x 261.22594pt>
+[46]
+<figures/baselinewingmodified.png, id=575, 963.6pt x 261.22594pt>
 File: figures/baselinewingmodified.png Graphic file (type png)
 <use figures/baselinewingmodified.png>
 Package pdftex.def Info: figures/baselinewingmodified.png  used on input line 30.
 (pdftex.def)             Requested size: 472.30046pt x 128.0374pt.
 
 
-[35 <./figures/baselinewingmodified.png>]
-<figures/wingliftcharacteristics.png, id=466, 352.31625pt x 542.025pt>
+[47 <./figures/baselinewingmodified.png>]
+<figures/wingliftcharacteristics.png, id=596, 352.31625pt x 542.025pt>
 File: figures/wingliftcharacteristics.png Graphic file (type png)
 <use figures/wingliftcharacteristics.png>
 Package pdftex.def Info: figures/wingliftcharacteristics.png  used on input line 41.
 (pdftex.def)             Requested size: 120.21063pt x 184.9429pt.
 
 
-[36 <./figures/wingliftcharacteristics.png>]
+[48 <./figures/wingliftcharacteristics.png>]
 Overfull \hbox (27.68536pt too wide) in paragraph at lines 60--69
  [][] 
  []
 
 
 
-[37]
-<figures/camberangle.png, id=501, 867.99281pt x 723.45282pt>
+[49]
+<figures/camberangle.png, id=631, 867.99281pt x 723.45282pt>
 File: figures/camberangle.png Graphic file (type png)
 <use figures/camberangle.png>
 Package pdftex.def Info: figures/camberangle.png  used on input line 82.
 (pdftex.def)             Requested size: 221.88489pt x 184.9429pt.
 
 
-[38 <./figures/camberangle.png>]
-<figures/doetable.png, id=512, 867.99281pt x 482.55281pt>
+[50 <./figures/camberangle.png>]
+<figures/doetable.png, id=642, 867.99281pt x 482.55281pt>
 File: figures/doetable.png Graphic file (type png)
 <use figures/doetable.png>
 Package pdftex.def Info: figures/doetable.png  used on input line 105.
@@ -1195,131 +1296,155 @@ Overfull \hbox (14.18712pt too wide) in paragraph at lines 105--106
 
 
 
-[39 <./figures/doetable.png>]
-<figures/newlymanufacturedwing.png, id=519, 788.19469pt x 435.12563pt>
+[51 <./figures/doetable.png>]
+<figures/newlymanufacturedwing.png, id=649, 788.19469pt x 435.12563pt>
 File: figures/newlymanufacturedwing.png Graphic file (type png)
 <use figures/newlymanufacturedwing.png>
 Package pdftex.def Info: figures/newlymanufacturedwing.png  used on input line 116.
 (pdftex.def)             Requested size: 231.9261pt x 128.0374pt.
-<figures/baselinedesignchanges.png, id=520, 800.23969pt x 238.64156pt>
+<figures/baselinedesignchanges.png, id=650, 800.23969pt x 238.64156pt>
 File: figures/baselinedesignchanges.png Graphic file (type png)
 <use figures/baselinedesignchanges.png>
 Package pdftex.def Info: figures/baselinedesignchanges.png  used on input line 125.
 (pdftex.def)             Requested size: 429.33896pt x 128.0374pt.
 
 
-[40 <./figures/newlymanufacturedwing.png> <./figures/baselinedesignchanges.png>]
-<figures/prototypes.png, id=529, 963.6pt x 542.025pt>
+[52 <./figures/newlymanufacturedwing.png> <./figures/baselinedesignchanges.png>]
+<figures/prototypes.png, id=659, 963.6pt x 542.025pt>
 File: figures/prototypes.png Graphic file (type png)
 <use figures/prototypes.png>
 Package pdftex.def Info: figures/prototypes.png  used on input line 136.
 (pdftex.def)             Requested size: 328.78123pt x 184.9429pt.
-<figures/controlbar.png, id=530, 823.57687pt x 286.82156pt>
+<figures/controlbar.png, id=660, 823.57687pt x 286.82156pt>
 File: figures/controlbar.png Graphic file (type png)
 <use figures/controlbar.png>
 Package pdftex.def Info: figures/controlbar.png  used on input line 145.
 (pdftex.def)             Requested size: 367.65298pt x 128.0374pt.
 )
 
-[41 <./figures/prototypes.png>]
+[53 <./figures/prototypes.png>]
 
-[42 <./figures/controlbar.png>] (./Justin Denneny.tex
+[54 <./figures/controlbar.png>] (./Justin Denneny.tex
 
-[43]
-<figures/Dynamic Testing Setup.png, id=550, 385.94188pt x 279.0425pt>
+[55]
+<figures/Dynamic Testing Setup.png, id=680, 385.94188pt x 279.0425pt>
 File: figures/Dynamic Testing Setup.png Graphic file (type png)
 <use figures/Dynamic Testing Setup.png>
 Package pdftex.def Info: figures/Dynamic Testing Setup.png  used on input line 17.
 (pdftex.def)             Requested size: 255.80011pt x 184.9429pt.
-<figures/Wing w Test Markers.png, id=552, 209.28188pt x 280.04625pt>
+<figures/Wing w Test Markers.png, id=682, 209.28188pt x 280.04625pt>
 File: figures/Wing w Test Markers.png Graphic file (type png)
 <use figures/Wing w Test Markers.png>
 Package pdftex.def Info: figures/Wing w Test Markers.png  used on input line 34.
 (pdftex.def)             Requested size: 138.21587pt x 184.9429pt.
 
 
-[44 <./figures/Dynamic Testing Setup.png>]
-<figures/MATLAB Generated Wing Tracking Overlay.png, id=562, 201.75375pt x 233.87375pt>
+[56 <./figures/Dynamic Testing Setup.png>]
+<figures/MATLAB Generated Wing Tracking Overlay.png, id=692, 201.75375pt x 233.87375pt>
 File: figures/MATLAB Generated Wing Tracking Overlay.png Graphic file (type png)
 <use figures/MATLAB Generated Wing Tracking Overlay.png>
 Package pdftex.def Info: figures/MATLAB Generated Wing Tracking Overlay.png  used on input line 52.
 (pdftex.def)             Requested size: 159.54994pt x 184.9429pt.
 
 
-[45 <./figures/Wing w Test Markers.png>]
-<figures/Preliminary Wing Deflection.png, id=571, 295.1025pt x 225.84375pt>
+[57 <./figures/Wing w Test Markers.png>]
+<figures/Preliminary Wing Deflection.png, id=701, 295.1025pt x 225.84375pt>
 File: figures/Preliminary Wing Deflection.png Graphic file (type png)
 <use figures/Preliminary Wing Deflection.png>
 Package pdftex.def Info: figures/Preliminary Wing Deflection.png  used on input line 72.
 (pdftex.def)             Requested size: 241.6704pt x 184.9429pt.
 
 
-[46 <./figures/MATLAB Generated Wing Tracking Overlay.png> <./figures/Preliminary Wing Deflection.png>]
-<figures/Spanwise Deflection Shape.png, id=579, 412.54124pt x 318.18875pt>
+[58 <./figures/MATLAB Generated Wing Tracking Overlay.png> <./figures/Preliminary Wing Deflection.png>]
+<figures/Spanwise Deflection Shape.png, id=709, 412.54124pt x 318.18875pt>
 File: figures/Spanwise Deflection Shape.png Graphic file (type png)
 <use figures/Spanwise Deflection Shape.png>
 Package pdftex.def Info: figures/Spanwise Deflection Shape.png  used on input line 87.
 (pdftex.def)             Requested size: 239.78397pt x 184.9429pt.
 
 
-[47 <./figures/Spanwise Deflection Shape.png>])) (./Conclusion.tex
+[59 <./figures/Spanwise Deflection Shape.png>])) (./Conclusion.tex
 
-[48]
+[60]
 Chapter 3.
-)
 
-[49
 
-]
-Overfull \hbox (44.19221pt too wide) in paragraph at lines 102--102
+[61
+
+])
+
+[62]
+Overfull \hbox (17.549pt too wide) in paragraph at lines 103--103
+[]$\T1/cmtt/m/n/12 https : / / www . rocscience . com / help / rs2 / documentation / rs2 -[] model / probabilistic -[]
+ []
+
+
+Overfull \hbox (37.59848pt too wide) in paragraph at lines 103--103
+\T1/cmtt/m/n/12 AD8556 . pdf$[]\T1/ptm/m/n/12 , [On-line]. Avail-able: https://www.analog.com/media/en/technical-documentation/data-
+ []
+
+
+Overfull \hbox (44.19221pt too wide) in paragraph at lines 103--103
 []\T1/ptm/m/n/12 Interface, \T1/ptm/m/it/12 Sm s-type load cell ^^V ten-sion and com-pres-sion load cell\T1/ptm/m/n/12 , []$\T1/cmtt/m/n/12 https : / / www . interfaceforce .
  []
 
 
-Overfull \hbox (110.49019pt too wide) in paragraph at lines 102--102
+Overfull \hbox (5.2164pt too wide) in paragraph at lines 103--103
+\T1/ptm/m/n/12 Mar. 29, 2026]. avail-able from: []$\T1/cmtt/m/n/12 https : / / electronics . stackexchange . com / questions /
+ []
+
+
+
+[63
+
+]
+Overfull \hbox (10.8003pt too wide) in paragraph at lines 103--103
+\T1/ptm/m/n/12 avail-able from: []$\T1/cmtt/m/n/12 https : / / www . sciencedirect . com / topics / engineering / coefficient -[]
+ []
+
+
+Overfull \hbox (110.49019pt too wide) in paragraph at lines 103--103
 \T1/ptm/m/n/12 2025. avail-able from: []$\T1/cmtt/m/n/12 https : / / www . youtube . com / playlist ? list = PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU$[]\T1/ptm/m/n/12 . 
  []
 
 
-
-[50
-
-]
-Overfull \hbox (12.40828pt too wide) in paragraph at lines 102--102
+Overfull \hbox (12.40828pt too wide) in paragraph at lines 103--103
 \T1/cmtt/m/n/12 biomimetics8080571$[]\T1/ptm/m/n/12 . avail-able from: []$\T1/cmtt/m/n/12 https : / / doi . org / 10 . 3390 / biomimetics8080571$[]\T1/ptm/m/n/12 . 
  []
 
 
-Overfull \hbox (0.68819pt too wide) in paragraph at lines 102--102
+
+[64]
+Overfull \hbox (0.68819pt too wide) in paragraph at lines 103--103
 []\T1/ptm/m/n/12 W. Shyy et al., \T1/ptm/m/it/12 Re-cent Progress in Flap-ping Wing Aero-dy-nam-ics and Aeroe-las-tic-ity\T1/ptm/m/n/12 . Springer,
  []
 
 
 
-[51] (./Main.aux)
+[65] (./Main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: F081DD9C0CE63C86AC6C200A9FE1E7D3;1771.
+(rerunfilecheck)             Checksum: D78FC2840F84446A50C3BC17E8EED0BC;1994.
 Package logreq Info: Writing requests to 'Main.run.xml'.
 \openout1 = `Main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24014 strings out of 473190
- 427126 string characters out of 5715801
- 1275457 words of memory out of 5000000
- 46717 multiletter control sequences out of 15000+600000
- 612342 words of font info for 105 fonts, out of 8000000 for 9000
+ 24170 strings out of 473190
+ 431195 string characters out of 5715801
+ 1279214 words of memory out of 5000000
+ 46840 multiletter control sequences out of 15000+600000
+ 610778 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,81p,1751b,1567s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,81p,1739b,1575s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfso1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfsx2488.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Main.pdf (52 pages, 26289745 bytes).
+Output written on Main.pdf (66 pages, 9948474 bytes).
 PDF statistics:
- 745 PDF objects out of 1000 (max. 8388607)
- 575 compressed objects within 6 object streams
- 183 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 908 PDF objects out of 1000 (max. 8388607)
+ 701 compressed objects within 8 object streams
+ 218 named destinations out of 1000 (max. 500000)
+ 352 words of extra memory for PDF output out of 10000 (max. 10000000)
 

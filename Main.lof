@@ -5,35 +5,45 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces CAD Model of the current ATP Design.}}{11}{figure.caption.6}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Detailed Views of the Coupling Mechanism.}}{12}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Assembled ATP.}}{13}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces 2023 Load string schematic \blx@tocontentsinit {0}\cite {MFWF_FinalReport2023}}}{16}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Preliminary load string unit test results with 1280 gain}}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces New amplifier unit test with 2000 gain}}{18}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Breadboard setups for (a) preliminary and (b) subtraction load string designs}}{19}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces USB-6002 DAQ unit test load and unload}}{20}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces 100-gram ATP test load and unload}}{21}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces 50-gram ATP test unload}}{21}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces 20-gram ATP test load}}{21}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces 10-gram ATP test load}}{22}{figure.caption.17}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces LSTM model version 2, predicted coefficient results compared to the actual coefficient values.}}{27}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces LSTM model version 2, training accuracy compared to the number of times the dataset has been run through.}}{27}{figure.caption.20}%
-\contentsline {figure}{\numberline {2.17}{\ignorespaces MLP model predicted coefficient results compared to the actual coefficient values.}}{28}{figure.caption.21}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces MLP model training accuracy compared to the number of times the large dataset has been run through.}}{28}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Architecture of an MLP model.}}{30}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Samples of NACA Airfoil Training Data.}}{31}{figure.caption.24}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Sample of the MLP Network Code Used in Training Model.}}{32}{figure.caption.25}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Predicted vs. Real Values of Parameters.}}{33}{figure.caption.26}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Training and Validation Losses throughout Training}}{33}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Baseline Wings: Final Wing Design from Previous Capstone Year \blx@tocontentsinit {0}\cite {MFWF_FinalReport2021}}}{35}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Wing Deformation Characteristics of a Flapping Wing \blx@tocontentsinit {0}\cite {dao2020corrugation}}}{36}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.26}{\ignorespaces Camber Angle Extension and Twist Angle in Wing Design\blx@tocontentsinit {0}\cite {yoon}}}{38}{figure.caption.32}%
-\contentsline {figure}{\numberline {2.27}{\ignorespaces Design of Experiments (Prototyping) Table }}{39}{figure.caption.33}%
-\contentsline {figure}{\numberline {2.28}{\ignorespaces Baseline Wing Remanufactured with PETG Veins}}{40}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.29}{\ignorespaces Design Changes to Improve the Baseline Wing}}{40}{figure.caption.35}%
-\contentsline {figure}{\numberline {2.30}{\ignorespaces Design Changes to Improve the baseline Wing}}{41}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.31}{\ignorespaces Preliminary Control Bar for testing}}{42}{figure.caption.37}%
-\contentsline {figure}{\numberline {2.32}{\ignorespaces Dynamic Test Setup}}{44}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.33}{\ignorespaces Wing with Marker Placement.}}{45}{figure.caption.39}%
-\contentsline {figure}{\numberline {2.34}{\ignorespaces MATLAB Motion Marker Tracking}}{46}{figure.caption.40}%
-\contentsline {figure}{\numberline {2.35}{\ignorespaces Preliminary Vertical Deflection for Manual Flapping}}{46}{figure.caption.41}%
-\contentsline {figure}{\numberline {2.36}{\ignorespaces Spanwise Deflection - Mode Shape}}{47}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces 2023 Load string schematic \blx@tocontentsinit {0}\cite {MFWF_FinalReport2023}}}{15}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Preliminary load string unit test results with 1280 gain}}{18}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Preliminary ATP design with steel cable connections}}{19}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces ATP test results with tension load string design}}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces 50g unload and load using upgraded electronics}}{21}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Subtraction load string architecture schematic}}{21}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Load/unload tests with 100- and 50-gram weights using the subtraction load string.}}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Load/unload tests with 20- and 10-gram weights using the subtraction load string.}}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces EM actuator at 10Hz signal response from ATP}}{23}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces EM actuator at 8Hz signal response from ATP}}{24}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Rigid link load string architecture schematic}}{25}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Comparison in ATP response with 20 grams applied with the subtraction and rigid link designs}}{26}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Comparison in ATP response with 10 grams applied with the subtraction and rigid link designs}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Calibration curve for TOP side load string}}{27}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces User interface of the LabView program for the ATP}}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces ATP schematic with numbered links}}{30}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Averaged force measured by the ATP over a flapping bird test run}}{31}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Mechanical flapping test with one wing and increasing frequency from 15Hz to 25Hz}}{33}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces EM actuator test with a single wing and different freuencies of 6, 8, 12, and 11 Hz}}{34}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces LSTM model version 2, predicted coefficient results compared to the actual coefficient values.}}{39}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces LSTM model version 2, training accuracy compared to the number of times the dataset has been run through.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces MLP model predicted coefficient results compared to the actual coefficient values.}}{40}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces MLP model training accuracy compared to the number of times the large dataset has been run through.}}{40}{figure.caption.33}%
+\contentsline {figure}{\numberline {2.29}{\ignorespaces Architecture of an MLP model.}}{42}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.30}{\ignorespaces Samples of NACA Airfoil Training Data.}}{43}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.31}{\ignorespaces Sample of the MLP Network Code Used in Training Model.}}{44}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.32}{\ignorespaces Predicted vs. Real Values of Parameters.}}{45}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.33}{\ignorespaces Training and Validation Losses throughout Training}}{45}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.34}{\ignorespaces Baseline Wings: Final Wing Design from Previous Capstone Year \blx@tocontentsinit {0}\cite {MFWF_FinalReport2021}}}{47}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.35}{\ignorespaces Wing Deformation Characteristics of a Flapping Wing \blx@tocontentsinit {0}\cite {dao2020corrugation}}}{48}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.36}{\ignorespaces Camber Angle Extension and Twist Angle in Wing Design\blx@tocontentsinit {0}\cite {yoon}}}{50}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.37}{\ignorespaces Design of Experiments (Prototyping) Table }}{51}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.38}{\ignorespaces Baseline Wing Remanufactured with PETG Veins}}{52}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.39}{\ignorespaces Design Changes to Improve the Baseline Wing}}{52}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.40}{\ignorespaces Design Changes to Improve the baseline Wing}}{53}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.41}{\ignorespaces Preliminary Control Bar for testing}}{54}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.42}{\ignorespaces Dynamic Test Setup}}{56}{figure.caption.49}%
+\contentsline {figure}{\numberline {2.43}{\ignorespaces Wing with Marker Placement.}}{57}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.44}{\ignorespaces MATLAB Motion Marker Tracking}}{58}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.45}{\ignorespaces Preliminary Vertical Deflection for Manual Flapping}}{58}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.46}{\ignorespaces Spanwise Deflection - Mode Shape}}{59}{figure.caption.53}%
 \addvspace {10\p@ }
