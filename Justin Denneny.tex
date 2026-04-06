@@ -1,0 +1,268 @@
+ \subsection{Introduction}
+ This section presents the development of a dynamic testing and motion tracking framework for evaluating wing deformation within the Micro Flapping-Wing Flyer (MFWF) project. The work focuses on transitioning from previously established static testing methods toward a system capable of capturing time-dependent deformation during flapping motion.
+ 
+The methodology progressed from an initial single-camera, manually driven setup to a refined dual-camera configuration capable of capturing both in-plane and out-of-plane deformation. A MATLAB-based tracking pipeline was developed to extract marker trajectories and convert recorded motion into quantitative displacement data. The resulting framework provides a repeatable and extendable approach for dynamic wing testing and forms a foundation for future experimental work.
+ 
+\subsection{Background and Motivation}
+ 
+Flapping-wing flight at small scales involves strong coupling between structural deformation and aerodynamic performance. Unlike conventional fixed-wing systems, flapping wings continuously bend, twist, and displace throughout each cycle, directly influencing lift generation, efficiency, and overall flight behaviour.
+ 
+For the Micro Flapping-Wing Flyer (MFWF) project, understanding wing deformation is essential. The wings must not only withstand repeated loading, but deform in a way that contributes to aerodynamic performance while remaining lightweight and structurally viable. As a result, evaluating wing designs using only static testing methods is not sufficient. Previous project work established a reliable static testing framework, producing repeatable stiffness and deflection data for baseline wing geometries. While useful, these results do not capture the time-dependent deformation that occurs during flapping, where aerodynamic forces and structural response are coupled.
+ 
+Based on this, the focus of this work shifted toward developing a dynamic testing methodology capable of measuring wing deformation during operation. This required both an experimental setup to generate consistent motion and a tracking system to convert recorded motion into displacement data. Initial development used a single overhead camera with manually induced flapping. This confirmed that marker-based tracking could capture deformation trends, but also highlighted key limitations, particularly the inability to capture out-of-plane motion.
+ 
+To continue making progress while the primary flapping mechanism was still being refined, an alternative bird-style flapping mechanism was used. While not representative of the final system, it provided more consistent motion and allowed tracking development to continue.
+ 
+\begin{figure}[h]
+
+\centering
+
+\includegraphics[width=0.6\textwidth]{figures/Justin Denneny Figures/altflapper.png}
+
+\caption{Alternative bird-style flapping mechanism used during early testing.}
+
+\end{figure}
+ 
+\subsection{Initial Development of Dynamic Testing}
+ 
+The initial stage of this work focused on validating a basic approach for capturing wing deformation during flapping motion. At the beginning of the project, a reliable flapping mechanism was not yet fully developed, so early testing was performed using manually induced motion to quickly test the tracking approach. A single overhead camera was used to record wing motion, with coloured markers placed at the root, mid-span, and tip. This setup allowed for initial tracking of deformation trends along the span of the wing.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.6\textwidth]{figures/Justin Denneny Figures/initial_dynamic_setup.png}
+
+\caption{Initial dynamic testing setup used during early development.}
+
+\end{figure}
+ 
+In parallel, an alternative bird-style flapping mechanism was used to provide more consistent and repeatable motion during early testing. While not representative of the final system, it helped improve consistency and allowed tracking development to continue while the main flapping system was still being refined.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.6\textwidth]{figures/Justin Denneny Figures/early_testing_manual.png}
+
+\caption{Initial dynamic testing setup using manual flapping and early marker placement.}
+
+\end{figure}
+ 
+A MATLAB-based tracking pipeline was developed using HSV colour segmentation and centroid detection to extract marker positions over time. This stage confirmed that marker-based tracking could capture general deformation behaviour.
+ 
+However, manual flapping introduced inconsistent amplitude and frequency, reducing repeatability. In addition, the single-camera setup could only capture in-plane motion, preventing observation of out-of-plane deformation. Despite these limitations, this stage established the foundation for the tracking methodology and guided the transition toward a more controlled and advanced testing setup.
+ 
+\subsection{Early Marker Tracking Development}
+ 
+With video data obtained from the initial dynamic testing stage, the next phase focused on developing a MATLAB-based tracking pipeline to extract marker motion from recorded footage. The goal was to convert visible marker movement into measurable displacement data that could be used to analyze wing deformation.
+ 
+The tracking process was implemented using MATLAB’s Image Processing and Computer Vision toolboxes. Each frame of the recorded video was processed individually, beginning with conversion from RGB to HSV (Hue, Saturation, Value) colour space. This allowed colour to be separated from brightness, improving marker detection under varying lighting conditions.
+ 
+Threshold ranges were defined for each marker colour, allowing binary masks to be generated for detection. These masks were then filtered using minimum area constraints to remove noise and small false detections. The centroid of each valid region was computed and used as the marker position for that frame. Repeating this process across all frames produced marker trajectories over time.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.65\textwidth]{figures/Justin Denneny Figures/dual_camera_tracking_overlay.png}
+
+\caption{Early tracking overlay showing detected marker positions during initial testing.}
+
+\end{figure}
+ 
+Overlay visualizations were used to validate tracking performance by comparing detected marker positions directly with the original video. This made it easier to identify missed detections, false positives, and general tracking issues.
+ 
+At this stage, the marker configuration was kept simple, with markers placed at the root, mid-span, and tip. This reduced tracking complexity while still capturing meaningful deformation behaviour. The results showed minimal movement at the root and increasing displacement toward the tip. Some limitations were observed. Marker detection remained sensitive to lighting conditions and background features, and motion blur at higher speeds reduced tracking accuracy. These issues highlighted the need for improvements to both the experimental setup and the tracking approach.
+ 
+\subsection{Refinement of Experimental Setup}
+ 
+Following the development of the initial tracking pipeline, it became clear that the quality of the experimental setup had a direct impact on tracking performance and data reliability. While the tracking system was capable of detecting and following markers, variations in testing conditions introduced uncertainty that limited the usefulness of the results.
+ 
+One of the main issues was inconsistency in camera placement. During early testing, the camera was either handheld or loosely positioned, resulting in changes in angle, height, and orientation between trials. This made it difficult to determine whether observed differences in motion were due to actual deformation or changes in the setup. Lighting conditions and background interference also affected tracking performance. Changes in lighting altered the appearance of marker colours, reducing the effectiveness of HSV thresholding. In addition, background features with similar colours occasionally caused false detections. These effects became more noticeable during faster motion, where motion blur further reduced marker visibility.
+ 
+Another limitation was the use of manually induced flapping. While useful for initial testing, it introduced variability in both amplitude and frequency, reducing repeatability between trials. These issues highlighted the need for a more controlled and consistent experimental setup. Improving camera stability, background conditions, and overall test consistency became necessary to move toward a more reliable dynamic testing system.
+ 
+\subsection{Camera Mount Development and Imaging Stability}
+ 
+To address the inconsistencies in the initial setup, improving camera stability became a priority. In order to obtain reliable and comparable results, the camera needed to remain fixed relative to the wing across all tests. Any movement in the camera would directly affect the measured motion. A dedicated camera mounting system was designed to provide a stable and repeatable imaging setup while still allowing controlled adjustments when needed.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.65\textwidth]{figures/Justin Denneny Figures/iphone_mount_cad.png}
+
+\caption{Camera mounting system used to maintain consistent positioning and alignment.}
+
+\end{figure}
+ 
+The mount constrains both translation and rotation, ensuring the camera remains fixed during testing. This allows the recorded motion to more accurately represent actual wing deformation rather than changes in the setup. In addition to improving measurement accuracy, the mount also made testing more efficient. Once the camera was positioned correctly, it could be reused without needing to realign everything between trials. This design was later refined by Stan to better align with his ATP work and integrate more effectively with the overall testing system. Overall, this was an important step toward creating a more controlled and repeatable testing environment, and it supported the transition to the dual-camera system used in later stages.
+ 
+\subsection{Single-Camera Limitations and Need for Depth Information}
+ 
+Although the single-camera approach was effective for capturing general deformation trends, it was limited in its ability to fully describe wing motion during flapping. The main issue was the inability to capture out-of-plane motion, restricting measurements to two-dimensional displacement within the camera’s field of view.
+ 
+Flapping-wing motion is inherently three-dimensional, with the wing undergoing both in-plane bending and out-of-plane displacement throughout each cycle. With a single overhead camera, any motion perpendicular to the image plane is either lost or incorrectly projected, resulting in incomplete or misleading measurements.
+ 
+This limitation is most noticeable at the wing tip, where the largest displacements occur. In these cases, the recorded motion represents only a projection of the true trajectory, making it difficult to distinguish between actual deformation and perspective effects.
+ 
+In addition, the lack of depth information prevents reconstruction of the true spatial shape of the wing during flapping. Without this, it is not possible to accurately quantify out-of-plane displacement or fully describe the deformation behaviour.
+ 
+These limitations motivated the transition to a dual-camera approach, allowing motion to be captured from multiple perspectives and separating in-plane and out-of-plane components.
+ 
+\subsection{Experimental Setup Improvements}
+ 
+Following the development of the initial tracking pipeline, it became clear that the experimental setup had a significant impact on tracking performance and overall data reliability. Early testing involved inconsistent camera placement, which affected how motion was recorded and made comparisons between trials difficult. Variations in lighting and background conditions also reduced tracking reliability, particularly during faster motion where marker visibility decreased. To address these issues, the setup was refined to create a more controlled and repeatable testing environment. A fixed camera mount was introduced to maintain consistent positioning, reducing uncertainty caused by camera movement. In addition, a checkerboard background was implemented to provide a structured reference for the scene, supporting spatial consistency and enabling depth-aware interpretation of the motion between camera views.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{figures/Justin Denneny Figures/dual_camera_setup_alone.png}
+
+\caption{Structured testing environment with checkerboard background.}
+
+\end{figure}
+ 
+This improved marker detection and helped maintain a consistent reference frame across tests. While a full calibration process was not implemented, these changes were enough to significantly improve tracking consistency and support further development. Overall, these improvements allowed the system to move from an initial proof-of-concept setup toward a more controlled and reliable testing configuration.
+ 
+\subsection{Dual-Camera Dynamic Testing Configuration}
+ 
+To address the limitations of the single-camera approach, a dual-camera setup was implemented to capture both in-plane and out-of-plane motion during flapping. The system uses two cameras positioned orthogonally to the wing. The top camera captures spanwise position and in-plane deformation, while the front camera captures vertical motion and flapping amplitude.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{figures/Justin Denneny Figures/frontview_dualcamera_setup.png}
+
+\caption{Front camera view capturing out-of-plane motion.}
+
+\end{figure}
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.7\textwidth]{figures/Justin Denneny Figures/dual_cameraTOP_setup.png}
+
+\caption{Top view of the dual-camera setup showing camera placement and testing environment.}
+
+\end{figure}
+ 
+By combining both views, the motion of each marker can be described more completely, separating in-plane and out-of-plane components. Both cameras were fixed using the mounting system to maintain consistent alignment between tests. This was important for ensuring that the recorded motion remained comparable across trials.
+ 
+An additional advantage of this setup is improved tracking reliability. If a marker becomes difficult to detect in one view due to motion blur or lighting, it can often still be identified in the other camera. While a full calibration procedure was not implemented, the controlled setup and consistent alignment allowed for a practical and effective method of capturing three-dimensional wing motion.
+ 
+\subsection{Tracking Methodology and Implementation}
+ 
+A marker-based tracking system was developed in MATLAB to extract wing motion from the dual-camera video recordings.
+
+Each frame was processed individually, beginning with conversion from RGB to HSV colour space. This allowed colour to be separated from brightness, improving marker detection under varying lighting conditions. Threshold ranges were defined for each marker colour (green, blue, magenta, and yellow), and binary masks were created to isolate each marker. These masks were then filtered using minimum area constraints to remove noise and small false detections. A region of interest (ROI) was also applied to restrict detection to the wing area, reducing interference from the background. Marker positions were determined using centroid detection and tracked across frames using a nearest-neighbour approach. Limits were applied to prevent incorrect assignments, and short gaps were interpolated when markers were temporarily lost due to motion blur or occlusion. To improve reliability, a span-based filtering approach was used. The wing span direction was defined from the root to the tip marker, and detections that did not align with this direction were rejected.
+ 
+Markers were distributed along the wing to capture deformation at multiple locations:
+
+\begin{itemize}
+
+\item Root (green) – reference point
+
+\item Tip (blue) – largest displacement
+
+\item Spar (magenta) – structural behaviour
+
+\item Membrane (yellow) – flexible surface response
+
+\end{itemize}
+ 
+This approach allowed deformation to be tracked across both rigid and flexible regions of the wing.
+ 
+\subsection{Coordinate Transformation and Physical Scaling}
+ 
+The tracked marker positions were initially obtained in pixel coordinates and were converted into physical units to allow for meaningful analysis. A scaling factor was determined using the known distance between the root and tip markers on the wing. This provided a consistent conversion from pixels to millimetres across all tracked data.
+ 
+A local coordinate system was then defined based on the wing geometry. The spanwise direction was determined from the root to the tip marker in the top camera view, defining the along-span coordinate, denoted as $u$. A perpendicular direction within the same plane was used to define in-plane displacement, denoted as $v$, representing bending within the wing plane. The front camera provided vertical displacement information, allowing out-of-plane motion to be defined as $w$.
+ 
+Each marker could therefore be described using three components:
+
+\begin{itemize}
+
+\item $u$ – spanwise position along the wing
+
+\item $v$ – in-plane displacement from the top view
+
+\item $w$ – out-of-plane displacement from the front view
+
+\end{itemize}
+ 
+This provided a simplified three-dimensional representation of wing deformation using data from both camera views.
+ 
+\subsection{Results and Visualization}
+ 
+The dual-camera tracking system provides both visual and quantitative insight into wing deformation during flapping. The results presented here focus on validating the tracking approach and demonstrating its ability to capture deformation behaviour.
+ 
+\paragraph{Tracking Output and Marker Trajectories}
+ 
+The primary output of the tracking system consists of overlay visualizations showing detected marker positions and their trajectories over time.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.65\textwidth]{figures/Justin Denneny Figures/final_tracking_overlay.png}
+
+\caption{Tracking overlay showing marker trajectories during flapping motion.}
+
+\end{figure}
+ 
+The tracking maintains consistent marker identification across frames. The root marker remains relatively fixed, while the tip marker shows the largest displacement. Markers along the spar follow smooth, continuous motion, while membrane markers show more variation due to flexibility and motion blur.
+ 
+\paragraph{In-Plane Motion and Spanwise Deformation}
+ 
+The in-plane motion of the wing is shown using top-view marker trajectories.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.75\textwidth]{figures/Justin Denneny Figures/top_view_plot.png}
+
+\caption{Top-view marker trajectories showing in-plane deformation across the wing span.}
+
+\end{figure}
+ 
+The root marker remains localized, while displacement increases toward the tip. The tip marker covers a larger region, reflecting greater motion during flapping. Markers along the spar follow smoother paths, indicating gradual structural deformation, while membrane markers show more scattered motion due to flexibility and tracking limitations. Overall, the results show that the system is able to capture key deformation trends along the span of the wing.
+ 
+\begin{figure}[htbp]
+
+\centering
+
+\includegraphics[width=0.65\textwidth]{figures/Justin Denneny Figures/dual_camera_tracking_overlay.png}
+
+\caption{Dual-camera tracking overlay showing combined marker trajectories.}
+
+\end{figure}
+ 
+\subsection{Discussion}
+ 
+The results show that the tracking system is able to capture wing deformation and produce both visual and quantitative outputs using a relatively simple setup. A key strength of the system is its ability to track multiple markers while maintaining consistent identification across frames. The combination of HSV-based detection, filtering, and span-based constraints provided stable tracking under controlled conditions. The overlay visualizations also made it easy to verify when tracking was working correctly.
+ 
+The main limitation was the frame rate of the recorded video. In earlier testing, footage was effectively reduced to around 30 fps, which caused large motion between frames and significant motion blur. This made it difficult to accurately track markers, especially during faster portions of the flapping cycle. Later improvements increased this to around 60 fps, but this was still not sufficient for capturing high-speed motion in detail.
+ 
+Marker merging was another limitation, particularly for membrane markers. At higher speeds, closely spaced markers would merge into a single detected region, making it difficult to maintain correct tracking. Variability in the flapping mechanism also affected repeatability between tests. In some cases, the motion did not remain consistent in amplitude or frequency, which limited the ability to generate fully comparable datasets.
+ 
+Lighting conditions and reflections also influenced tracking performance. Although the structured setup helped reduce these effects, some manual adjustment of detection thresholds was still required.Despite these limitations, the system captures the main deformation trends and demonstrates that this approach is suitable for dynamic wing testing. The primary objective of developing a working testing and tracking framework was successfully achieved.
+ 
+\subsection{Future Work}
+ 
+The primary outcome of this work is the development of a functional dynamic testing framework rather than a completed dataset of wing performance. Future work should focus on building on this system to perform controlled testing and generate comparable data across multiple wing designs.
+ 
+A key next step is conducting dynamic tests under consistent operating conditions, including fixed flapping frequencies and amplitudes. Maintaining repeatable test conditions will be important for making meaningful comparisons between different wing configurations.
+ 
+One of the main limitations identified was the frame rate of the camera system. Even at approximately 60 fps, motion blur and large frame-to-frame displacement limited tracking accuracy. The use of a high-speed camera is recommended for future work, with frame rates of at least 240 fps, and ideally higher, to better capture rapid flapping motion. Marker placement should also be refined. Closely spaced membrane markers were prone to merging at higher speeds, so increasing spacing or reducing the number of markers would improve detection reliability.
+ 
+Further improvements to the tracking algorithm could include better handling of occlusion, adaptive thresholding, and reduced need for manual tuning. From an experimental standpoint, using a more consistent flapping mechanism will improve repeatability and data quality. Future Wing Team members should also validate tracking performance using overlay visualizations before collecting full datasets.
+ 
+\subsection{Conclusion}
+ 
+This work developed a dynamic testing and motion tracking framework for evaluating wing deformation during flapping.The system progressed from a single-camera setup using manually induced motion to a dual-camera configuration capable of capturing both in-plane and out-of-plane deformation. A MATLAB-based tracking pipeline was also developed to extract marker trajectories. The system successfully captures key deformation trends, including increasing displacement from root to tip and differences between structural and flexible regions of the wing. While limitations such as frame rate and tracking accuracy remain, the primary objective of establishing a functional and repeatable testing framework was achieved. Overall, this work provides a solid foundation for future testing and comparison of wing designs within the MFWF project.
