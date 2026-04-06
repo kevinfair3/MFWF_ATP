@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.1.4}Flapper Attachment Mechanisms}{13}{subsection.2.1.4}%
 \contentsline {subsection}{\numberline {2.1.5}Supporting Team Members}{15}{subsection.2.1.5}%
 \contentsline {subsection}{\numberline {2.1.6}Redesigning the Outer Frame}{16}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}Recommendations for the Following Year}{17}{subsection.2.1.7}%
+\contentsline {subsection}{\numberline {2.1.7}Recommendations for the Following Year}{18}{subsection.2.1.7}%
 \contentsline {section}{\numberline {2.2}ATP Data Acquisition}{19}{section.2.2}%
 \contentsline {section}{\numberline {2.3}LSTM Neural Network Development}{20}{section.2.3}%
 \contentsline {section}{\numberline {2.4}MLP Neutral Network Development}{21}{section.2.4}%
