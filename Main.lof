@@ -8,12 +8,12 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces 2023 Load string schematic \blx@tocontentsinit {0}\cite {MFWF_FinalReport2023}}}{15}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Preliminary load string unit test results with 1280 gain}}{18}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Preliminary ATP design with steel cable connections}}{19}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces ATP test results with tension load string design}}{19}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces ATP test results with tension load string design}}{20}{figure.caption.12}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces 50g unload and load using upgraded electronics}}{21}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Subtraction load string architecture schematic}}{21}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Subtraction load string architecture schematic}}{22}{figure.caption.14}%
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Load/unload tests with 100- and 50-gram weights using the subtraction load string.}}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Load/unload tests with 20- and 10-gram weights using the subtraction load string.}}{22}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces EM actuator at 10Hz signal response from ATP}}{23}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Load/unload tests with 20- and 10-gram weights using the subtraction load string.}}{23}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces EM actuator at 10Hz signal response from ATP}}{24}{figure.caption.17}%
 \contentsline {figure}{\numberline {2.15}{\ignorespaces EM actuator at 8Hz signal response from ATP}}{24}{figure.caption.18}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Rigid link load string architecture schematic}}{25}{figure.caption.19}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Comparison in ATP response with 20 grams applied with the subtraction and rigid link designs}}{26}{figure.caption.20}%
@@ -23,7 +23,7 @@
 \contentsline {figure}{\numberline {2.21}{\ignorespaces ATP schematic with numbered links}}{30}{figure.caption.24}%
 \contentsline {figure}{\numberline {2.22}{\ignorespaces Averaged force measured by the ATP over a flapping bird test run}}{31}{figure.caption.26}%
 \contentsline {figure}{\numberline {2.23}{\ignorespaces Mechanical flapping test with one wing and increasing frequency from 15Hz to 25Hz}}{33}{figure.caption.28}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces EM actuator test with a single wing and different freuencies of 6, 8, 12, and 11 Hz}}{34}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces EM actuator test with a single wing and different frequencies of 6, 8, 12, and 11 Hz}}{34}{figure.caption.29}%
 \contentsline {figure}{\numberline {2.25}{\ignorespaces LSTM model version 2, predicted coefficient results compared to the actual coefficient values.}}{39}{figure.caption.30}%
 \contentsline {figure}{\numberline {2.26}{\ignorespaces LSTM model version 2, training accuracy compared to the number of times the dataset has been run through.}}{39}{figure.caption.31}%
 \contentsline {figure}{\numberline {2.27}{\ignorespaces MLP model predicted coefficient results compared to the actual coefficient values.}}{40}{figure.caption.32}%
