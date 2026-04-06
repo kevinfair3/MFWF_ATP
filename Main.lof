@@ -23,17 +23,26 @@
 \contentsline {figure}{\numberline {2.21}{\ignorespaces Sample of the MLP Network Code Used in Training Model.}}{32}{figure.caption.25}%
 \contentsline {figure}{\numberline {2.22}{\ignorespaces Predicted vs. Real Values of Parameters.}}{33}{figure.caption.26}%
 \contentsline {figure}{\numberline {2.23}{\ignorespaces Training and Validation Losses throughout Training}}{33}{figure.caption.27}%
-\contentsline {figure}{\numberline {2.24}{\ignorespaces Baseline Wings: Final Wing Design from Previous Capstone Year \blx@tocontentsinit {0}\cite {MFWF_FinalReport2021}}}{34}{figure.caption.29}%
-\contentsline {figure}{\numberline {2.25}{\ignorespaces Wing Deformation Characteristics of a Flapping Wing \blx@tocontentsinit {0}\cite {dao2020corrugation}}}{37}{figure.caption.30}%
-\contentsline {figure}{\numberline {2.26}{\ignorespaces Camber Angle Extension and Twist Angle in Wing Design\blx@tocontentsinit {0}\cite {yoon}}}{42}{figure.caption.33}%
-\contentsline {figure}{\numberline {2.27}{\ignorespaces Design of Experiments (Prototyping) Table }}{44}{figure.caption.34}%
-\contentsline {figure}{\numberline {2.28}{\ignorespaces Baseline Wing Remanufactured with PETG Veins}}{44}{figure.caption.35}%
-\contentsline {figure}{\numberline {2.29}{\ignorespaces Design Changes to Improve the Baseline Wing}}{45}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.30}{\ignorespaces Design Changes to Improve the baseline Wing}}{45}{figure.caption.37}%
-\contentsline {figure}{\numberline {2.31}{\ignorespaces Preliminary Control Bar for testing}}{46}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.32}{\ignorespaces Dynamic Test Setup}}{49}{figure.caption.39}%
-\contentsline {figure}{\numberline {2.33}{\ignorespaces Wing with Marker Placement.}}{50}{figure.caption.40}%
-\contentsline {figure}{\numberline {2.34}{\ignorespaces MATLAB Motion Marker Tracking}}{51}{figure.caption.41}%
-\contentsline {figure}{\numberline {2.35}{\ignorespaces Preliminary Vertical Deflection for Manual Flapping}}{51}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.36}{\ignorespaces Spanwise Deflection - Mode Shape}}{52}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Baseline wing: final wing design from the 2021/22 capstone year~\blx@tocontentsinit {0}\cite {MFWF_FinalReport2021}.}}{34}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Wing deformation characteristics contributing to lift generation in a flapping wing~\blx@tocontentsinit {0}\cite {dao2020corrugation}.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Twist and camber angle definitions in flapping wings~\blx@tocontentsinit {0}\cite {yoon2014effect}.}}{37}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Stiffness distribution in a hawkmoth \textit {Agrius convolvuli} wing achieved through venation~\blx@tocontentsinit {0}\cite {yoon2014effect}.}}{38}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces Exploded view of the wing assembly showing the three primary components: control bar, wing veins, and flexible membrane (CATIA V5, 2026-01-14).}}{43}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.29}{\ignorespaces Sleeve specification adopted from~\blx@tocontentsinit {0}\cite {yoon2014effect}.}}{44}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.30}{\ignorespaces CAD models of the two wing planforms under investigation (CATIA V5, 2026-01-14).}}{45}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.31}{\ignorespaces Measured mass across 20 fabricated wings. Red points indicate wings exceeding the 1.50~g single-wing ideal limit. The shaded band represents the $\pm $1$\sigma $ range, demonstrating a replicate mass deviation of less than 2\%.}}{48}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.32}{\ignorespaces Baseline wing remanufactured with PETG veins.}}{48}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.33}{\ignorespaces Design changes applied to improve the 2021/22 baseline wing durability.}}{49}{figure.caption.39}%
+\contentsline {figure}{\numberline {2.34}{\ignorespaces Design solutions developed to address root stiffness limitations of the 2021/22 baseline.}}{49}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.35}{\ignorespaces Preliminary control bar prototype.}}{50}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.36}{\ignorespaces Summary of Manufacturing Steps}}{51}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.37}{\ignorespaces Manufactured DOE Wings for Testing.}}{52}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.38}{\ignorespaces Chord length and mass relationship across both series.}}{53}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.39}{\ignorespaces Vein pattern and mass relationship across both series.}}{53}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.40}{\ignorespaces Drill Spin Test Set-Up.}}{56}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.41}{\ignorespaces Dynamic Test Setup}}{62}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.42}{\ignorespaces Wing with Marker Placement.}}{63}{figure.caption.49}%
+\contentsline {figure}{\numberline {2.43}{\ignorespaces MATLAB Motion Marker Tracking}}{64}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.44}{\ignorespaces Preliminary Vertical Deflection for Manual Flapping}}{64}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.45}{\ignorespaces Spanwise Deflection - Mode Shape}}{65}{figure.caption.52}%
 \addvspace {10\p@ }

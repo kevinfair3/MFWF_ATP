@@ -43,8 +43,8 @@
       \strng{authornamehash}{128f555fe23dbd3d8bb506ff65713ee0}
       \strng{authorfullhash}{128f555fe23dbd3d8bb506ff65713ee0}
       \strng{authorfullhashraw}{128f555fe23dbd3d8bb506ff65713ee0}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Statistics}
@@ -71,8 +71,8 @@
       \strng{authornamehash}{6261ead8909219cc5d4edd079efb3f69}
       \strng{authorfullhash}{6261ead8909219cc5d4edd079efb3f69}
       \strng{authorfullhashraw}{6261ead8909219cc5d4edd079efb3f69}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{4th Year Captsone Project; MFWF Final Progress Report Combined}
@@ -94,8 +94,8 @@
       \strng{authorfullhash}{6847528dc456b294ffb326481079eb2b}
       \strng{authorfullhashraw}{6847528dc456b294ffb326481079eb2b}
       \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{[Online; accessed Dec. 3, 2025]}
@@ -122,8 +122,8 @@
       \strng{authornamehash}{f81b34da5839253845c696bf71a74915}
       \strng{authorfullhash}{f81b34da5839253845c696bf71a74915}
       \strng{authorfullhashraw}{f81b34da5839253845c696bf71a74915}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.analog.com/media/en/technical-documentation/data-sheets/ad8421.pdf}}
@@ -563,6 +563,44 @@
       \verb 10.3390/app10207375
       \endverb
     \endentry
+    \entry{yoon2014effect}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e115cfe6880aa8a9d17b32b8c0cf61b3}{%
+           family={Yoon},
+           familyi={Y\bibinitperiod},
+           given={Sungsoo},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c9c43e1b9eb1ee1530e90cbc6edc3af6}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={Chang-kwon},
+           giveni={C\bibinithyphendelim k\bibinitperiod}}}%
+        {{hash=38453c00acba596f2344e4480f6f4925}{%
+           family={Shyy},
+           familyi={S\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{64022358c5594dfd0be606f95138f20f}
+      \strng{fullhash}{c3d62fdebd24fff09f5ba6ca4717eabe}
+      \strng{fullhashraw}{c3d62fdebd24fff09f5ba6ca4717eabe}
+      \strng{bibnamehash}{c3d62fdebd24fff09f5ba6ca4717eabe}
+      \strng{authorbibnamehash}{c3d62fdebd24fff09f5ba6ca4717eabe}
+      \strng{authornamehash}{64022358c5594dfd0be606f95138f20f}
+      \strng{authorfullhash}{c3d62fdebd24fff09f5ba6ca4717eabe}
+      \strng{authorfullhashraw}{c3d62fdebd24fff09f5ba6ca4717eabe}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{AIAA Journal}
+      \field{number}{3}
+      \field{title}{Effect of spanwise twist and bending on flapping wing aerodynamics}
+      \field{volume}{52}
+      \field{year}{2014}
+      \field{pages}{574\bibrangedash 584}
+      \range{pages}{11}
+    \endentry
     \entry{shyy2010aerodynamics}{book}{}{}
       \name{author}{7}{}{%
         {{hash=38453c00acba596f2344e4480f6f4925}{%
@@ -616,8 +654,8 @@
       \strng{authorfullhash}{5ac3bb0a9efecd0bb33d5129ef9448b2}
       \strng{authorfullhashraw}{5ac3bb0a9efecd0bb33d5129ef9448b2}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Aerodynamics of Low Reynolds Number Flyers}
@@ -649,8 +687,8 @@
       \strng{authornamehash}{dae23e7bae8ee8b339109c28c2e0643b}
       \strng{authorfullhash}{906b51861c2ca32b1114307668bd43b9}
       \strng{authorfullhashraw}{906b51861c2ca32b1114307668bd43b9}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Experimental Biology}
@@ -747,8 +785,8 @@
       \strng{authornamehash}{78838bed6f5a34f381f229f9c13c0889}
       \strng{authorfullhash}{78838bed6f5a34f381f229f9c13c0889}
       \strng{authorfullhashraw}{78838bed6f5a34f381f229f9c13c0889}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Acta Mechanica Sinica}
@@ -758,45 +796,6 @@
       \field{year}{2013}
       \field{pages}{353\bibrangedash 362}
       \range{pages}{10}
-    \endentry
-    \entry{yoon2014effect}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=e115cfe6880aa8a9d17b32b8c0cf61b3}{%
-           family={Yoon},
-           familyi={Y\bibinitperiod},
-           given={Sungsoo},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c9c43e1b9eb1ee1530e90cbc6edc3af6}{%
-           family={Kang},
-           familyi={K\bibinitperiod},
-           given={Chang-kwon},
-           giveni={C\bibinithyphendelim k\bibinitperiod}}}%
-        {{hash=38453c00acba596f2344e4480f6f4925}{%
-           family={Shyy},
-           familyi={S\bibinitperiod},
-           given={Wei},
-           giveni={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{64022358c5594dfd0be606f95138f20f}
-      \strng{fullhash}{c3d62fdebd24fff09f5ba6ca4717eabe}
-      \strng{fullhashraw}{c3d62fdebd24fff09f5ba6ca4717eabe}
-      \strng{bibnamehash}{c3d62fdebd24fff09f5ba6ca4717eabe}
-      \strng{authorbibnamehash}{c3d62fdebd24fff09f5ba6ca4717eabe}
-      \strng{authornamehash}{64022358c5594dfd0be606f95138f20f}
-      \strng{authorfullhash}{c3d62fdebd24fff09f5ba6ca4717eabe}
-      \strng{authorfullhashraw}{c3d62fdebd24fff09f5ba6ca4717eabe}
-      \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{AIAA Journal}
-      \field{number}{3}
-      \field{title}{Effect of spanwise twist and bending on flapping wing aerodynamics}
-      \field{volume}{52}
-      \field{year}{2014}
-      \field{pages}{574\bibrangedash 584}
-      \range{pages}{11}
     \endentry
     \entry{kraemer2012rapid}{article}{}{}
       \name{author}{2}{}{%
@@ -819,8 +818,8 @@
       \strng{authornamehash}{d1a6d82e2b65d783f55892e80a0bb6e0}
       \strng{authorfullhash}{d1a6d82e2b65d783f55892e80a0bb6e0}
       \strng{authorfullhashraw}{d1a6d82e2b65d783f55892e80a0bb6e0}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Robotics}
@@ -852,8 +851,8 @@
       \strng{authornamehash}{dd60f9c69b80b162bf611ef97a67a3bc}
       \strng{authorfullhash}{dd60f9c69b80b162bf611ef97a67a3bc}
       \strng{authorfullhashraw}{dd60f9c69b80b162bf611ef97a67a3bc}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Experimental Biology}
@@ -884,8 +883,8 @@
       \strng{authornamehash}{3454b2302b77db1f360df8ffd9095331}
       \strng{authorfullhash}{3454b2302b77db1f360df8ffd9095331}
       \strng{authorfullhashraw}{3454b2302b77db1f360df8ffd9095331}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Experimental Biology}
@@ -916,8 +915,8 @@
       \strng{authornamehash}{0cfba5cc43a1524dcf98bc3e32c967ba}
       \strng{authorfullhash}{0cfba5cc43a1524dcf98bc3e32c967ba}
       \strng{authorfullhashraw}{0cfba5cc43a1524dcf98bc3e32c967ba}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Fluid Mechanics}
@@ -926,6 +925,119 @@
       \field{year}{2011}
       \field{pages}{32\bibrangedash 74}
       \range{pages}{43}
+    \endentry
+    \entry{bhfly2025}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=4e093a7659b65228a416f8f379191e69}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Jianghao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9db3ec13ee6f5b2a493ff2411204fe5b}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod}}}%
+        {{hash=dd976960c353277ceab7bafd468ecd8b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yanlai},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=379bd9f3fa6e70de44e7ec46b6a8d98a}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Peng},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a82f7b211fe415c0eccfd31925edc866}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9581d6c4b3d9cedbab41281655b8373b}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Heyu},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2b01d303567b99056235e81bd74fd50e}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Long},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{35456d863407872f4fe679871f9442f8}
+      \strng{fullhash}{5431f43c643f3071e1fa86527a72e32d}
+      \strng{fullhashraw}{5431f43c643f3071e1fa86527a72e32d}
+      \strng{bibnamehash}{35456d863407872f4fe679871f9442f8}
+      \strng{authorbibnamehash}{35456d863407872f4fe679871f9442f8}
+      \strng{authornamehash}{35456d863407872f4fe679871f9442f8}
+      \strng{authorfullhash}{5431f43c643f3071e1fa86527a72e32d}
+      \strng{authorfullhashraw}{5431f43c643f3071e1fa86527a72e32d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chinese Journal of Aeronautics}
+      \field{number}{4}
+      \field{title}{Design of a hover-capable flapping wing micro air vehicle with abdomen-wing coupled control}
+      \field{volume}{39}
+      \field{year}{2026}
+      \field{pages}{103807}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cja.2025.103807
+      \endverb
+    \endentry
+    \entry{oppenheimer2017}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=6fcea282f7fb7574722bd9a12100014b}{%
+           family={Oppenheimer},
+           familyi={O\bibinitperiod},
+           given={Michael\bibnamedelima W.},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=e99adfa7e28c2dd761dc0dadd126b7e5}{%
+           family={Sigthorsson},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima O.},
+           giveni={D\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=f2a802d423a5b117a1fa41ddc750cc15}{%
+           family={Weintraub},
+           familyi={W\bibinitperiod},
+           given={Isaac\bibnamedelima E.},
+           giveni={I\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=1818fa0d76d0bad93d2084446722816f}{%
+           family={Doman},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima B.},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Grapevine, Texas}%
+      }
+      \strng{namehash}{cca38a47e7ffbc025ff44c6fd60737d5}
+      \strng{fullhash}{9ce5638cbb25eca1ef7e8f441e31feb7}
+      \strng{fullhashraw}{9ce5638cbb25eca1ef7e8f441e31feb7}
+      \strng{bibnamehash}{9ce5638cbb25eca1ef7e8f441e31feb7}
+      \strng{authorbibnamehash}{9ce5638cbb25eca1ef7e8f441e31feb7}
+      \strng{authornamehash}{cca38a47e7ffbc025ff44c6fd60737d5}
+      \strng{authorfullhash}{9ce5638cbb25eca1ef7e8f441e31feb7}
+      \strng{authorfullhashraw}{9ce5638cbb25eca1ef7e8f441e31feb7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{AIAA Guidance, Navigation, and Control Conference}
+      \field{month}{1}
+      \field{series}{AIAA SciTech Forum}
+      \field{title}{Wing Design and Testing for a Tailless Flapping Wing Micro Air Vehicle}
+      \field{year}{2017}
+      \field{pages}{1271}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.2514/6.2017-1271
+      \endverb
     \endentry
     \entry{taylor2003flying}{article}{}{}
       \name{author}{3}{}{%
@@ -953,8 +1065,8 @@
       \strng{authornamehash}{fee7be0e09b7b5bd10b2ca2da3830c4c}
       \strng{authorfullhash}{69f1fca774596238213a64abd40b68df}
       \strng{authorfullhashraw}{69f1fca774596238213a64abd40b68df}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature}
@@ -963,84 +1075,6 @@
       \field{year}{2003}
       \field{pages}{707\bibrangedash 711}
       \range{pages}{5}
-    \endentry
-    \entry{wang2005measurement}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=a6565b3d56dd034f76f1286532aa9ac3}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Z.\bibnamedelimi Jane},
-           giveni={Z\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{a6565b3d56dd034f76f1286532aa9ac3}
-      \strng{fullhash}{a6565b3d56dd034f76f1286532aa9ac3}
-      \strng{fullhashraw}{a6565b3d56dd034f76f1286532aa9ac3}
-      \strng{bibnamehash}{a6565b3d56dd034f76f1286532aa9ac3}
-      \strng{authorbibnamehash}{a6565b3d56dd034f76f1286532aa9ac3}
-      \strng{authornamehash}{a6565b3d56dd034f76f1286532aa9ac3}
-      \strng{authorfullhash}{a6565b3d56dd034f76f1286532aa9ac3}
-      \strng{authorfullhashraw}{a6565b3d56dd034f76f1286532aa9ac3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annual Review of Fluid Mechanics}
-      \field{title}{Dissecting insect flight}
-      \field{volume}{37}
-      \field{year}{2005}
-      \field{pages}{183\bibrangedash 210}
-      \range{pages}{28}
-    \endentry
-    \entry{yoon}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=fe7c21c48ea26f93e10b644b007b57d8}{%
-           family={Yoon},
-           familyi={Y\bibinitperiod},
-           given={S.-H.},
-           giveni={S\bibinithyphendelim H\bibinitperiod}}}%
-        {{hash=105056258aa28abb24c7a340f79cdb03}{%
-           family={Cho},
-           familyi={C\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=a38fe2282e0ae708270c02346a36d08f}{%
-           family={Lee},
-           familyi={L\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=6e6f57a4a2529dec95830ee0d8c3245a}{%
-           family={Kim},
-           familyi={K\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=aac4c27b86617f7fae5b9eff8374535a}{%
-           family={Shin},
-           familyi={S\bibinitperiod},
-           given={S.-J.},
-           giveni={S\bibinithyphendelim J\bibinitperiod}}}%
-      }
-      \strng{namehash}{e171ebc0413d4dbde44ae48e27260684}
-      \strng{fullhash}{acc40dd92f7088343db5a59d915ef8aa}
-      \strng{fullhashraw}{acc40dd92f7088343db5a59d915ef8aa}
-      \strng{bibnamehash}{acc40dd92f7088343db5a59d915ef8aa}
-      \strng{authorbibnamehash}{acc40dd92f7088343db5a59d915ef8aa}
-      \strng{authornamehash}{e171ebc0413d4dbde44ae48e27260684}
-      \strng{authorfullhash}{acc40dd92f7088343db5a59d915ef8aa}
-      \strng{authorfullhashraw}{acc40dd92f7088343db5a59d915ef8aa}
-      \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Fluids and Structures}
-      \field{title}{Effects of Camber Angle on Aerodynamic Performance of Flapping-Wing Micro Air Vehicle}
-      \field{volume}{97}
-      \field{year}{2020}
-      \field{pages}{103101}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.jfluidstructs.2020.103101
-      \endverb
     \endentry
     \entry{Lentink2009}{article}{}{}
       \name{author}{2}{}{%
@@ -1063,8 +1097,8 @@
       \strng{authornamehash}{26129e6b2b89bee5e51ec6bb41a69de2}
       \strng{authorfullhash}{26129e6b2b89bee5e51ec6bb41a69de2}
       \strng{authorfullhashraw}{26129e6b2b89bee5e51ec6bb41a69de2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Experimental Biology}
@@ -1109,8 +1143,8 @@
       \strng{authornamehash}{306fddd8c220f509edc4c87d1be8efb9}
       \strng{authorfullhash}{86b1c75a407a18903692dee2a0d37388}
       \strng{authorfullhashraw}{86b1c75a407a18903692dee2a0d37388}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Experiments in Fluids}
@@ -1173,8 +1207,8 @@
       \strng{authorfullhash}{cb675a2b92bb566d2c4777b003c65891}
       \strng{authorfullhashraw}{cb675a2b92bb566d2c4777b003c65891}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Recent Progress in Flapping Wing Aerodynamics and Aeroelasticity}
