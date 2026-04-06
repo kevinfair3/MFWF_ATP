@@ -9,7 +9,7 @@ the limitations of their work, and how these gaps shaped this year's objectives.
 \subsubsection{2021/22 Capstone Contributions}
 
 The 2021/22 team established a foundational wing architecture and manufacturing 
-methodology for the twist modulation controlled wing. Their primary contribution 
+process for the twist modulation controlled wing. Their primary contribution 
 was a hybrid four-component structural scheme consisting of a 3D printed vein 
 structure, a carbon fibre leading edge rod, a flexible membrane, and a root 
 control bar, shown in Figure~\ref{fig:baselinewingmodified}.
@@ -41,7 +41,7 @@ marginal tip deflection of 8.64~mm~\cite{MFWF_FinalReport2021}.
 
 The 2022/23 team identified that thin vein regions near the wing root were 
 susceptible to cracking under the cyclic inertial loading at 30~Hz stroke 
-reversal. They addressed this by increasing the leading edge carbon fibre 
+reversal. They addressed this by increasing the carbon fibre 
 rod diameter to 2~mm, with a marginal weight penalty~\cite{MFWF_FinalReport2023}.
 
 \subsubsection{Gaps Motivating This Year's Work}
@@ -56,9 +56,8 @@ bending amplitude, cannot be reliably measured in a static setting. No
 systematic framework existed to relate specific design parameters to these 
 aeroelastically relevant deformation modes.
 
-This year, the electromagnetic flapping mechanism team removed twist 
-modulation from the control architecture, eliminating the aerodynamic 
-requirement for a separated root control bar and leading edge rod 
+This year, the flapping mechanism teams removed twist 
+modulation from the control architecture, eliminating the requirement for a separated root control bar and leading edge rod 
 arrangement. This change required a total wing redesign compatible with 
 the updated mechanism interface and a frequency-based control approach. 
 Wing design and manufacturing tasks consequently progressed from refining 
@@ -101,8 +100,8 @@ To ensure quantitative relevance, this review incorporates experimentally
 validated data from both biological flyers and engineered platforms 
 including the Harvard RoboBee~\cite{ma2013robobee}, DelFly 
 Nimble~\cite{de2018delfly}, and KUBeetle~\cite{phan2020kubettle}, all of 
-which have demonstrated sustained hovering flight and provide well-documented 
-benchmarks for structural stiffness and aerodynamic performance.
+which have demonstrated suceewssful flight and provide documented 
+benchmarks for aerodynamic performance.
 
 Across insect-scale flyers and engineered FWMAVs, three coupled deformation 
 modes consistently appear: chordwise camber, spanwise bending, and passive 
@@ -134,8 +133,8 @@ example stiffness distribution achieved through venation in a real wing.
 \begin{figure}[H]
     \centering
     \includegraphics[height=8cm]{figures/stiffnessdistribution.png}
-    \caption{Stiffness distribution in a hawkmoth \textit{Agrius convolvuli} 
-    wing achieved through venation~\cite{yoon2014effect}.}
+    \caption{Stiffness Distribution in a Hawkmoth \textit{Agrius convolvuli} 
+    Wing Achieved through Venation~\cite{yoon2014effect}.}
     \label{fig:stiffnessdistribution}
 \end{figure}
 
@@ -159,10 +158,9 @@ optimal deformation behaviour. Reported values from literature include:
 
 Across these systems, wing mass is typically 1--5\% of total body mass. 
 The MFWF vehicle has a total mass of 40~g, placing the 1.5~g per wing 
-constraint at 3.75\% of vehicle mass, which is consistent with the upper 
-end of this range. Reduced wing mass lowers inertial power requirements 
+constraint at 3.75\% of vehicle mass, which is consistent with the range found. Reduced wing mass lowers inertial power requirements 
 and enables higher flapping frequencies, but must be balanced against 
-structural stiffness to maintain controlled deformation. The operating 
+structural stiffness to maintain controlled and predictable deformation. The operating 
 Reynolds number for the MFWF wing at 30~Hz with a 5.0~cm chord and 
 100~mm span is approximately $Re = \bar{U}c/\nu \approx 3{,}000$--$5{,}000$, 
 placing it firmly within the unsteady low-Reynolds-number regime 
@@ -187,8 +185,7 @@ In RoboBee wings (membrane thickness $\sim$5~$\mu$m), passive camber
 emerges from aerodynamic pressure and inertial effects. Larger platforms 
 such as DelFly employ thicker membranes ($\sim$10--25~$\mu$m), producing 
 reduced camber but improved structural robustness. Camber in the MFWF 
-wing should therefore be targeted within 5--12\%, with attention to 
-membrane thickness and its effect on passive deformation magnitude.
+wing should therefore be targeted within 5--12\%.
 
 \subsubsection{Passive Twist}
 
@@ -199,7 +196,7 @@ systems~\cite{yoon2014effect, kraemer2012rapid}. It is noted that
 biological twist arises from anisotropic material properties not present 
 in carbon fibre and polypropylene constructions; the applicability of these 
 target ranges to the MFWF wing is therefore an assumption that ATP testing 
-is intended to validate rather than confirm. In KUBeetle and DelFly designs, 
+is intended to validate rather than confirm. The ATP results take priority in case targets and results disagree. In KUBeetle and DelFly designs, 
 twist is achieved through graded stiffness, with torsional rigidity 
 decreasing toward the tip, producing beneficial phase lag between root 
 motion and aerodynamic loading without active control. Lift improvements 
@@ -230,7 +227,7 @@ while preserving aerodynamic shape; increasing a carbon fibre rod from
 minimal mass penalty in prior MFWF work~\cite{MFWF_FinalReport2023}. 
 Small inconsistencies in membrane tension or vein placement can 
 significantly alter deformation behaviour, making manufacturing 
-repeatability a direct experimental quality concern.
+repeatability extremely important in terms of experiment quality and accuracy.
 
 \subsubsection{Geometry and Aspect Ratio}
 
@@ -284,7 +281,7 @@ guidance only.
 
 Typical hovering FWMAVs operate within a frequency range of 10--30~Hz, 
 Reynolds numbers of $10^2$--$10^4$, and stroke amplitudes of 
-$90^\circ$--$140^\circ$. The Strouhal number ($St = fA/U$) is typically 
+$90^\circ$--$160^\circ$. The Strouhal number ($St = fA/U$) is typically 
 maintained between 0.2 and 0.4 for efficient lift 
 generation~\cite{taylor2003flying}. Dynamic testing on the ATP must 
 replicate these conditions to ensure meaningful comparison with literature, 
@@ -328,14 +325,13 @@ experiments.
     \label{tab:lit_summary}
 \end{table}
 
-\subsection{Wing Design Specifications}
+\subsection{2025/26 Wing Design Specifications}
 
 The wing design presented here represents a departure from the prior MFWF 
-baseline. The previous design relied on a stiff membrane with a fixed root 
-attachment, where twist formation was partially achieved through membrane 
+baseline wings. The previous design relied on a stiff membrane with a fixed root 
+attachment, where twist formation mostly achieved through membrane 
 material properties. The updated design was developed to satisfy the 
-revised interface requirements of the electromagnetic flapping mechanism, 
-which removed twist modulation from the control architecture. Rather than 
+revised interface requirements of the electromagnetic flapping mechanism. Rather than 
 relying on membrane stiffness, the new design allows the membrane to rotate 
 passively around two carbon fibre control bars. Passive camber and twist 
 are generated entirely through aeroelastic deformation under flapping loads, 
@@ -345,23 +341,19 @@ given the number of configurations required by the DOE.
 
 \subsubsection{Wing Components}
 
-The wing assembly consists of three primary structural components as 
-illustrated in Figure~\ref{fig:wingCAD}.
+The wing assembly consists of four primary structural components as illustrated in Figure~\ref{fig:wingCAD}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=9cm]{figures/WingCAD.png}
-    \caption{Exploded view of the wing assembly showing the three primary 
-    components: control bar, wing veins, and flexible membrane 
-    (CATIA V5, 2026-01-14).}
+    \caption{2025/26 Wing Assembly (CATIA V5, 2026-01-14).}
     \label{fig:wingCAD}
 \end{figure}
 
 \paragraph{Control Bar:}
 The control bar consists of two 1.5~mm diameter carbon fibre rods joined 
-by a PETG 3D printed T-connector (100\% infill). It serves as the primary 
-structural member through which the flapping mechanism transmits motion 
-to the wing. The membrane is wrapped around the control bar to form a 
+by a PETG 3D printed T-connector (20\% infill). It serves as the primary 
+structural member through which the flapping mechanism transmits motion to the wing. The membrane is wrapped around the control bar to form a 
 sleeve, allowing it to rotate freely about the bar axis. This sleeve 
 attachment decouples membrane stiffness from the root boundary condition, 
 enabling the reduced-stiffness design approach, as illustrated in 
@@ -375,14 +367,11 @@ Figure~\ref{fig:wingsleeve}.
 \end{figure}
 
 \paragraph{Wing Veins:}
-The intermediate vein structure consists of straight 1.0~mm diameter 
-pultruded carbon fibre micro rods bonded to the membrane surface using 
-polypropylene tape. The veins run from the root toward the tip, and their 
-angular placement relative to the chordwise axis defines the stiffness 
-gradient across the wing. The angular arrangement, referred to as the 
+The vein structure consists of straight 1.0~mm diameter 
+pultruded carbon fibre micro rods bonded to the membrane surface using polypropylene tape. The veins run from the root toward the tip, and their 
+angular placement relative to the chordwise axis defines the stiffness gradient across the wing. The angular arrangement, referred to as the 
 vein splay pattern, is one of the two primary variables in the DOE. The 
-specific angular values for each pattern (U, V, W) are documented in the 
-DOE design matrix.
+specific angular pattern for each pattern (U, V, W) are documented in the DOE design matrix.
 
 \paragraph{Flexible Membrane:}
 The flexible membrane forms the aerodynamic surface. Polypropylene card 
@@ -390,8 +379,7 @@ sleeve material (PP5) was selected for its adequate tear resistance under
 dynamic flapping loads, confirmed through tear testing, and for its lower 
 areal density relative to Kapton. The membrane is cut to the target 
 planform shape using 3D printed templates to ensure dimensional 
-repeatability across replicates. (Insert Template photos) 
-
+repeatability across replicates.
 \subsubsection{Planform Shapes}
 
 Two planform geometries are investigated in the DOE, as shown in 
@@ -406,25 +394,23 @@ acknowledged trade-off against the 1.5~g mass constraint.
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[height=3.25cm]{figures/Rseries.png}
-        \caption{Series~R: curved trailing edge planform.}
+        \caption{Series~R:Curved Trailing Edge Planform.}
         \label{fig:Rseries}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.48\textwidth}
         \centering
         \includegraphics[height=3.25cm]{figures/Zseries.png}
-        \caption{Series~Z: trapezoidal planform.}
+        \caption{Series~Z: Trapezoidal Planform.}
         \label{fig:Zseries}
     \end{subfigure}
-    \caption{CAD models of the two wing planforms under investigation 
+    \caption{CAD Models of the Two Wing Planforms Under Investigation 
     (CATIA V5, 2026-01-14).}
     \label{fig:planforms}
 \end{figure}
 
-Series~R features a curved trailing edge producing a spanwise variation 
-in chord length and a more gradually distributed aerodynamic loading toward 
-the tip. Series~Z uses a straight trapezoidal planform offering a more 
-uniform chord distribution and simpler membrane cutting geometry.
+Series~R features a curved trailing edge producing a spanwise variation in chord length and a more gradually distributed aerodynamic loading toward the tip. Series~Z uses a straight trapezoidal planform offering a more 
+uniform chord distribution.
 
 \subsection{Design of Experiments}
 
@@ -474,7 +460,7 @@ established during prototyping.
     diameter ensures stiffness differences between wings arise only from 
     angular placement, not material or section variation \\
     \hline
-    Control bar & 1.5~mm carbon fibre, PETG T-connector (100\% infill) & 
+    Control bar & 1.5~mm carbon fibre, PETG T-connector (20\% infill) & 
     Sized from structural calculations by the 2021/22 team for inertial 
     loading at 30~Hz; minimum diameter producing acceptable root 
     deflections~\cite{MFWF_FinalReport2021} \\
@@ -528,7 +514,7 @@ deviation of less than 2\%, as shown in Figure~\ref{fig:massdeviationplot}.
 \begin{figure}[H]
     \centering
     \includegraphics[height=9cm]{figures/massdeviationplot.png}
-    \caption{Measured mass across 20 fabricated wings. Red points indicate 
+    \caption{Measured Mass of 20 Wings: Red points indicate 
     wings exceeding the 1.50~g single-wing ideal limit. The shaded band 
     represents the $\pm$1$\sigma$ range, demonstrating a replicate 
     mass deviation of less than 2\%.}
@@ -539,7 +525,7 @@ deviation of less than 2\%, as shown in Figure~\ref{fig:massdeviationplot}.
 Development}
 
 \paragraph{Baseline Wing Remanufacturing:}
-Early prints of the 2021/22 baseline exhibited vein thickness uniformity 
+Early fabrications of the 2021/22 baseline exhibited vein thickness uniformity 
 issues and membrane bubbles. The vein structure was modified to introduce 
 curved edges at intersections and reprinted with adjustments to print 
 orientation, support strategy, and extrusion temperature until consistent 
@@ -553,11 +539,8 @@ results were achieved, as shown in Figure~\ref{fig:newlymanufacturedwing}.
 \end{figure}
 
 Thin regions near the root and trailing edge experienced cracking during 
-handling. Local sharp internal corners were smoothed and vein intersections 
-thickened slightly to distribute cyclic loads more evenly, as shown in 
-Figure~\ref{fig:baselinedesignchanges}. A variety of additional design 
-solutions addressing root stiffness were developed and manufactured, shown 
-in Figure~\ref{fig:Designsolutions}. Of these, only the torsionally 
+handling. Local sharp internal corners were smoothed and vein intersections thickened slightly to distribute cyclic loads more evenly, as shown in 
+Figure~\ref{fig:baselinedesignchanges}. A variety of additional design solutions addressing root stiffness were developed and manufactured, shown in Figure~\ref{fig:Designsolutions}. Of these, only the torsionally 
 compliant R1 variant was compatible with the 3D printing process; R2 and 
 R3 featured variable root-to-tip stiffness profiles that were not 
 reproducible reliably via FDM. Work on these variants was subsequently 
@@ -566,16 +549,16 @@ discontinued following the revision of the control approach.
 \begin{figure}[H]
     \centering
     \includegraphics[height=4.5cm]{figures/baselinedesignchanges.png}
-    \caption{Design changes applied to improve the 2021/22 baseline wing 
-    durability.}
+    \caption{Design Changes Applied to Improve the 2021/22 Baseline Wing 
+    Durability.}
     \label{fig:baselinedesignchanges}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=8cm]{figures/designsolutions.png}
-    \caption{Design solutions developed to address root stiffness 
-    limitations of the 2021/22 baseline.}
+    \caption{Design Solutions Developed to Address Root Stiffness 
+    Limitations of the 2021/22 Baseline.}
     \label{fig:Designsolutions}
 \end{figure}
 
@@ -584,19 +567,19 @@ The control bar design was revised toward the end of the fall semester
 following the removal of twist modulation from the mechanism architecture. 
 A preliminary version was produced for prototyping, as shown in 
 Figure~\ref{fig:controlbar}, with the final carbon fibre version completed 
-once interface geometry was agreed between teams in the winter semester.
+once interface geometry was agreed between teams and the professor in the winter semester.
 
 \begin{figure}[H]
     \centering
     \includegraphics[height=4.5cm]{figures/controlbar.png}
-    \caption{Preliminary control bar prototype.}
+    \caption{Preliminary Control Bar Prototype.}
     \label{fig:controlbar}
 \end{figure}
 
 \subsubsection{Winter Semester: Revised Process, DOE Design, and 
 Production}
 
-\paragraph{Manufacturing Process Revision}
+\paragraph{Manufacturing Process Revision:}
 Early winter testing revealed that the inherited assembly process produced 
 wings with excessive root stiffness. Two sources were identified: 
 unintended membrane pre-tension introduced by the attachment method, and 
@@ -607,14 +590,21 @@ connection, membrane cutting, and vein and sleeve attachment.
 \paragraph{Step 1: Rod Connection}
 The two carbon fibre rods are cut to size and inserted into the PETG 
 T-connector. If the fit is loose, the joint is bonded with hot glue or epoxy. Hot 
-glue was used during early prototyping and as the standard for all DOE wings.
+glue was used during early prototyping and as the standard for DOE wings.
 
 \paragraph{Step 2: Membrane Cutting}
 Dedicated 3D printed templates were designed for each planform and chord 
 size. The template is placed over the polypropylene membrane and the 
 planform boundary is cut, ensuring all replicates of the same design are 
 cut from identical shapes and eliminating planform variation as a source 
-of replicate-to-replicate mass and stiffness scatter. (Insert Template photos)
+of replicate-to-replicate mass and stiffness scatter.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=9cm]{figures/templates.jpeg}
+    \caption{Mebrane Templates (CATIA V5, 2026-01-14).}
+    \label{fig:templates}
+\end{figure}
 
 \paragraph{Step 3: Vein Attachment and Sleeve Addition}
 Vein rods are bonded to the membrane surface using polypropylene tape and 
@@ -873,14 +863,32 @@ counter-clockwise spin runs, indicating that the progressive vein
 arrangement promotes passive membrane deformation under dynamic loading. 
 \texttt{R-V-C5.0} sits at the 3.10~g pair mass threshold, passed 
 structural inspection with no joint failure, membrane tearing, or sleeve 
-separation, and is the lightest mass-compliant Pattern~V configuration 
-in Series~R. The secondary candidate is \texttt{Z-V-C5.0} (ID:~P), which 
+separation, and is the lightest mass-compliant Pattern~V configuration in Series~R.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=8cm]{figures/WingF.png}
+    \caption{Geometry of Primary Optimal Wing Candidate, Wing F.}
+    \label{fig:WingF}
+\end{figure} 
+
+The secondary candidate is \texttt{Z-V-C5.0} (ID:~P), which 
 also recorded strong camber, passed structural inspection, and sits at 
 3.10~g, enabling a direct planform comparison against 
 \texttt{R-V-C5.0}. This recommendation is provisional. It is based solely 
 on mass compliance and qualitative spin test observation, not on the 
 quantitative deformation and lift data the DOE was designed to generate. 
 Final selection requires ATP testing with dynamic deformation tracking.
+
+\paragraph{Preliminary ATP Testing}
+The team was able to run one ATP test with full range and 11 to 25Hz using the mechanical flapping mechanism and baseline wing Z (single Wing). The resulting plot is shown in Figure~\ref{fig:WingZplot} below. A force of 5.5 grams was recorded for the Z series wing design without veins. This result is promising and demonstrates the potential to study deviations in aerodynamic efficiency of the wings and make a final selection based on this. Unfortunately, no other tests were completed due to mechanism breaking. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=8cm]{figures/WingZplot.png}
+    \caption{Force Measurement for Baseline Trapezoidal Wing Z.}
+    \label{fig:WingZplot}
+\end{figure} 
 
 \subsubsection{Mitigating Actions Taken}
 Despite the inability to complete the ATP test, the following actions 
@@ -890,7 +898,7 @@ preserve the value of this year's work for future teams.
     \item \textbf{Drill spin testing:} All 40 wings were tested, 
     confirming structural integrity and providing qualitative deformation 
     observations across the full design space.
-    \item \textbf{Complete wing database:} All 40 wings are documented 
+    \item \textbf{Wing database:} All 40 wings are documented 
     with full design specifications, manufacturing parameters, mass 
     measurements, and spin test observations, allowing the next team to 
     execute the DOE without repeating fabrication work.

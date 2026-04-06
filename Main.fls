@@ -607,6 +607,11 @@ INPUT ./figures/controlbar.png
 INPUT ./figures/controlbar.png
 INPUT ./figures/controlbar.png
 INPUT ./figures/controlbar.png
+INPUT ./figures/templates.jpeg
+INPUT ./figures/templates.jpeg
+INPUT ./figures/templates.jpeg
+INPUT ./figures/templates.jpeg
+INPUT ./figures/templates.jpeg
 INPUT ./figures/manufacturing.png
 INPUT ./figures/manufacturing.png
 INPUT ./figures/manufacturing.png
@@ -659,6 +664,16 @@ INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecsx1095.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm
+INPUT ./figures/WingF.png
+INPUT ./figures/WingF.png
+INPUT ./figures/WingF.png
+INPUT ./figures/WingF.png
+INPUT ./figures/WingF.png
+INPUT ./figures/WingZplot.png
+INPUT ./figures/WingZplot.png
+INPUT ./figures/WingZplot.png
+INPUT ./figures/WingZplot.png
+INPUT ./figures/WingZplot.png
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/adobe/times/ptmb8c.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/vf/adobe/times/ptmb8c.vf
 INPUT ./Justin Denneny.tex

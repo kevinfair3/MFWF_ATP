@@ -47,7 +47,7 @@
 \contentsline {subsubsection}{Geometry and Aspect Ratio}{40}{equation.2.2}%
 \contentsline {subsubsection}{Flapping Kinematics and Operating Conditions}{41}{equation.2.6}%
 \contentsline {subsubsection}{Summary of Design-Relevant Parameters}{41}{equation.2.6}%
-\contentsline {subsection}{\numberline {2.5.3}Wing Design Specifications}{42}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.3}2025/26 Wing Design Specifications}{42}{subsection.2.5.3}%
 \contentsline {subsubsection}{Wing Components}{43}{subsection.2.5.3}%
 \contentsline {paragraph}{Control Bar:}{43}{figure.caption.34}%
 \contentsline {paragraph}{Wing Veins:}{44}{figure.caption.35}%
@@ -61,36 +61,37 @@
 \contentsline {paragraph}{Baseline Wing Remanufacturing:}{48}{figure.caption.37}%
 \contentsline {paragraph}{Control Bar Prototype:}{50}{figure.caption.40}%
 \contentsline {subsubsection}{Winter Semester: Revised Process, DOE Design, and Production}{50}{figure.caption.41}%
-\contentsline {paragraph}{Manufacturing Process Revision}{50}{figure.caption.41}%
+\contentsline {paragraph}{Manufacturing Process Revision:}{50}{figure.caption.41}%
 \contentsline {paragraph}{Step 1: Rod Connection}{50}{figure.caption.41}%
 \contentsline {paragraph}{Step 2: Membrane Cutting}{50}{figure.caption.41}%
-\contentsline {paragraph}{Step 3: Vein Attachment and Sleeve Addition}{51}{figure.caption.41}%
-\contentsline {paragraph}{Quality Control:}{51}{figure.caption.42}%
-\contentsline {subsubsection}{Production Outcomes}{52}{figure.caption.42}%
-\contentsline {subsubsection}{Manufacturing Manual}{54}{table.caption.46}%
+\contentsline {paragraph}{Step 3: Vein Attachment and Sleeve Addition}{51}{figure.caption.42}%
+\contentsline {paragraph}{Quality Control:}{52}{figure.caption.43}%
+\contentsline {subsubsection}{Production Outcomes}{52}{figure.caption.43}%
+\contentsline {subsubsection}{Manufacturing Manual}{55}{table.caption.47}%
 \contentsline {subsection}{\numberline {2.5.6}Design Verification and Results}{55}{subsection.2.5.6}%
-\contentsline {subsubsection}{Manufacturing Phase Results}{55}{subsection.2.5.6}%
-\contentsline {paragraph}{Chord Length:}{55}{subsection.2.5.6}%
-\contentsline {paragraph}{Planform Series:}{55}{subsection.2.5.6}%
-\contentsline {paragraph}{Vein Pattern:}{55}{subsection.2.5.6}%
-\contentsline {subsubsection}{Drill Spin Test}{55}{subsection.2.5.6}%
-\contentsline {subsubsection}{Mitigating Actions Taken}{58}{table.2.6}%
-\contentsline {subsection}{\numberline {2.5.7}Recommendations for Future Work}{58}{subsection.2.5.7}%
-\contentsline {paragraph}{Secure a Reliable Flapping Mechanism:}{58}{subsection.2.5.7}%
-\contentsline {paragraph}{Complete ATP Testing on the Existing Wing Set or an Expanded Set:}{59}{subsection.2.5.7}%
-\contentsline {paragraph}{Improve Manufacturing Repeatability:}{59}{subsection.2.5.7}%
-\contentsline {paragraph}{Membrane Material Exploration:}{59}{subsection.2.5.7}%
-\contentsline {paragraph}{Mylar (Biaxially Oriented PET Film):}{59}{subsection.2.5.7}%
-\contentsline {paragraph}{0.51 oz Dyneema® Composite Fabric:}{59}{subsection.2.5.7}%
-\contentsline {paragraph}{Direct 3D Printing onto Membrane:}{60}{subsection.2.5.7}%
-\contentsline {paragraph}{Define the Actuator-Wing Interface as early as possible:}{60}{subsection.2.5.7}%
-\contentsline {section}{\numberline {2.6}Dynamic Testing and Motion Tracking}{61}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Background}{61}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Dynamic Testing Setup}{61}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Marker Placement}{62}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}Motion Tracking Development}{62}{subsection.2.6.4}%
-\contentsline {subsection}{\numberline {2.6.5}Preliminary Dynamic Results}{63}{subsection.2.6.5}%
-\contentsline {subsection}{\numberline {2.6.6}Use of Previous Static Testing Data}{65}{subsection.2.6.6}%
-\contentsline {subsection}{\numberline {2.6.7}Plan for Winter Semester}{66}{subsection.2.6.7}%
-\contentsline {chapter}{\numberline {3}Conclusion and Next Steps}{67}{chapter.3}%
-\contentsline {chapter}{References}{70}{chapter*.53}%
+\contentsline {subsubsection}{Manufacturing Phase Results}{56}{subsection.2.5.6}%
+\contentsline {paragraph}{Chord Length:}{56}{subsection.2.5.6}%
+\contentsline {paragraph}{Planform Series:}{56}{subsection.2.5.6}%
+\contentsline {paragraph}{Vein Pattern:}{56}{subsection.2.5.6}%
+\contentsline {subsubsection}{Drill Spin Test}{56}{subsection.2.5.6}%
+\contentsline {paragraph}{Preliminary ATP Testing}{59}{figure.caption.49}%
+\contentsline {subsubsection}{Mitigating Actions Taken}{60}{figure.caption.50}%
+\contentsline {subsection}{\numberline {2.5.7}Recommendations for Future Work}{61}{subsection.2.5.7}%
+\contentsline {paragraph}{Secure a Reliable Flapping Mechanism:}{61}{subsection.2.5.7}%
+\contentsline {paragraph}{Complete ATP Testing on the Existing Wing Set or an Expanded Set:}{61}{subsection.2.5.7}%
+\contentsline {paragraph}{Improve Manufacturing Repeatability:}{61}{subsection.2.5.7}%
+\contentsline {paragraph}{Membrane Material Exploration:}{62}{subsection.2.5.7}%
+\contentsline {paragraph}{Mylar (Biaxially Oriented PET Film):}{62}{subsection.2.5.7}%
+\contentsline {paragraph}{0.51 oz Dyneema® Composite Fabric:}{62}{subsection.2.5.7}%
+\contentsline {paragraph}{Direct 3D Printing onto Membrane:}{62}{subsection.2.5.7}%
+\contentsline {paragraph}{Define the Actuator-Wing Interface as early as possible:}{62}{subsection.2.5.7}%
+\contentsline {section}{\numberline {2.6}Dynamic Testing and Motion Tracking}{63}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Background}{63}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Dynamic Testing Setup}{63}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Marker Placement}{64}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Motion Tracking Development}{64}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}Preliminary Dynamic Results}{65}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}Use of Previous Static Testing Data}{67}{subsection.2.6.6}%
+\contentsline {subsection}{\numberline {2.6.7}Plan for Winter Semester}{68}{subsection.2.6.7}%
+\contentsline {chapter}{\numberline {3}Conclusion and Next Steps}{69}{chapter.3}%
+\contentsline {chapter}{References}{73}{chapter*.56}%
