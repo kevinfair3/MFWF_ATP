@@ -1,6 +1,10 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Fall semester ATP test results summary}}{22}{table.caption.18}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Training, Validation, and Test Accuracies}}{32}{table.caption.28}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Deformation characteristics for insect-scale flapping wings.}}{37}{table.caption.31}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Force measurements from different ATP configurations with a 500-gram applied weight}}{35}{table.caption.32}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Lift force measurements of the right and left load cells during flapping bird test}}{38}{table.caption.34}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Training, Validation, and Test Accuracies}}{50}{table.caption.46}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Design parameter targets for FWMAV wings from literature, applied to the MFWF system.}}{60}{table.caption.51}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces Fixed Parameters Across All DOE Wing Designs}}{63}{table.2.5}%
+\contentsline {table}{\numberline {2.6}{\ignorespaces Summary of wing mass manufacturing outcomes.}}{73}{table.caption.65}%
+\contentsline {table}{\numberline {2.7}{\ignorespaces Summary of manufacturing and drill spin test results. Mass pass criterion: assembled wing pair mass $\leq 3.10$~g (1.55~g per wing). Deformation tendency based on qualitative visual observation during drill spin test in both CW and CCW directions.}}{74}{table.2.7}%
 \addvspace {10\p@ }
