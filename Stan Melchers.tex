@@ -1,22 +1,22 @@
 \subsection{Background}
 The previous year decided to create a new design of the Aerodynamics Test Platform (ATP) from scratch. They preformed various computer simulations including Finite Element Analysis (FEA) for manufactured components and testing of various designs within MSC Adams to determine which would be the most stable under the oscillations induced by the flapper. Below is an image of the final ATP design CAD model they produced.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \includegraphics[height=6.5cm]{figures/Stan Melchers Figures/Previous Year's ATP Design.jpg}
   \caption{Previous Year's ATP Design.}
   \label{fig:Previous_ATP_Design}
 \end{figure}
 
-The design consists of an outer frame made from aluminum extrusion and plastic press fit connectors. The base of the load cells are secured to the outer frame and the active end of the load cells are connected to crossbars using barrel adjusters and eighth inch steel cables. There are six load cells within the design, two in each axis of motion. The crossbars are connected to the inner frame using more barrel adjusters and eighth inch steel cables.
+The design consists of an outer frame made from aluminum square tube and plastic press fit connectors. The base of the load cells are secured to the outer frame and the active end of the load cells are connected to crossbars using barrel adjusters and eighth inch steel cables. There are six load cells within the design, two in each axis of motion. The crossbars are connected to the inner frame using more barrel adjusters and eighth inch steel cables.
 
 The previous year's team completed this design and was able to assemble the outer frame and some of the crossbars and cables. However, due to shipping timelines they were unable to assemble the entire design and begin testing.
 
 In their handover letter, the previous year's team recommended the design of the inner frame be re-evaluated to better integrate with the flapper as well as the steel wire attachment mechanism between the inner frame and crossbars.
 
-The semester began by reviewing the previous year's progress on the ATP and getting a look at the ATP in person. Below is an image of the state of the ATP at the start of the year.
+The semester began by reviewing the previous year's progress on the ATP and getting a look at the ATP in person. Figure \ref{fig:State_Of_ATP_Sep} shows an image of the state of the ATP at the start of the year.
 
-\begin{figure}[htb]
+\begin{figure}[htbp]
   \centering
   \includegraphics[height=6.5cm]{figures/Stan Melchers Figures/State of ATP Sep 2025.jpg}
   \caption{State of the ATP at the beginning of the Fall Semester.}
@@ -41,7 +41,7 @@ The goal for the fall semester was to create a functional ATP design that could 
   \label{fig: Assembled ATP Fall 2025}
 \end{figure}
 
-With assembly complete, testing could begin. Testing was a joint effort with Kevin Fair as he is responsible for the Sensor Integration and Data Acquisition for the ATP. By this point in the semester, Kevin had gotten a load cell functional with a laptop and LabVIEW to read the output voltage. We tested the load cell in both the horizontal and vertical orientations as well as various tensions for the steel cables. Our testing consisted of placing a series of decreasing masses onto the adapter plate and checking the output voltage of the load cell to determine the smallest detectable mass. During out initial tests, the smallest mass we detected was 200 grams. At a target flapper weight of 40 grams, this result was displeasing. Since this design utilizes steel cables, which work under tension, to achieve the desired rigidity these steel cables must be pre-tensioned. Our testing found that as this pre-tension force (And therefore the rigidity of the steel cables.) is increased, the resolution of our load cell decreased and vice-versa. Kevin talks in depth about this within section \ref{chap:Kevin_Fair} of this report. With the completion of this testing, that concluded our work on the ATP for the fall semester.
+With assembly complete, testing could begin. Testing was a joint effort with Kevin Fair as he is responsible for the Sensor Integration and Data Acquisition for the ATP. By this point in the semester, Kevin had gotten a load cell functional with a laptop and LabVIEW to read the output voltage. We tested the load cell in both the horizontal and vertical orientations as well as various tensions for the steel cables. Our testing consisted of placing a series of decreasing masses onto the adapter plate and checking the output voltage of the load cell to determine the smallest detectable mass. During out initial tests, the smallest mass we detected was 200 grams. At a target flapper weight of 40 grams, this result was displeasing. Since this design utilizes steel cables, which work under tension, to achieve the desired rigidity these steel cables must be pre-tensioned. Our testing found that as this pre-tension force (And therefore the rigidity of the steel cables.) is increased, the resolution of our load cell decreased and vice-versa. Kevin talks about this within section \ref{chap:Kevin_Fair} of this report. With the completion of this testing, that concluded our work on the ATP for the fall semester.
 
 \subsection{Redesigning the Coupling Mechanism}
 Starting the winter semester, the next step was to reduce the static mass of the inner frame and coupler design. With a lower static mass, the tensile forces required to support the design would be lower and therefore the resolution of the load cells would be increased. Since the inner frame was already 3D printed and therefore quite light, concentration was put on the steel cable coupling mechanism as this accounted for the major of the mass.
@@ -55,7 +55,7 @@ I began by creating a coupler design that utilized 3D printed threaded couplers 
   \label{fig:Rod Coupling Mechanism}
 \end{figure}
 
-This design was sent for manufacturing, assembled, and tested once all components had been received. The testing revealed that the 3D printed couplers were too brittle and cracked at the base while being tightened to clamp onto the carbon graphite rod. With iteration it is possible that this design could have become a functional coupling mechanism design. However, at the same time as this testing, a second coupling mechanism was being designed and the potential for this second design seemed much higher. So, the decision was made to focus on the second design instead of revising the first design.
+This design was sent for manufacturing, assembled, and tested once all components had been received. The testing revealed that the 3D printed PLA couplers were too brittle and cracked at the base while being tightened to clamp onto the carbon graphite rod. With iteration it is possible that this design could have become a functional coupling mechanism design. However, at the same time as this testing, a second coupling mechanism was being designed and the potential for this second design seemed much higher. So, the decision was made to focus on the second design instead of revising the first design.
 
 This second coupling mechanism design was a rigid beam design that utilized 3D printed square beams with heat set inserts pressed into each end. One end of the beam would connect to the load cell using a threaded stud while the other end would connect to the inner frame using a Socket Head Cap Screw (SHCS) and washer. Figure \ref{fig:Rigid Coupling Mechanism} shows a cross section of this design.
 
@@ -147,7 +147,7 @@ A second notable effort was the manufacturing of a set of calibration weights wh
 \end{figure}
 
 \subsection{Redesigning the Outer Frame}
-In the closing weeks of the semester, there was leftover funding for our capstone, so it was suggested by our lead engineers that the outer frame could be redesigned to use 25mm square aluminum extrusion instead of the existing aluminum square tube. The advantage of aluminum extrusion versus the existing design is primarily dimensional accuracy, the extrusion will produce an outer frame that is more accuracy and square than the existing frame improving the alignment of the load cells and their readings. Additionally, aluminum extrusion is very flexible in the accessories offered, this allows for future additions to the frame to be quite simple in comparison to the current design. Another recommendation made by our lead engineers was the integration of vibrational dampers to mitigate the vibrations seen in the load cells during operation. 
+In the closing weeks of the semester, there was leftover funding from the department, so it was suggested by our lead engineers that the outer frame be redesigned to use 25mm square aluminum extrusion instead of the existing aluminum square tube. The advantage of aluminum extrusion versus the existing design is primarily dimensional accuracy, the extrusion will produce an outer frame that is more accuracy and square than the existing frame improving the alignment of the load cells and their readings. Additionally, aluminum extrusion is very flexible in the accessories offered, this allows for future additions to the frame to be quite simple in comparison to the current design. Another recommendation made by our lead engineers was the integration of vibrational dampers to mitigate the vibrations seen in the load cells during operation. 
 
 With these recommendations in mind, the outer frame was redesigned accordingly. The outer frame decreased in size slightly for increased mobility during operation and storage, the individual pieces of extrusion are held together using 90$^\circ$ angle brackets with bolts and nuts that fit into the slots of the extrusion. The load cells connect to the frame in the same method as the previous design, a clearance hole and corresponding SHCS and nut. The vibrational dampers mentioned earlier connect the load cells to the inner frame using a threaded stud on the load cell side and SHCS and washer on the inner frame side, similar to the rigid bar coupling mechanism. The inner frame remains unchanged from the previous design. Figure \ref{fig:Final ATP Design} shows an isometric view of the final CAD design of the ATP as well as a cross section.
 
@@ -169,9 +169,17 @@ With these recommendations in mind, the outer frame was redesigned accordingly. 
 \label{fig:Final ATP Design}
 \end{figure}
 
-While the components were ordered in the second week of March 2026, at the time of writing this report they have yet to arrive. Leaving the task of assembling and testing this updated ATP design up to next years students.
+The components arrived at the beginning of April, so the manufacturing and assembly of the new outer frame was started quickly. The aluminum extrusions were cut to length and the necessary holes were drilled. With the pieces manufactured, the outer frame was assembled using the angle brackets and hardware. The load cells were then transferred from the old frame to the new frame using the same SHCS and washers as before. Lastly, the vibrational dampers were connected to the load cells and inner frame using SHCS's, washers, and studs as necessary. With the new outer frame complete, the ATP is now fully functional and ready for testing with the various flapping mechanisms. Figure \ref{fig:Assembled ATP April 2026} shows the final ATP assembled with the updated outer frame.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[height = 6.5cm]{figures/Stan Melchers Figures/Assembled ATP - April 2026.png}
+  \caption{Assembled ATP as of April 2026.}
+  \label{fig:Assembled ATP April 2026}
+\end{figure}
+
 \subsection{Recommendations for the Following Year}
-For the following year's team, a few areas of focus are recommended. Firstly, it is recommended that they assemble the final ATP design as seen in figure \ref{fig:Final ATP Design}. This will require manufacturing and assembling the outer frame, transferring the load cells, and inner frame from the previous ATP design to the new outer frame. All CAD data and drawings is available in the 2025/2026 microsoft teams files for reference during assembly. The aluminum extrusions ordered were in 2 foot lengths, so they must be cut to length with some needing 45$^\circ$ mitred corners. Additionally, 6 clearance holes for the M6 SHCS's that secure the load cells to the frame must be drilled in 6 of the pieces. Drawings have been prepared for each piece of extrusion that requires manufacturing. Once the extrusions have been manufactured, they can be connected to each other using the angle brackets specified. With the outer frame complete, the load cells are connected to the outer frame using M6 SHCS's and washers. From here the vibrational dampers can be connected to the load cells using M6 studs, the easiest method of manufacturing an M6 stud was found to be cutting the head off of an M6 SHCS and de-burring to achieve the desired stud length. Lastly, the inner frame can be connected to the vibrational dampers using the appropriate M6 SHCS's and washers.
+For the following year's team, a few areas of focus are recommended. Firstly, the team should familiarize themselves with the ATP and its various components and be able to operate the ATP with the various flapping mechanisms. Additionally, the team should review sections \ref{chap:Stan_Melchers} and \ref{chap:Kevin_Fair} of this report to understand the design decisions made and the testing performed on the ATP throughout the year. With this understanding, the team should be able to perform testing on the ATP with the various flapping mechanisms and analyze the data collected from these tests.
 
 A second area of focus could be the mitigation of vibrational effects on the ATP's frame. This is the purpose of the vibrational dampers in the new ATP design. It is recommended that the following year's team investigates the effectiveness of these dampers and finds other methods of reducing the vibrational effects on the load cell readings of the ATP.
 
