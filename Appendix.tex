@@ -1,5 +1,82 @@
 \chapter{Appendix}
 \sffamily
-\textbf{This is optional.} Not every report needs an appendix
-If you have additional information like code pieces, long tables, etc. that would break the flow  of the text in the report, you can put it here.
-% 
+%\textbf{This is optional.} Not every report needs an appendix
+%If you have additional information like code pieces, long tables, etc. that would break the flow  of the text in the report, you can put it here.
+\appendix
+\section{DOE Design Matrix}
+\label{app:doe_matrix}
+
+This appendix documents the full DOE design matrix for both Series~R (curved trailing edge) and Series~Z (trapezoidal planform). All vein angles are measured from the conventional negative $y$-axis pointing toward the trailing edge at the root.Pattern~U distributes the three veins with uniform angular spacing across the chord; Pattern~V concentrates vein spacing progressively toward the leading edge; Pattern~W concentrates vein spacing progressively toward the trailing edge. Each design was manufactured in 2 replicates and planned for 3 frequency test conditions per replicate. All frequency test entries are pending due to ATP mechanism unavailability this year.
+
+\subsection*{Series~R --- Curved Trailing Edge Planform}
+
+\begin{center}
+\small
+\captionof{table}{Series~R DOE Design Matrix}
+\label{tab:doe_matrix_r}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{||c|l|c|c|c|c|c|c||}
+    \hline
+    \textbf{ID} & \textbf{Wing ID} & \textbf{Pattern} & \textbf{Chord (cm)} & \textbf{Spread ($^\circ$)} & \textbf{Vein 1 ($^\circ$)} & \textbf{Vein 2 ($^\circ$)} & \textbf{Vein 3 ($^\circ$)} \\
+    \hline\hline
+    A & R-BASELINE   & NONE & 5.0 & 0  & --    & --    & --    \\
+    \hline
+    B & R-U-C4.5-S30 & U    & 4.5 & 30 & 20.00 & 40.00 & 60.00 \\
+    \hline
+    C & R-U-C5.0-S45 & U    & 5.0 & 45 & 11.25 & 22.50 & 33.75 \\
+    \hline
+    D & R-U-C5.5-S60 & U    & 5.5 & 60 & 15.00 & 30.00 & 45.00 \\
+    \hline
+    E & R-V-C4.5-S45 & V    & 4.5 & 45 &  6.75 & 15.75 & 40.50 \\
+    \hline
+    F & R-V-C5.0-S60 & V    & 5.0 & 60 &  9.00 & 21.00 & 54.00 \\
+    \hline
+    G & R-V-C5.5-S30 & V    & 5.5 & 30 &  6.75 & 15.75 & 40.50 \\
+    \hline
+    H & R-W-C4.5-S60 & W    & 4.5 & 60 &  6.00 & 30.00 & 48.00 \\
+    \hline
+    I & R-W-C5.0-S30 & W    & 5.0 & 30 & 10.00 & 25.00 & 40.00 \\
+    \hline
+    J & R-W-C5.5-S45 & W    & 5.5 & 45 &  4.50 & 22.50 & 36.00 \\
+    \hline
+\end{tabular}}
+\end{center}
+
+\vspace{1em}
+
+\subsection*{Series~Z --- Trapezoidal Planform}
+
+\begin{center}
+\small
+\captionof{table}{Series~Z DOE Design Matrix}
+\label{tab:doe_matrix_z}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{||c|l|c|c|c|c|c|c||}
+    \hline
+    \textbf{ID} & \textbf{Wing ID} & \textbf{Pattern} & \textbf{Chord (cm)} & \textbf{Spread ($^\circ$)} & \textbf{Vein 1 ($^\circ$)} & \textbf{Vein 2 ($^\circ$)} & \textbf{Vein 3 ($^\circ$)} \\
+    \hline\hline
+    K & Z-BASELINE   & NONE & 5.0 & 0  & --    & --    & --    \\
+    \hline
+    L & Z-U-C4.5-S30 & U    & 4.5 & 30 & 20.00 & 40.00 & 60.00 \\
+    \hline
+    M & Z-U-C5.0-S45 & U    & 5.0 & 45 & 11.25 & 22.50 & 33.75 \\
+    \hline
+    N & Z-U-C5.5-S60 & U    & 5.5 & 60 & 15.00 & 30.00 & 45.00 \\
+    \hline
+    O & Z-V-C4.5-S45 & V    & 4.5 & 45 &  6.75 & 15.75 & 40.50 \\
+    \hline
+    P & Z-V-C5.0-S60 & V    & 5.0 & 60 &  9.00 & 21.00 & 54.00 \\
+    \hline
+    Q & Z-V-C5.5-S30 & V    & 5.5 & 30 &  6.75 & 15.75 & 40.50 \\
+    \hline
+    R & Z-W-C4.5-S60 & W    & 4.5 & 60 &  6.00 & 30.00 & 48.00 \\
+    \hline
+    S & Z-W-C5.0-S30 & W    & 5.0 & 30 & 10.00 & 25.00 & 40.00 \\
+    \hline
+    T & Z-W-C5.5-S45 & W    & 5.5 & 45 &  4.50 & 22.50 & 36.00 \\
+    \hline
+\end{tabular}}
+\end{center}
+
+\vspace{1em}
+\noindent\textbf{Notes:} Each design was manufactured in 2 replicates. Three frequency test conditions were planned per replicate, giving 180 total runs across both series. All frequency and amplitude entries are pending ATP testing.
