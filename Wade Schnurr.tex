@@ -1,123 +1,32 @@
 % !TeX root = Wade-preview.tex
 % https://github.com/kevinfair3/MFWF_ATP/tree/wade
-\begin{itemize}
-    \item \textcolor{purple}{Introduction}
-    \begin{itemize}
-        \item \textcolor{purple}{Recommended length: 2-3 paragraphs}
-        \item \textcolor{purple}{Paragraph 1 purpose: define the neural-network subgroup objective within the ATPW project.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{build a neural-network-based aerodynamic model}
-            \item \textcolor{purple}{support interpretation and future prediction of ATP measurements}
-            \item \textcolor{purple}{connect the work to the broader MFWF project}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 2 purpose: explain the project progression from Fall to Winter.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{NACA airfoil data were used as a preliminary structured dataset}
-            \item \textcolor{purple}{Fall focused on baseline model selection}
-            \item \textcolor{purple}{Winter moved toward PR-SSM and dynamic flapping-wing modeling}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 3 purpose if needed: give minimal neural-network background for readability.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{what a layer does}
-            \item \textcolor{purple}{what an activation function does}
-            \item \textcolor{purple}{what an epoch is}
-            \item \textcolor{purple}{why these ideas matter for nonlinear aerodynamic prediction}
-        \end{itemize}
-    \end{itemize}
+
 \subsection{Introduction}
-In the Fall 2025 semester, during the initial research the first attempts began to develop a proof-of concept machine learning model using NACA airfoil data to predict four aerodynamic properties associated with each airfoil (lift coefficient, drag coefficient, pitching moment, and profile drag coefficient). NACA was used because they have made significant contributions to the aerospace field and the NACA airfoil dataset were used because they provide a large, structured, and well documented aerodynamic database, ideal for early model development.The initial Long Short-Term Memory (LSTM) model underperformed compared to the current Multi-Layer Perceptron (MLP) model for reasons such as the non-sequential nature of the airfoil data. The LSTM model to function contained features to convert the non-sequential data into sequential data to interpret it as such, which added unnecessary complexity to the model.The LSTM model was initially chosen for the non-sequential data opposed to a physics based NN which can enforce aerodynamic laws as an early exploratory model because LSTMs are known for their ability to predict nonlinear relationships.The MLP neural network currently produces relatively high levels of accuracy when trained on the many datapoints contained in the NACA airfoil dataset. 
+In the Fall 2025 semester, during the initial research, the first attempts began to develop a proof-of-concept machine learning model using NACA airfoil data to predict four aerodynamic properties associated with each airfoil: coefficient of lift, coefficient of drag, pitching moment coefficient, and profile drag coefficient. The NACA airfoil dataset was used because they provide a large, structured, and well-documented aerodynamic database that was useful for early model development. The initial Long Short-Term Memory (LSTM) model underperformed compared to the current Multi-Layer Perceptron (MLP) model for reasons such as the non-sequential nature of the airfoil data. For the LSTM model to function, features were added to convert the non-sequential data into sequential data, which added unnecessary complexity to the model. The LSTM model was initially chosen as an exploratory model because LSTMs are known for their ability to predict nonlinear relationships. The current MLP neural network produces relatively high levels of accuracy when trained on the many data points contained in the NACA airfoil dataset.
 
-In the Winter 2026 semester, the the first objective was to finalize the conceptual validation of the MLP neural network using NACA airfoil data and to display the data in an intuitive way. The second objective was to make the transition to alter the current and/or develop a new non-linear black box aerodynamic model to use dimensions and measurements from the flyer (wings, actuation mechanism, …), Aerodynamic Test Platform(ATP), and Rotational Rates Test Stand (RRTS) to predict the non-linear three-dimensional aerodynamic forces (X, Y, and Z) and moments (Pitch, Roll, and Yaw) produced by the flyer flapper. The objective was to validate and compare the predicted forces and moments with the experimental data obtained from the ATP and RRTS. However, because the RRTS and ATP were still in development and not producing meaningful experimental results at the transition point between semesters, the focus shifted to replicate a paper that used machine learning  to predict dynamic aerodynamic forces and moments, as in first semester the MLP network used static NACA airfoil data to predict static forces, with the hope that they could be modified to accept future experimental data. The paper that was selected uses a PR-SSM to predict three dimensional non-linear wing forces and moments from and experimental dataset that also involves various wing trajectories.
+In the Winter 2026 semester, the first objective was to finalize the conceptual validation of the MLP neural network using NACA airfoil data and to display the data in an intuitive way. The second objective was to alter the current model and/or develop a new nonlinear black-box aerodynamic model that could use dimensions and measurements from the ATP (force and wing tracking) and RRTS (moments) to predict the nonlinear three-dimensional aerodynamic forces and moments produced by the MFWF. The objective was to validate and compare the predicted forces and moments with the experimental data obtained from the ATP and RRTS. However, because the ATP and RRTS were still in development and were not producing meaningful experimental results at this transition point, the focus shifted to replicating a paper that used machine learning to predict dynamic aerodynamic forces and moments. The idea was that the replicated model could later be modified to accept future experimental data. The paper that was selected used a Probabilistic Recurrent-State Space Model(PR-SSM) to predict three-dimensional nonlinear wing forces and moments from an experimental dataset that also involved various wing trajectories.
 
-A brief overview of neural-network terminology is useful for understanding the work presented in the following sections. In a simple feed forward neural network with back propagation the input information flows through a series of layers and hidden layers. The input data is received by an input layer, which then passes through the hidden layers where the network learns patterns and non-linear relationships, which then pass the information to the output layer which produces the prediction. A layer is made up of multiple neurons that apply learned weights and biases to the input then passes the result through an activation function which is normally the same for all neurons in a given layer. Weights are a numerical value used to scale how strongly the input affects the output to the next layer. While biasses are a numerical value used to independently shift how strongly the input affects the output to the next layer. Activation functions are a mathematical function applied after the layers linear transformation allowing the network to model nonlinear relationships between inputs and output. During the training, the model is updated through a process called back propagation, a procedure use to update the network parameters based on the measured error after each prediction is made. An epoch is one complete pass of the training dataset thought network. These are just some of the relevant concepts of a neural network. The aerodynamic quantities being predicted depend on non-linear interactions between many variables such as geometry, operational setting, and fluid dynamic properties making neural networks an acceptable category of models for exploring aerodynamic predictions.
+A brief overview of neural-network terminology is useful for understanding the work presented in the following sections. In a simple feedforward neural network with backpropagation (as seen in Figure~\ref{fig:FFNN with BP}) the input information flows through a series of input, hidden, and output layers. The input data are received by an input layer, then passed through the hidden layers where the network learns patterns and nonlinear relationships, and then passed to the output layer where the prediction is produced. A layer is made up of multiple neurons that apply learned weights and biases to the input and then pass the result through an activation function, which is normally the same for all neurons in a given layer. Weights are numerical values used to scale how strongly the input affects the output to the next layer, while biases are numerical values used to independently shift the result. Activation functions are mathematical functions applied after the layer's linear transformation, allowing the network to model nonlinear relationships between inputs and outputs. During training, the model is updated through a process called backpropagation, which is used to update the network parameters based on the measured error after each prediction is made. An epoch is one complete pass of the training dataset through the network. These are some of the relevant concepts of a neural network. The aerodynamic quantities being predicted depend on nonlinear interactions between many variables such as geometry, operation conditions, and fluid-dynamic properties making neural networks an acceptable category of models for exploring aerodynamic predictions.
 
- \subsection{MLP Neural Network - Methodology}
-     \item \textcolor{purple}{MLP Neural Network - Methodology}
-    \begin{itemize}
-        \item \textcolor{purple}{Recommended length: 4 paragraphs}
-        \item \textcolor{purple}{Paragraph 1 purpose: explain the role of the Fall MLP study.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{proof-of-concept study}
-\newline The initial machine learning goal in the Fall of 2025 was to establish a proof-of-concept. The objective of this proof was to support the idea that a black box aerodynamic model could be applied to accurately predict the three, three dimensional aerodynamics forces generated by the flapper.
-            \item \textcolor{purple}{why NACA data were chosen}
-\newline NACA and the NACA airfoil dataset were chosen to use for the initial proof of concept because of their large, easily accessible, well documented dataset of standard static aerodynamic quantities.
-            \item \textcolor{purple}{why this was a useful intermediate step before ATP-ready dynamic data}
-\newline The development of MLP model as an intermediated step before data from or similar to the ATP's dynamic data was useful because it allowed for development and understanding. A simpler starting point with a well defined dataset enabled a deeper understanding, at a basic level, of what is happening within the machine learning processes and how it arrives at the predicted results from its inputs. The data used, the static airfoils, relation to the predicted values were simpler, however shared some overlap with the anticipated experimental data to be used in the future.
-        \end{itemize}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=6.5cm]{figures/Wade Schnurr Images/FFNN with Back Propogation.png}
+    \caption{Feedforward neural network with backpropagation \cite{GeeksforGeeksFFNNImage2024}.}
+    \label{fig:FFNN with BP}
+\end{figure}
 
-        \item \textcolor{purple}{Paragraph 2 purpose: define the Fall dataset, inputs, and outputs.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{data source}
-\newline As previously stated the dataset used was from the NACA airfoil dataset from NACA, accessed through Airfoil Tools \cite{airfoiltools}. All airfoil information that was exported was summarized into an Microsoft Excel file. The dataset included NACA airfoil identification (ID), angle of attack, coefficient of lift ($C_L$), coefficient of drag ($C_D$), profile drag coefficient($C_{DP}$), pitching moment ($C_M$), transition point on upper surface ($Top_{Xtr}$), transition point on lower surface ($Bot_{Xtr}$), and the Reynolds Number (Re). For initial testing development a smaller sample of the airfoils were collected to form dataset which was eventually expanded upon later for more intensive testing of the model. The final dataset that was used for training consisted of NACA 4-digit, 5-digit, 6-series, modified 6-series / 6A-series, H-series, and a few modified NACA variants, totaling 124 airfoils. \textcolor{red}{One of the limitations of the final dataset used for training the MLP model is that the dataset it was trained on could have be larger, if all of the airfoil information available on the Airfoil Tools, only 124 of 1638 (included non-NACA) airfoils were included in the dataset.\cite{airfoiltools}}
+\subsection{MLP Neural Network - Methodology}
+The initial machine-learning goal in Fall 2025 was to establish a proof of concept. The objective of this proof was to support the idea that a black-box aerodynamic model could be applied to predict aerodynamic forces from a simpler but still useful dataset. NACA airfoil data were chosen for the initial proof of concept because of the large, easily accessible, and well-documented dataset of standard steady aerodynamic quantities. Developing the MLP model as an intermediate step before data from, or similar to, the ATP dynamic data was useful because it allowed for development and understanding of machine learning processes. Starting with a simpler and well-defined dataset made it easier to understand, at a basic level, how the machine-learning process worked and how the model arrived at the predicted results from its inputs.
 
-            \item \textcolor{purple}{Reynolds-number coverage}
-\newline The dataset was compiled for aerodynamic polar data over a range of Reynolds numbers ranging from 50,000 to 5,000,000. The range of Reynolds number was useful as it exposed the model to a wid set of aerodynamic operating conditions.
+As previously stated, the dataset used came from Airfoil Tools \cite{airfoiltools}. All of the airfoil information that was exported was summarized into a Microsoft Excel file. The dataset included NACA airfoil identification (ID), angle of attack ($\alpha$), lift coefficient ($C_L$), drag coefficient ($C_D$), profile drag coefficient ($C_{DP}$), pitching moment coefficient ($C_M$), transition point on the upper surface ($Top_{Xtr}$), transition point on the lower surface ($Bot_{Xtr}$), and Reynolds number ($Re$). For the initial testing and development, a smaller sample of the airfoils was collected to form a dataset, which was later expanded for more intensive testing of the model. The final dataset used for training consisted of NACA 4-digit, 5-digit, 6-series, modified 6-series / 6A-series, H-series, and a few modified NACA variants, totaling 124 airfoils. One limitation of the final dataset used for training the MLP model was this size as it could have been larger. Of the 1638 airfoils available on Airfoil Tools, including non-NACA airfoils, only 124 were included in the final dataset \cite{airfoiltools}. The dataset covered Reynolds numbers on intervals ranging from 50{,}000 to 5{,}000{,}000, which exposed the model to a wide set of aerodynamic operating conditions. The selected inputs were airfoil ID, angle of attack, upper transition location, lower transition location, and Reynolds number, while the outputs were coefficient of lift, coefficient of drag, pitching-moment coefficient, and profile-drag coefficients. Before training could occur, the downloaded airfoil data needed to be preprocessed so that they could be interpreted by the machine-learning model. For each airfoil and angle of attack, the same airfoil ID and Reynolds number had to be applied to retain the relationship to geometry and operating condition.
 
-The selected inputs were the NACA airfoil ID, angle of attack, upper and lower transition locations, and Reynolds number, while the model outputs were the lift, drag, pitching-moment, and profile-drag coefficients. Together, these variables defined a structured supervised-learning problem suitable for evaluating whether a neural network could learn meaningful aerodynamic relationships from steady airfoil data.
+The first type of model that was explored and tested was an LSTM architecture. The LSTM was considered because of in-class discussion and, in particular, its ability to predict complex nonlinear relationships. However, after the NACA airfoil dataset was examined further, it appeared that each sample could be referenced on its own and that the ordering of the rows did not represent a meaningful sequence or time history. LSTM models are designed to use sequential data, and therefore applying an LSTM to this dataset required an artificial interpretation of the data, which added unnecessary complexity. The next model that was applied was an MLP, since it uses independent tabular samples. The MLP uses a feedforward architecture in which the selected inputs can be taken directly from the dataset without the use of an additional memory structure like the LSTM required. Therefore, for the proof-of-concept study, the MLP model was eventually selected because it better matched the type and structure of the dataset.
 
-            \item \textcolor{purple}{selected inputs}
-\newline From the dataset, the variables that were used as inputs consisted of the NACA airfoil ID, angle of attack, upper transition point, and lower transition point. 
+The final version of the MLP architecture was a feedforward neural network with three hidden layers. The hidden layers used 128, 128, and 64 neurons respectively, which then led to the output layer containing four neurons, each corresponding to one predicted aerodynamic coefficient. The total input space used four numerical features, Reynolds number, angle of attack, upper transition location, and lower transition location, in addition to the one-hot encoding used to represent the airfoil ID. The activation function used in the hidden layers was the Rectified Linear Unit (ReLU), while the output layer used a linear activation function to directly predict continuous aerodynamic coefficients. Before training, scaling was applied to the numeric input features and the target coefficient values using a MinMaxScaler transformation to scale the values to the zero-to-one range. The dataset was split into training (70\%), validation (15\%), and test (15\%) subsets using a reproducible random split with a fixed random seed. Training was performed for a maximum of 300 epochs with a batch size of 64. Validation performance was continuously monitored, early stopping was implemented with a patience of 20 epochs and restoration of the best weights, and a ReduceLROnPlateau callback was used to lower the learning rate after 8 epochs without validation-loss improvement. The loss function used was a weighted mean-squared error, with increased weights assigned to $C_D$ and $C_{DP}$ because they were, on average, predicted less accurately than the other outputs.
 
-            \item \textcolor{purple}{predicted coefficients}
-\newline The model took in the input variable and used them to predict values, output, which consisted of the values for the following variables coefficient of lift, coefficient of drag, profile drag coefficient, and pitching moment. 
+\subsection{MLP Neural Network - Results}
+One of the main ways the performance of the MLP model was evaluated was through the use of predicted versus true plots, or parity plots, for each output coefficient \cite{WadeProgressPresentation3_2025,WadeProgressPresentation4_2025}. The plots use the true coefficient values on the horizontal axis and the model predictions on the vertical axis. A point that lies on the 1:1 line represents a perfect prediction. The parity plots were useful in rapid analysis of the model and in presentations because they gave a quick visual indication of prediction quality, spread, and any departure from the ideal predictions. In addition, training-history curves, or loss curves, were used to assess the stability and efficiency of MLP learning. The training and validation loss curves were examined to determine whether the model converged smoothly, whether the validation performance closely followed the training performance, and whether there was evidence of overfitting or unstable optimization.
 
-            \item \textcolor{purple}{any preprocessing or encoding}
-\newline Before training could occur, the downloaded airfoil data needed to be preprocessed in order for it to be in a format that could be interpreted by the machine learning model. For each airfoil for every angle of attack the same airfoil ID and Reynolds Number had to be applied to retain the relation to its geometry and operating condition. The model was then able to read through the columns corresponding to the input variables and compare / verify its predictions against the values in the corresponding output variables columns.
-
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 3 purpose: explain model selection.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{LSTM was explored}
-\newline The first type of model that was explored and tested was a LSTM architecture. The LSTM was considered due to in class discussion, in particular its ability to predict complex nonlinear relationships.
-
-            \item \textcolor{purple}{dataset was non-sequential}
-\newline However, after the NACA airfoil dataset was further examined, it appeared that each sample could be referenced on its own, and that the ordering of the rows of data did not represent a meaningful sequence, time history or other. LSTM models are designed to use sequential data, and therefore when the dataset was applied, an artificial interpretation of the dataset was applied, resulting in unnecessary added complexity.
-
-            \item \textcolor{purple}{MLP was more appropriate for tabular independent samples}
-\newline The next model that was applied was a MLP as it uses independent, tabular samples. The MLP model uses a feedforward architecture, in which the selected inputs could be directly taken from the dataset without the use of an additional memory structure like the LSTM required. The direct data input made the MLP a better match to learn the nonlinear relationship between the airfoil parameters and the aerodynamic coefficients. 
-
-            \item \textcolor{purple}{MLP became the baseline model}
-\newline
-Therefore for the proof-of-concept study the MLP model was selected for its relation to the type of data and the structure of the dataset, in an attempt to limit unnecessary complexity.
-
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 4 purpose: summarize the final MLP setup.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{architecture}
- \newline The latest version of the MLP architecture was a feedforward neural network with three hidden layers. The hidden layers used 128, 128, and 64 neurons respectively which then led to the output layer containing 4 neurons, each corresponding the predicted aerodynamic coefficients. The total input space used four numerical features, Reynolds number, angle of attack, upper transition location, and lower transition location, in addition to the one-hot encoder used to represent the airfoil ID. 
- 
-            \item \textcolor{purple}{activation functions}
- \newline The activation function that was used within the hidden layers was the Rectified Linear Unit (ReLU), as nonlinear expressiveness was required to learn the aerodynamic relationships. The output layer used a linear activation function to directly predict continuous aerodynamic coefficients. The network was trained using the Adam optimizer with a learning rate of $1\times10^{-3}$.
-
-            \item \textcolor{purple}{scaling or normalization}
- \newline Before training, scaling was applied to the numeric input features and the target coefficient values. The MinMaxScaler transformation was use to scale the values to the zero to one range. Scaling was applied to increase the numeric stability during optimization. The goal was to prevent numbers with larger magnitudes from disproportionately influencing the learning process. Also, the categorical airfoil ID was converted into a one-hot encoded, therefore allowing it to be incorporated into the feedforward input vector.
-
-            \item \textcolor{purple}{train/validation/test split}
- \newline The dataset was split into three subsets: training (70\% of the data), validation (15\% of the data), and test (15\% of the data) using a reproducible random split with a fixed random seed. These proportions of the split allowed the model to be trained on the majority of the data available while still setting aside sufficient data for hyperparameter monitoring and the final performance evaluation.
-
-            \item \textcolor{purple}{stopping or regularization choices}
- \newline The training was performed for a maximum of 300 epoch with a batch size of 64. Validation performance was continuously monitored and early stopping was implemented with a patience of 20 epochs with a restoration of the best weight. ReduceLROnPlateau callback was used to lower the learning rate after 8 epochs without validation-loss improvements by a factor of 0.5 down to a minimum learning rate of $1\times10^{-5}$. The loss function used was a weighted mean-squared error (MSE), with increased weights assigned to $C_D$ and $C_{DP}$ to increase their importance during training as they were, on average, being predicted with less accuracy than the other outputs. 
-        \end{itemize}
-    \end{itemize}
-
- \subsection{MLP Neural Network - Results}
-    \item \textcolor{purple}{MLP Neural Network - Results}
-    \begin{itemize}
-        \item \textcolor{purple}{Recommended length: 4 paragraphs}
-        \item \textcolor{purple}{Paragraph 1 purpose: explain how the Fall MLP was evaluated.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{predicted-versus-true plots}
- \newline One of the main ways the the performance of the model was evaluated was through the use of predicted-versus-true plots (parity plots), as seen in Figure~\ref{fig:mlp_pred_vs_true_results_block}
- for each output coefficient. The plots consist of the true/actual coefficient values on the horizontal axis and the model predictions placed on the vertical axis. A point that lines on the 1:1 line would be representative of the model making making a perfect prediction. The parity plots were often used in rapid analysis of the model and used in presentations as they provided a quick visual indication of the prediction quality, spread, and any departure trends from the ideal predictions \cite{WadeProgressPresentation3_2025,WadeProgressPresentation4_2025}.
- 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 11 cm]{figures/Wade Schnurr Images/MLP Predicted vs True (Test Set).png}
@@ -125,18 +34,14 @@ Therefore for the proof-of-concept study the MLP model was selected for its rela
     \label{fig:mlp_pred_vs_true_results_block}
 \end{figure}
 
-            \item \textcolor{purple}{loss curves}
- \newline In addition, training-history curves (loss curves), as shown in Figure~\ref{fig:mlp_training_loss_results_block}, were used to assess the stability and efficiency of MLP learning. The training and validation loss curves were examined to determine whether the model converged smoothly, whether the validation performance closely followed the training performance, and whether there was evidence of overfitting or unstable optimization. The parity plots and the loss curves complemented one another by showing both the final predictive quality and the learning behavior through which that performance was achieved during training.
-
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 11 cm]{figures/Wade Schnurr Images/MLP_Training_History_Large_NACA.png}
     \caption{MLP training-history curve for the complete NACA dataset.}
     \label{fig:mlp_training_loss_results_block}
 \end{figure}
- 
-            \item \textcolor{purple}{available metrics such as MSE or R\textsuperscript{2}}
- \newline Quantitative performance metrics were used to summarize the accuracy of the model, including mean absolute error (MAE), root mean squared error (RMSE), and the coefficient of determination ($R^2$) for each predicted aerodynamic coefficient. The coefficient-level and overall metrics are summarized in Table~\ref{tab:mlp_results_metrics}. These values indicate that the model captured a dominant variation for all four outputs to a high degree of accuracy while maintaining low average prediction error. The reported values were taken from the saved test-set evaluation metrics generated by the MLP training script \cite{MLPMetricsJSON_2026}.
+
+Quantitative performance metrics were used to summarize the accuracy of the model, including mean absolute error (MAE), root mean squared error (RMSE), and coefficient of determination ($R^2$) for each predicted aerodynamic coefficient. The individual coefficient and overall prediction metrics are summarized in Table~\ref{tab:mlp_results_metrics}. The reported values were taken from the saved test-set evaluation metrics generated by the MLP training script \cite{MLPMetricsJSON_2026}. The parity plots in Figure~\ref{fig:mlp_pred_vs_true_results_block} show that the MLP predictions clustered relatively closely to the 1:1 line for each of the four output coefficients. The close clustering indicates a strong relationship between the predicted and true values across the test set. The $C_L$ and $C_M$ plots showed the tightest clustering, while the drag-related quantities presented slightly larger scatter. Table~\ref{tab:mlp_results_metrics} confirms the visual interpretation of the plots and graphs. Out of the four output coefficients, the highest prediction accuracy was observed for $C_L$, while the drag related and pitching moment predictions displayed slightly lower levels of agreement. The higher accuracy for $C_L$ likely reflects that lift was easier for the model to learn from the available input variables, especially angle of attack and airfoil identity.
 
 \begin{table}[htbp]
     \centering
@@ -150,13 +55,14 @@ Therefore for the proof-of-concept study the MLP model was selected for its rela
         $C_D$    & 0.001 & 0.003 & 0.988 \\
         $C_{DP}$ & 0.001 & 0.003 & 0.988 \\
         $C_M$    & 0.002 & 0.004 & 0.990 \\
-        Overall  & 0.007 & 0.011 & 0.998 \\
+        Overall  & 0.007 & 0.011 & 0.991 \\
         \hline
     \end{tabular}
 \end{table}
- 
-            \item \textcolor{purple}{comparison against the LSTM where useful}
- \newline The MLP results were compared against the earlier LSTM trials to support the selection of the updated model. The comparison summarized in Table~\ref{tab:mlp_lstm_comparison} shows that the LSTM configuration without airfoil ID produced the weakest predictive accuracy, while including airfoil identity in the dataset increased the averaged overall $R^2$ by about 31.4\%. The change from the LSTM with airfoil ID to the MLP was much smaller, with the averaged overall $R^2$ increasing by about 1.2\%. Even with the smaller numerical gain, the MLP achieved the strongest averaged predictive performance while also using a simpler architecture that more naturally matched to the non-sequential dataset \cite{WadeProgressPresentation3_2025,WadeProgressPresentation4_2025,MLPMetricsJSON_2026}. Table~\ref{tab:mlp_lstm_comparison} also shows that $C_L$ was the most accurately predicted output across all three model cases. The higher accuracy for $C_L$ likely reflects that lift was easier for the models to learn from the available input variables, potentially the angle of attack and airfoil identity.
+
+The training-history curves shown in Figure~\ref{fig:mlp_training_loss_results_block} show that the MLP learned efficiently through the steep initial reduction in the loss curves followed by gradual convergence to a low final error. This behavior suggests that the selected architecture had enough capacity to learn the main patterns in the dataset without requiring an excessively deep or complex network. The choice of optimizer, scaling strategy, and learning rate is also supported by the smooth convergence of the loss curves. Only a limited gap is present between the training and validation curves, which suggests that severe overfitting was not present. The loss curves also did not plateau prematurely and converged at lower levels, which suggests that underfitting was not present. A more detailed residual analysis across the input variables was not completed, which means that any concentration of error with respect to specific airfoil characteristics or operating conditions could not yet be identified with a high degree of confidence.
+
+The MLP results were compared against the earlier LSTM trials to support the selection of the updated model. The comparison summarized in Table~\ref{tab:mlp_lstm_comparison} shows that the LSTM configuration without airfoil ID produced the weakest predictive accuracy, while including airfoil identity in the dataset increased the averaged overall $R^2$ by about 31.4\%. The change from the LSTM with airfoil ID to the MLP was much smaller, with the averaged overall $R^2$ increasing by about 1.2\%. Even with the smaller numerical gain, the MLP achieved the strongest averaged predictive performance while also using a simpler architecture that more naturally matched the non-sequential dataset \cite{WadeProgressPresentation3_2025,WadeProgressPresentation4_2025,MLPMetricsJSON_2026}. The results obtained in the Fall semester established a technical baseline for later aerodynamic modeling work with the subgroup. At the same time, the Fall work clarified the limits of what could be learned from static NACA airfoil data alone. Although the MLP model performed well on the steady airfoil dataset, strong performance on static airfoil data did not resolve the final ATP prediction objective because the dataset did not capture the unsteady, three-dimensional aerodynamic behavior of the MFWF system. The current MLP model should therefore be interpreted as a useful proof-of-concept surrogate model rather than a direct solution to the final ATP prediction problem. An additional outcome of the MLP work was the development of a Streamlit-based interface that displayed aerodynamic coefficient predictions in an interactive format and improved the interpretability of the results across the input space.
 
 \begin{table}[htbp]
     \centering
@@ -175,169 +81,104 @@ Therefore for the proof-of-concept study the MLP model was selected for its rela
         \hline
     \end{tabular}
 \end{table}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 2 purpose: interpret predictive performance.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{closeness to the 1:1 line}
- \newline The parity plots shown in Figure~\ref{fig:mlp_pred_vs_true_results_block} showed that the MLP predictions clustered relatively closely to the 1:1 line for each of the four output coefficients. The close clustering indicates a strong relationship between the predicted and true values across the test set. The $C_L$ and $C_M$ graphs shown the tightest clustering, while the points on the drag related quantities present a slightly larger scatter. Even with the slight variations between plots the overall alignment presented was relatively strong which suggest that the model had learned a dominant non-linear relationship in the steady-airfoil dataset. 
 
-            \item \textcolor{purple}{what the metrics suggest}
- \newline The MLP metrics summarized in Table~\ref{tab:mlp_results_metrics} confirm the visual interpretation of the plots and graphs. The overall MAE was about 0.007, the overall RMSE was about 0.011, adn the overall $R^2$ was about 0.998 which is consistent with a high accuracy regression model. The numerical results suggest the same result as the graphical results, that the MLP model was able to reproduce the aerodynamic coefficient trends present in the NACA airfoil dataset with a relatively small average error within the operating conditions present in the training data. 
- 
-            \item \textcolor{purple}{which outputs were predicted better or worse}
- \newline 
- 
- 
- Among the four outputs, the strongest predictive performance was observed for the lift coefficient, while the drag-related quantities and pitching moment showed slightly lower, though still high, levels of agreement. This pattern is consistent with the reported per-target metrics in Table~\ref{tab:mlp_results_metrics}, where $C_L$ achieved the highest $R^2$, while $C_D$ and $C_{DP}$ remained slightly more difficult to predict. Although these differences were not large enough to undermine the usefulness of the model, they suggest that some aerodynamic outputs were more sensitive to data quality, model capacity, or operating-condition coverage than others.
-        \end{itemize}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 15 cm]{figures/Wade Schnurr Images/streamlit_mlp_interface.png}
+    \caption{Streamlit-based interface developed to visualize MLP-predicted aerodynamic coefficients and explore how the outputs change across the input space.}
+    \label{fig:mlp_streamlit_interface}
+\end{figure}
 
-        \item \textcolor{purple}{Paragraph 3 purpose: interpret training behavior and failure patterns.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{loss-curve behavior}
- \newline The training-history curves shown in Figure~\ref{fig:mlp_training_loss_results_block} indicated that the MLP learned efficiently, with a steep initial reduction in loss followed by gradual convergence toward a low final error. This behavior suggests that the selected architecture had sufficient capacity to learn the main patterns in the dataset without requiring an excessively deep or difficult-to-train network. The smooth convergence also supports the choice of optimizer, scaling strategy, and learning-rate schedule used during training.
-            \item \textcolor{purple}{overfitting or underfitting if visible}
- \newline Only a limited gap was observed between the training and validation loss curves in Figure~\ref{fig:mlp_training_loss_results_block}, which suggests that severe overfitting was not present in the final model. At the same time, the loss values converged to low levels rather than plateauing prematurely, so there was no strong evidence of obvious underfitting. The combined behavior of the loss curves therefore indicates that the model reached a reasonable balance between learning capacity and generalization on the randomly partitioned dataset.
-            \item \textcolor{purple}{any error concentration in certain regimes}
- \newline Based on the currently available Fall figures, the largest remaining errors appear to be associated more with the drag-related outputs than with lift. However, the Fall analysis did not yet include a full residual breakdown by Reynolds number, angle of attack, or airfoil family, so any claim about specific error concentration by operating regime should be stated cautiously. This absence of deeper residual analysis is itself an important limitation, because it means the model could still contain structured weaknesses that are not visible from global metrics alone.
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 4 purpose: explain why the Fall results mattered.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{Fall MLP established a useful baseline}
- \newline The Fall MLP results established a technically defensible baseline for later aerodynamic modeling work within the neural-network subgroup. The model demonstrated that a relatively simple feedforward architecture could learn meaningful aerodynamic structure from a large, steady-airfoil dataset and could reproduce four important aerodynamic coefficients with high overall accuracy. This outcome validated the basic preprocessing, training, and evaluation workflow that would later support more advanced modeling efforts.
-            \item \textcolor{purple}{it showed limits of steady-airfoil learning}
- \newline At the same time, the Fall study also clarified the limits of what could be learned from static NACA airfoil data alone. Although the MLP performed well on the available steady-airfoil dataset, the final engineering objective involved dynamic flapping-wing forces and moments measured from ATP-related systems rather than static two-dimensional airfoil coefficients. As a result, the Fall model should be interpreted as a useful surrogate-modeling proof of concept rather than as a direct solution to the final ATP prediction problem.
-            \item \textcolor{purple}{it motivated the move toward Winter PR-SSM and more ATP-relevant data}
- \newline These findings motivated the Winter shift toward PR-SSM-based dynamic modeling and a stronger emphasis on datasets that are more physically representative of the flapping-wing problem. In that sense, the main value of the Fall MLP was not only its accuracy on the NACA dataset, but also the fact that it clarified which parts of the workflow were already sound and which parts still required more physically relevant data and modeling structure. Useful visuals to retain in the final report are the predicted-versus-true coefficient grid in Figure~\ref{fig:mlp_pred_vs_true_results_block}, the training-loss curve in Figure~\ref{fig:mlp_training_loss_results_block}, and the coefficient-level metrics summary in Table~\ref{tab:mlp_results_metrics}.
-        \end{itemize}
-    \end{itemize}
+\subsection{PR-SSM Paper Replication - Methodology}
+The paper ``State-space aerodynamic model reveals high force control authority and predictability in flapping flight'' \cite{PRSSMFlapping2021} was selected as the paper to replicate because it was closer to the ATP objective than the NACA airfoil study. The Probabilistic Recurrent State-Space Model (PR-SSM) and dataset used in the paper shared many similarities to the types of data the MFWF test stands were anticipated to produce. The Fall MLP addressed steady tabular airfoil data, whereas the MFWF requires dynamic prediction of flapping-wing forces and moments. The PR-SSM study also treated the aerodynamic prediction as a sequence-modeling problem, which more closely aligned with flapping-wing motion than a static regression model. The paper therefore provided a stronger connection to the MFWF application because it predicted three-dimensional force and moment coefficients varying with time rather than steady two-dimensional coefficients.
 
- \subsection{PR-SSM Paper Replication - Methodology}
-     \item \textcolor{purple}{PR-SSM Paper Replication - Methodology}
-    \begin{itemize}
-        \item \textcolor{purple}{Recommended length: 4-5 paragraphs}
-        \item \textcolor{purple}{Paragraph 1 purpose: explain why the PR-SSM paper was chosen.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{more physically relevant than the Fall NACA study}
-            \item \textcolor{purple}{dynamic aerodynamic prediction}
-            \item \textcolor{purple}{stronger connection to flapping-wing behavior}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 2 purpose: define the Winter prediction problem and dataset.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{what is being predicted}
-            \item \textcolor{purple}{what the inputs are}
-            \item \textcolor{purple}{what local data were available}
-            \item \textcolor{purple}{how the dataset differs from the paper if relevant}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 3 purpose: summarize the model and training setup.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{architecture}
-            \item \textcolor{purple}{activation functions}
-            \item \textcolor{purple}{scaling}
-            \item \textcolor{purple}{losses}
-            \item \textcolor{purple}{stopping logic}
-            \item \textcolor{purple}{split strategy}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 4 purpose: explain deviations from the paper.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{what was replicated directly}
-            \item \textcolor{purple}{what had to be adapted}
-            \item \textcolor{purple}{why those changes were necessary}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 5 purpose if needed: connect the Winter methodology to ATP relevance.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{why this framework is closer to the final engineering problem than the Fall baseline}
-        \end{itemize}
-    \end{itemize}
+The PR-SSM study predicted three-dimensional time-varying aerodynamic forces and moments from flapping-wing trajectory data. In the outputs, the targets were reported as $CF_x$ (x-direction force coefficient), $CF_y$ (y-direction force coefficient), $CM_x$ (x-axis moment coefficient), $CM_y$ (y-axis moment coefficient), and $CM_z$ (z-axis moment coefficient). The force and moment coefficients are dimensionless, normalized forms of aerodynamic forces and moments. They are predicted instead of dimensional values because they provide a more general representation of the aerodynamic behavior and make comparison across different operating conditions and configurations easier. The flapping-wing trajectory dataset supplied with the PR-SSM repository \cite{BayizPRSSMRepo} included both the model inputs and the corresponding measured output quantities used for training and evaluation. The inputs were organized as sequences and represented wing-motion history and state information. The local copy of the repository also contained the MATLAB input files as well as output folders containing training logs, saved configurations, checkpoints, loss histories, and postprocessed metrics. An example of a representative strong training configuration, was iteration 35. Interation 35 used a latent-state dimension of 12, one recognition layer, 100 inducing points, 30 samples, and seed 123 (fixed randomized seed initialization between iterations). The main limitation of the current dataset is that it still came from the replicated PR-SSM study rather than from synchronized ATP and RRTS measurements.
 
- \subsection{PR-SSM Paper Replication - Results}
-     \item \textcolor{purple}{PR-SSM Paper Replication - Results}
-    \begin{itemize}
-        \item \textcolor{purple}{Recommended length: 5 paragraphs}
-        \item \textcolor{purple}{Paragraph 1 purpose: define what counts as success in the Winter study.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{evaluation figures}
-            \item \textcolor{purple}{prediction-versus-true plots}
-            \item \textcolor{purple}{overlays}
-            \item \textcolor{purple}{metrics}
-            \item \textcolor{purple}{what a successful replication or adaptation would mean}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 2 purpose: interpret overall predictive quality.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{R\textsuperscript{2}}
-            \item \textcolor{purple}{MSE}
-            \item \textcolor{purple}{alignment with true data}
-            \item \textcolor{purple}{comparison to expected performance from the paper if possible}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 3 purpose: discuss dynamic tracking behavior.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{time-series overlays}
-            \item \textcolor{purple}{phase matching}
-            \item \textcolor{purple}{amplitude tracking}
-            \item \textcolor{purple}{cycle-level agreement if relevant}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 4 purpose: identify weak spots and limitations.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{patterns in poor predictions}
-            \item \textcolor{purple}{limited data}
-            \item \textcolor{purple}{split leakage risk}
-            \item \textcolor{purple}{effects of deviations from the paper}
-            \item \textcolor{purple}{uncertainty about generalization}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 5 purpose: assess ATP relevance.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{whether the approach appears viable for ATP data}
-            \item \textcolor{purple}{what information is still missing}
-            \item \textcolor{purple}{what remains to be validated}
-        \end{itemize}
-    \end{itemize}
+The replicated PR-SSM used the same core state-space structure as the original codebase. The representative strong training configuration used nine filters, kernel size six, pool size five, and stride one. The activation function choice was important because the model had to capture nonlinear aerodynamic behavior while still keeping stable sequence learning throughout the trajectories. Tanh was used in the representative configuration. The PR-SSM code handled most data preparation internally, so the local setup focused on trying to maintain consistency between the input trajectories, hyperparameters, and postprocessing procedures. The quality of the training was evaluated through saved loss histories and postprocessed prediction metrics, with $R^2$ and RMSE from the the held-out test trajectories being the most useful measures. Early stopping was active in the representative run and used the validation split with patience of 3 epochs and a minimum improvement threshold. A stepwise decaying learning rate was also used during training. During the search to optimize the hyperparameters, the dataset partitions and seed initializations were fixed across runs so that the hyperparameter configuration changes could be compared evenly. The robustness to other splits and seed initializations still needs to be tested once a few hyperparameter configurations have been optimized.
 
- \subsection{Conclusions and Recommendations}
-    \item \textcolor{purple}{Conclusions and Recommendations}
-    \begin{itemize}
-        \item \textcolor{purple}{Recommended length: 4 paragraphs}
-        \item \textcolor{purple}{Paragraph 1 purpose: synthesize the main lessons from both semesters.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{Fall established a baseline and model-selection logic}
-            \item \textcolor{purple}{Winter improved physical relevance through PR-SSM-style dynamic modeling}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 2 purpose: interpret final model usefulness.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{what the metrics imply}
-            \item \textcolor{purple}{what the current models can reasonably claim to do}
-            \item \textcolor{purple}{what they still cannot do confidently}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 3 purpose: recommend model improvements.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{hyperparameter tuning}
-            \item \textcolor{purple}{better validation}
-            \item \textcolor{purple}{more representative data}
-            \item \textcolor{purple}{stronger uncertainty treatment}
-            \item \textcolor{purple}{architecture refinement if justified}
-        \end{itemize}
-        \item \textcolor{purple}{Paragraph 4 purpose: recommend ATP data and workflow improvements.}
-        \item \textcolor{purple}{Main ideas:}
-        \begin{itemize}
-            \item \textcolor{purple}{synchronized kinematics and force data}
-            \item \textcolor{purple}{trustworthy targets}
-            \item \textcolor{purple}{broad operating-condition coverage}
-            \item \textcolor{purple}{ML-ready formatting}
-            \item \textcolor{purple}{future path toward final aerodynamic-force prediction}
-        \end{itemize}
-    \end{itemize}
-\end{itemize}
+The latest work replicated the original PR-SSM framework directly in several important respects. The local project retained the provided repository structure, the supplied MATLAB input files, and the TensorFlow 1.14 implementation used by the original codebase. Other elements had to be adapted and developed for local use. Some of the changes included the file structure, experimental run tracking and comparison processes, hyperparameter-search processes, and the summary of tracking across many iterations of output folders. The postprocessing and visualization stage was also expanded through new local scripts, which were used to generate plots, compare test runs, and summarize metrics more efficiently than the original workflow alone. An important improvement made over the semester was transitioning from informal exploratory testing to a more controlled comparison. The comparison spreadsheets became more structured over time, which brought to light issues and fixes such as the need for fixed dataset partitions and fixed seed initializations during hyperparameter search. Those changes were needed because the objective extended beyond rerunning the paper configuration and included identifying promising settings and building a process that could later transition to ATP- and RRTS-relevant data. The PR-SSM methodology was therefore closer to addressing the overall objective because it modeled nonlinear, time-varying outputs from sequential motion data rather than isolated (non-sequential) steady-state points.
+
+\subsection{PR-SSM Paper Replication - Results}
+A successful outcome was defined less by exact duplication of every published number and more by whether the local PR-SSM produced stable training and credible held-out test predictions. Similar to the MLP model, some of the more useful visual evaluation tools were the parity plots and loss curves. The parity plots were useful because they showed how the force and moment coefficient predictions clustered around the 1:1 line. The combined parity-grid figure in Figure~\ref{fig:prssm_combined_parity_grid} is an efficient main visual tool because it summarizes all five outputs at once for both the training and testing datasets. The time-history overlays (seen in the middle of Figure\ref{fig:prssm_animation_interface}) were also valuable because they showed whether the model tracked phase and amplitude across full trajectories. An animation and trajectory visualization script, illustrated in Figure~\ref{fig:prssm_animation_interface}, was generated in the local repository to help with inspection of the dynamic behaviors over time, not just the global correlation. The quantitative success of the model was assessed mainly through output $R^2$ and RMSE values from the held-out test trajectory dataset, as summarized in Table~\ref{tab:prssm_results_metrics}. Using that definition of success, a successful replication meant showing that the PR-SSM could learn the dominant aerodynamic trends in the provided dataset and serve as a step toward ATP and RRTS sequence modeling.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 9 cm]{figures/Wade Schnurr Images/prssm_combined_parity_grid_with_best_fit.png}
+    \caption{Combined PR-SSM parity-grid figure with best-fit lines for run 35. The figure provides an efficient summary of all output prediction quality across the training and test datasets.}
+    \label{fig:prssm_combined_parity_grid}
+\end{figure}
+
+\begin{table}[htbp]
+    \centering
+    \caption{R35 PR-SSM test-set performance metrics for run 35.}
+    \label{tab:prssm_results_metrics}
+    \begin{tabular}{lcc}
+        \hline
+        Output & RMSE & $R^2$ \\
+        \hline
+        $CF_x$ & 0.181 & 0.969 \\
+        $CF_y$ & 0.315 & 0.906 \\
+        $CM_x$ & 0.264 & 0.937 \\
+        $CM_y$ & 0.180 & 0.969 \\
+        $CM_z$ & 0.195 & 0.965 \\
+        Average & 0.227 & 0.949 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The representative strong local PR-SSM run test-set $R^2$ values and RMSE are summarized in Table~\ref{tab:prssm_results_metrics}. The parity-grid trends in Figure~\ref{fig:prssm_combined_parity_grid} and the metrics used together suggest that the model tracked the dominant aerodynamic behavior well. The strongest agreement appeared in $CF_x$, $CM_y$, and $CM_z$, while the weakest appeared in $CF_y$ and $CM_x$. The single-output example shown in Figure~\ref{fig:prssm_cf_y_parity_best_fit} is a strong choice because it shows both the correlation and the departure from the ideal 1:1 slope, this is where the predicted values exactly match the actual value. The slope of best fit is less than 1, which means that on average the larger positive coefficient values were underpredicted while the larger negative coefficient values were slightly overpredicted and the predictions were more accurate as the coefficient approached zero. Direct numerical comparison against the paper should be made with caution because the local experiments included alterations and exploratory tuning.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 9 cm]{figures/Wade Schnurr Images/prssm_parity_test_CF_y_with_best_fit.png}
+    \caption{Representative PR-SSM parity plot with best-fit line for $CF_y$ on the test set. The plot shows the overall relationship with the target data while also indicating how the fitted trend departs from the ideal 1:1 line.}
+    \label{fig:prssm_cf_y_parity_best_fit}
+\end{figure}
+
+Additional diagnostic plots helped interpret the remaining errors. A residual plot such as Figure~\ref{fig:prssm_cf_y_residual} is used to show whether the prediction errors remain centered around zero or whether systematic bias appears across the output range. Figure~\ref{fig:prssm_cf_y_error_vs_true} is useful when the report needs to show whether error changes across the true-output range. Figure~\ref{fig:prssm_cf_y_error_hist} summarizes the error distribution. The histogram is usually the least essential diagnostic because much of its value overlaps with the residual plot and summary metrics. Taken together, these diagnostics suggest that the PR-SSM captured most of the important aerodynamic behavior while still showing uneven accuracy across outputs.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 9 cm]{figures/Wade Schnurr Images/prssm_residual_test_CF_y.png}
+    \caption{R35 PR-SSM residual plot for $CF_y$ from the test dataset. Residual plots help identify bias, spread, and systematic error patterns that may not be visible in a parity plot alone.}
+    \label{fig:prssm_cf_y_residual}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 9 cm]{figures/Wade Schnurr Images/prssm_error_vs_true_test_CF_y.png}
+    \caption{R35 PR-SSM absolute-error-versus-true-value plot for $CF_y$ on the test set which helps assess whether prediction error grows, shrinks, or stays approximately uniform across the output range.}
+    \label{fig:prssm_cf_y_error_vs_true}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 9 cm]{figures/Wade Schnurr Images/prssm_error_hist_test_CF_y.png}
+    \caption{R35 PR-SSM error histogram for $CF_y$ on the test set showing how the prediction errors are distributed.}
+    \label{fig:prssm_cf_y_error_hist}
+\end{figure}
+
+The main value in the PR-SSM comes from its ability to follow varying aerodynamic trajectories rather than fit static points. In the flapping-wing application, correct phase behavior is important because a small phase shift can produce inadequate dynamic predictions. Amplitude tracking is also important because a model that misses peak magnitudes would have limited value for design purposes. The animation interface in Figure~\ref{fig:prssm_animation_interface} is useful here because it shows how dynamic overlays support interpretation of a sequence model. The figure displays measured and predicted coefficient histories together with the associated wing-motion trajectory. A useful training-behavior figure is the loss-versus-epoch graph in Figure~\ref{fig:prssm_loss_zoomed}. The graph shows whether or not the loss settled smoothly near the end of training.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 15 cm]{figures/Wade Schnurr Images/prssm_animation_interface.png}
+    \caption{PR-SSM trajectory-animation and dynamic-overlay interface. The figure visualizes wing motion together with measured and predicted force and moment coefficient histories across a specific trajectory.}
+    \label{fig:prssm_animation_interface}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 9 cm]{figures/Wade Schnurr Images/prssm_loss_vs_epoch_zoomed.png}
+    \caption{PR-SSM loss history for run 35 is used for assessing convergence, training stability, and whether additional epochs were likely to produce meaningful improvement.}
+    \label{fig:prssm_loss_zoomed}
+\end{figure}
+
+Several limitations remain. A main weak point in the representative PR-SSM run was the uneven prediction quality across the five outputs. In particular, $CF_y$ and $CM_x$ were predicted with lower accuracy than the other three outputs. The fact that the dataset was experimental could also play a part in the variation between the predicted and measured results. Slight variations between tests could also contribute to the imperfect predictions. By splitting the dataset into three fixed subsets of training, validation, and testing trajectories during the hyperparameter search, the comparison across runs was made more controlled. However, a final optimized configuration still needs to be tested across multiple random seed initializations and alternative random trajectory partitions. The local changes made to the codebase were thought to be reasonable and necessary, for example to reduce training time, although they also made it more challenging to achieve an equivalent or superior reproduction of the results from the paper. A question that remains is how the model will generalize beyond the provided flapping-wing dataset. Despite those limitations, the results from the current development indicate that the viability of a PR-SSM-style sequential model is encouraging. The model addresses the objective using a dynamic form and already performs fairly well on a related flapping-wing dataset (the dataset used in the paper). A synchronized ATP and RRTS dataset containing trustworthy kinematics and the corresponding force and moment measurements in a machine-learning-ready format still remains missing. Some possible avenues for future validation include trajectory-level generalization, sensitivity to alternative dataset partitions, and direct testing on ATP (three-dimensional force and wing trajectory) and RRTS (three dimensional moment measurements) measurement data.
+
+\subsection{Conclusions and Recommendations}
+Across the two semesters, the main contribution of the neural-network subgroup was the start of the development of a clearer model-selection pathway for aerodynamic prediction. The Fall MLP work created a baseline workflow and demonstrated that steady airfoil data were sufficient for building a preliminary proof-of-concept model. The Winter PR-SSM work improved the physical relevance of the model and data by moving from steady, static coefficient prediction to unsteady, dynamic force and moment coefficient prediction on flapping wing trajectory data.
+
+The final metrics imply two useful outcomes. The Fall MLP confirmed that the basic machine learning process was viable. The PR-SSM achieved average test set $R^2$ near 0.95 on a dynamic flapping wing dataset, demonstrating that the model learned meaningful aerodynamic patterns. Based on the results, the current work can reasonably claim to have established a credible machine learning based modeling path and to have demonstrated that PR-SSM-style dynamic modeling can perform strongly on a related flapping-wing dataset. However, at this time the current work cannot confidently claim validated prediction accuracy on ATP (force and wing trajectory data) and RRTS generated data or full robustness across different dataset partitions, seeds, and operating conditions.
+
+The recommended next step is to continue the PR-SSM hyperparameter search under controlled conditions, such as using fixed datasets and seeds until a clearly superior configuration can be identified. Validation through held out test trajectory performance, residual analysis, and comparison of the outputs should continue and be improved, with targeted effort focused on the weaker performance in $CF_y$ and $CM_x$. Another important improvement is to prioritize using experimental data that are more representative rather than only increasing the complexity of the model. For example the current flapper only uses one trajectory and the model contains many trajectories. When an optimized set of hyperparameters has been identified under controlled testing, the next step should be to rerun the model across multiple random seed initializations and trajectory partitions. Reporting of uncertainty should also be improved by comparing performance across multiple seeds, trajectory partitions, and repeated runs rather than depending on a single best-case result. A high-priority recommendation is to create a synchronized ATP force measurement, ATP wing tracking, and RRTS moment dataset in an appropriate machine learning ready format, or as a start utilize the anticipated file type and data format. The quality of the aerodynamic outputs should be checked before very large training runs, and the dataset should use consistent naming, synchronized measurements, sufficiently broad operating-condition coverage, and clearly defined dataset partitions. it is also recommended to log records of tests, for example by updating the comparison spreadsheets.
