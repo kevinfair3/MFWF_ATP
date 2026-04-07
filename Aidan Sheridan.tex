@@ -1,66 +1,129 @@
 \subsection{Background}
  
-This year, a new sub-team was created to develop a non-linear black-box model to analyze and predict the aerodynamic forces on the flapping wings of the micro-flapping wing-flyer utilizing neural networks. As this was an entirely new sub-team that was created this year, the team had to start from the ground up researching different models and figuring out which would be the best fit for accurately predict the three-dimensional forces.
- 
-\begin{figure}[htb]
-  \centering
-  \includegraphics[height=6.5cm]{figures/MLP Network Diagram Aidan.png}
-  \caption{Architecture of an MLP model.}
-  \label{fig:MLP_Architecture}
-\end{figure}
- 
-The team settled on researching two different neural network types and determining how they function, and how they could be used to predict the aerodynamic forces. I decided to focus on a Multilayer Perceptron (MLP) model, which is made up of input, output and hidden layers, where the hidden layers allow the network to handle nonlinear problems. The different layers are connected by a series of neurons that each take an input and  processes it to produce an output. Each neuron has a weight that determines importance, and these weights are summed and passed through an activation function, which introduces nonlinearity to the function.
- 
-\subsection{Training Data}
-To build the network, I made a test network that can predict the coefficient of lift, coefficient of drag, pressure drag coefficient, and the pitching moment coefficient from the angle of attack, Reynolds number, and the top and bottom transition points of various airfoils. I used a database of NACA airfoils that I gathered from "splinecloud.com" which provided a large database of various NACA airfoils and the necessary input and output parameters for the network, and compiled them into a single excel file that contained over 66,000 individual samples of data across 619 different airfoils. This excel sheet listed out all the parameters required for the network, and was also used by Wade Schnurr for his work on the Long Short-Term Memory (LSTM) model that was occurring simultaneously with my model.
+This year, a new sub team was created to develop a non-linear black-box model to analyze and predict the aerodynamic forces on the flapping wings of the micro-flapping wing-flyer utilizing neural networks. As this was an entirely new sub team that was created this year, the team had to start from the ground up researching different models and figuring out which would be the best fit for accurately predict the three-dimensional forces.
  
 \begin{figure}[htbp]
-  \centering
-  \includegraphics[height=6.5cm]{figures/Training Data Aidan.png}
-  \caption{Samples of NACA Airfoil Training Data.}
-  \label{fig:NACA_Airfoil_Training_Data}
+
+    \centering
+
+    \includegraphics[width=0.5\linewidth]{figures/Aidan Sheridan Figures/MLP_Network_Architecture_Aidan.png}
+
+    \caption{MLP network architecture}
+
 \end{figure}
  
-\subsection{Model and Results}
+The team settled on researching multiple different neural network types and determining how they function, and how they could be used to predict the aerodynamic forces. I decided to focus on a Multilayer Perceptron (MLP) model, which is made up of input, output and hidden layers, where the hidden layers allow the network to handle nonlinear problems. The different layers are connected by a series of neurons that each take an input and  processes it to produce an output. Each neuron has a weight that determines importance, and these weights are summed and passed through an activation function, which introduces nonlinearity to the function. The training length is measured in epochs, with one epoch representing a single pass of the entire training dataset through the model.
+ 
+\subsection{Methodology}
+
+To build the network, I made a test network during the fall semester that can predict the coefficient of lift, coefficient of drag, pressure drag coefficient, and the pitching moment coefficient from the angle of attack, Reynolds number, and the top and bottom transition points of various NACA airfoils to serve as a proof of concept for which neural network types would work best for the problem. I used a database of NACA airfoils that I gathered from splinecloud.com which provided a large database of various NACA airfoils and the necessary input and output parameters for the network, and compiled them into a single excel file that contained over 66,000 individual samples of data across 619 different airfoils. This excel sheet listed out all the parameters required for the network, and was also used by my other teammate for his work on the Long Short-Term Memory (LSTM) model that was occurring simultaneously with my model.
+ 
+The network that I used had three hidden layers due to the complexity of the network with 4 inputs and outputs, and included 452 neurons, which are 256, 128 and 64 in the hidden layers, and 4 for the input layer as is standard for MLP networks. The network included a Rectified Linear Unit (ReLU) activation function, which outputs 0 for negative inputs and the input itself for positive inputs, which is useful for modeling complex relationships in data. The network also has a dropout function, which randomly deactivates neurons during training in order to prevent overfitting.
+ 
+ 
+In the winter semester, the focus was on adapting the network to accurately predict the three-dimensional forces acting on the flapper by the wings, and to accomplish this, a new model was created using data from \cite{Shavit} This paper used a sequence-to-sequence model to predict the kinematics of the wings, namely the angle vectors at different times, the forces and torques generated by flapping wings. This task differs substantially from the NACA airfoil task due to the dynamic and time-sensitive nature of the data from the dataset from the paper. Nevertheless, a temporal dilated convolution neural network was developed to try and replicate the results of this paper. This model has a window size of 51 to predict the three angle vectors, and includes five dilation blocks with two 1D convolution layers each, along with one global average pooling layer and three dense layers with 256, 128 and 3 neurons each. The network includes early stopping once during training with a patience of 20 epochs, meaning if no improvement is detected after 20 epochs, the training automatically stops to prevent overfitting, and the ReLU activation function is used throughout the hidden layers, excluding the smallest dense layer.
  
 \begin{figure}[htbp]
-  \centering
-  \includegraphics[height=10cm]{figures/Aidan Code Image 1.png}
-  \caption{Sample of the MLP Network Code Used in Training Model.}
-  \label{fig:MLP Code}
+
+    \centering
+
+    \includegraphics[width=0.5\linewidth]{figures/Aidan Sheridan Figures/Temporal_Dilated_CNN_Architecture.png}
+
+    \caption{Diagram of temporal dilated convolution neural network.}
+
+    \label{fig:Temporal CNN diagram}
+
 \end{figure}
  
-The network that I used had three hidden layers due to the complexity of the network with 4 inputs and outputs, and included 452 neurons, which are 256, 128 and 64 in the hidden layers, and 4 for the input layer as is standard for MLP networks. The network included a Rectified Linear Unit (ReLU) activation function, which outputs 0 for negative inputs and the input itself for positive inputs, which is useful for modeling complex relationships in data. The network also has a dropout function, which randomly deactivates neurons during training in order to prevent over-fitting.
  
-\begin{figure}[htb]
-  \centering
-  \includegraphics[height=6.5cm]{figures/Predicted vs True Aidan.png}
-  \caption{Predicted vs. Real Values of Parameters.}
-  \label{fig:Predicted_vs_Real}
-\end{figure}
+The data were stored in two files, one for forces and torques and one for kinematics. This data was scaled and randomized prior to training. The data were split with 72\% used to train the data, 13\% used to validate the training, and 15\% to test the newly-trained network. Using this data set, I replicated the paper and also ran a new model that predicted the forces from the angles and torques.
+ 
+\subsection{Results}
  
 \begin{figure}[htbp]
-  \centering
-  \includegraphics[height=6.0cm]{figures/Training and Validation Loss Aidan.png}
-  \caption{Training and Validation Losses throughout Training}
-  \label{fig:Training_and_Validation}
+
+    \centering
+
+    \includegraphics[width=0.5\linewidth]{figures/Aidan Sheridan Figures/NACA_Airfoil_Graphs.png}
+
+    \caption{Predicted vs true values and training and validation losses during training, static model}
+
 \end{figure}
  
 \begin{table}[htbp]
+
     \centering
+
     \begin{tabular}{|c|c|}
+
         \hline
+
         Accuracy Type & Accuracy Percentage \\ \hline
+
         Training Accuracy & 90.4805 \\ \hline
+
         Validation Accuracy & 91.8836 \\ \hline
+
         Test Accuracy & 96.304 \\ \hline
+
     \end{tabular}
-    \caption{Training, Validation, and Test Accuracies}
+
+    \caption{Training, Validation, and Test Accuracies, static model}
+
     \label{tab:four_by_two}
+
 \end{table}
  
 \newpage
-The training, validation and test accuracies were found to be 0.904805, 0.918836 and 0.963504 respectively. The accuracies can be increased with more epochs and a smaller batch size, where 100 epochs were used with a batch size of 64. Overall, this is good progress for the network.
+The training, validation and test $R^2$ values were found to be 0.904805, 0.918836 and 0.963504 respectively for the NACA airfoil network, which demonstrates that the model is decent at predicting static aerodynamic parameters from static data. For the dynamic neural network, the paper did not include a published $R^2$ value, which represents the training accuracy, for the sequence-to-sequence model, however the mean squared error loss was 0.1212. 
+
+\begin{figure}[htbp]
+
+    \centering
+
+    \includegraphics[width=0.5\linewidth]{figures/Aidan Sheridan Figures/Predicted vs real values of parameters, dynamic model.png}
+
+    \caption{Predicted vs real values of parameters, dynamic model}
+
+\end{figure}
  
-\subsection{Plan for Winter Semester}
-Next semester, the team will focus on using the model to predict the three-dimensional aerodynamic forces acting upon the flapping wings. Once the model is accurate enough, the input parameters will have to be determined and sufficient data will have to be collected by the rest of the ATPW team in order to be able to predict these forces.
+\begin{figure}[htbp]
+
+    \centering
+
+    \includegraphics[width=0.5\linewidth]{figures/Aidan Sheridan Figures/MSE loss, dynamic model.png}
+
+    \caption{MSE loss, dynamic model}
+
+\end{figure}
+ 
+ 
+\begin{table}[htbp]
+
+    \centering
+
+    \begin{tabular}{|c|c|c|}
+        \hline
+    & $R^2$ & MSE\\
+    \hline
+    Paper & - & 0.1216\\
+    \hline
+    Angle Prediction & 0.9769 & 0.002741\\
+    \hline
+    Force Prediction & 0.9362 & 0.000465\\
+    \hline
+
+    \end{tabular}
+
+    \caption{$R^2$ and MSE of paper results and temporal CNN results}
+
+    \label{tab:four_by_three}
+
+\end{table}
+
+In the angle prediction neural network, the $R^2$ and MSE were 0.9769 and 0.002741 respectively, and 0.9362 and 0.000465 respectively for the force prediction network. These represent excellent and accurate results, and with the MSE have even exceeded the performance of the sequence-to-sequence model in the paper. The slopes of the predicted vs true graphs in the dynamic model are not exactly 45 degrees, which means that the model is still exhibiting some elevated amounts of bias, which can be corrected by either enlarging the temporal windows, or by increasing the batch size, as the number of epochs are not an issue due to the fact that early stopping happens before the set number of 200 epochs were ran through. Nevertheless, this model can be used for the ATP and RRTS, with their data being similar enough so that the general architecture and neural network type does not need to be changed, however some modifications to the network may need to be made to deal with different parameters and different formats that the data is being stored in.
+ 
+\subsection{Conclusions and Recommendations}
+
+The $R^2$ and MSE for the network replicating the paper were 0.9769 and 0.002741 respectively, and 0.9362 and 0.000465 respectively for the force prediction network. This represents a massive improvement compared to the results of the paper, however it may be possible to further improve the accuracy and MSE by increasing the batch size or by using larger temporal windows. Additionally, the format that the data was recorded in is different from the format that the ATP and RRTS teams recorded their data in. A new model exists that is supposed to read the data in the same format as what the ATP and RRTS record, however it has not been thoroughly tested, and more work will need to be conducted on it in the upcoming year, involving modifications to how the data is read, however the network should function with all the same fundamental aspects of the existing network.
+ 
